@@ -7,244 +7,437 @@
 <title>Tre Pi Profumerie &middot; Visio Digital Partner</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ===== PALETTE (dark beauty luxury) ===== */
+@font-face{font-family:"Satoshi";src:url(https://cdn.fontshare.com/wf/EKWWASRLTBPCBLQSNK3P6OHQM7OOYXND/BVWKUFUAWULUCUADPJVFBUYDJSXSROYP/JY3G4AHS6EYN6N6OEHTFIJIPYZWLCXKV.woff2) format("woff2");font-weight:300 900;font-display:swap}
+
+/* ===== PALETTE (Visio chiara: bianco + nero + blu) ===== */
 :root{
-  --bg:#0B0A0F; --ink:#E8E4E0; --head:#FFFFFF; --muted:#9A959F; --line:rgba(255,255,255,.1);
-  --panel:rgba(255,255,255,.04); --accent:#C8A96E; --accent2:#E8C98E; --on-accent:#0B0A0F;
-  --btn-bg:#C8A96E; --btn-fg:#0B0A0F; --radius:12px;
+  --bg:#FFFFFF; --ink:#2D2D3A; --head:#111118; --muted:#6B7085; --line:rgba(0,0,0,.08);
+  --panel:#F6F6F9; --accent:#002BFF; --accent2:#3355FF; --on-accent:#FFFFFF;
+  --btn-bg:#002BFF; --btn-fg:#FFFFFF; --radius:10px;
   --fh:"Plus Jakarta Sans",system-ui,sans-serif; --fb:"Plus Jakarta Sans",system-ui,sans-serif;
-  --gut:clamp(24px,5vw,80px); --ease:cubic-bezier(.16,1,.3,1);
+  --hw:700; --htt:none; --hls:-0.01em;
+  --wv-bg:#05071A; --wv-panel:#0A0E2C; --wv-panel-2:#10153A; --wv-line:rgba(174,181,218,.16);
+  --wv-ink:#F2F4FF; --wv-ink-2:#AEB5DA; --wv-ink-3:#7A82AE; --wv-blue:#7C8CFF; --wv-mint:#4DEBB0; --wv-coral:#FF8A7A;
+  --gut:clamp(20px,4.5vw,72px); --ease:cubic-bezier(.16,1,.3,1);
 }
 
-/* ===== RESET ===== */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--ink)}
-body{font-family:var(--fb);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow:hidden}
+body{font-family:var(--fb);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow:hidden}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-a{color:inherit;text-decoration:none}
-
-/* ===== DECK ===== */
 #deck{height:100svh;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;scroll-behavior:smooth}
 @media(max-width:899px),(max-height:700px){#deck{scroll-snap-type:y proximity}}
 
-/* ===== SLIDE ===== */
-.slide{position:relative;min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:100px var(--gut) 60px;overflow:hidden}
-.wrap{width:100%;max-width:1200px;margin:0 auto}
+.slide{position:relative;min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:96px var(--gut) 52px;overflow:hidden}
+.wrap{width:100%;max-width:1300px;margin:0 auto}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:26px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--fh);font-weight:var(--hw);text-transform:var(--htt);letter-spacing:var(--hls);color:var(--head);line-height:1.06}
+h1{font-size:clamp(36px,4.6vw,72px)}
+h2{font-size:clamp(28px,2.9vw,46px);margin-top:14px;max-width:24ch}
+h3{font-size:clamp(18px,1.35vw,22px);line-height:1.2}
+.lead{font-size:clamp(15px,1.15vw,18px);color:var(--muted);max-width:60ch;margin-top:16px}
+.note{font-size:12px;color:var(--muted);margin-top:18px;letter-spacing:.02em}
+.head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,72px);align-items:end;margin-bottom:32px}
+.head .lead{margin-top:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);padding:24px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--btn-bg);color:var(--btn-fg);border-radius:var(--radius);padding:15px 24px;font-weight:600;text-decoration:none;letter-spacing:.02em;transition:transform .25s var(--ease),box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,43,255,.18)}
+.ph{width:100%;height:100%;object-fit:cover}
 
-/* ===== TYPOGRAPHY ===== */
-.kicker{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
-.kicker::before{content:"";width:32px;height:1.5px;background:currentColor}
-h1,h2,h3{font-family:var(--fh);font-weight:800;letter-spacing:-.02em;color:var(--head);line-height:1.08}
-h1{font-size:clamp(40px,5.2vw,80px)}
-h2{font-size:clamp(32px,3.4vw,54px);margin-top:16px;max-width:20ch}
-h3{font-size:clamp(20px,1.5vw,26px);line-height:1.2}
-.lead{font-size:clamp(16px,1.25vw,20px);color:var(--muted);max-width:52ch;margin-top:18px;line-height:1.6}
-.note{font-size:12px;color:var(--muted);margin-top:20px;letter-spacing:.02em}
-
-/* ===== COMPONENTS ===== */
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--btn-bg);color:var(--btn-fg);border-radius:var(--radius);padding:18px 32px;font-weight:700;font-size:16px;letter-spacing:.02em;transition:transform .3s var(--ease),box-shadow .3s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(200,169,110,.25)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:calc(var(--radius) + 8px);padding:28px}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;letter-spacing:.04em;border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--muted)}
-
-/* ===== TOPBAR ===== */
-.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.pair{display:flex;align-items:center;gap:14px;color:var(--ink)}
+/* topbar */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gut);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.pair{display:flex;align-items:center;gap:14px;color:var(--head)}
 .pair .x{font-size:12px;color:var(--muted)}
-.pair .vd{width:132px;color:var(--ink)}
+.pair .vd{width:132px;color:var(--head)}
 .pair .vd svg{width:100%;height:auto;display:block}
-.pair .bn{font-family:var(--fh);font-weight:800;font-size:18px}
+.pair .bn{font-family:var(--fh);font-weight:var(--hw);text-transform:var(--htt);font-size:18px}
 .topr{display:flex;gap:8px}
-.topr button{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--muted);min-height:36px;transition:border-color .2s}
+.topr button{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 13px;color:var(--muted);min-height:34px;transition:border-color .2s}
 .topr button:hover{border-color:var(--accent)}
 .progress{position:fixed;left:0;top:0;height:2px;background:var(--accent);z-index:60;width:0;transition:width .5s var(--ease)}
-.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:10px}
+.dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:8px}
 .dots button{width:20px;height:20px;display:grid;place-items:center}
-.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:all .3s var(--ease)}
-.dots .on i{background:var(--accent);transform:scale(1.6)}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.dots .on i{background:var(--accent);transform:scale(1.5)}
 @media(max-width:899px){.dots{display:none}.pair .vd{width:96px}}
 
-/* ===== 01 COVER ===== */
+/* cover */
 .cover{padding:0;flex-direction:row;align-items:stretch}
-.cover .txt{flex:1 1 55%;display:flex;flex-direction:column;justify-content:center;padding:120px var(--gut) 80px}
-.cover .pic{flex:1 1 45%;position:relative;min-height:100svh;overflow:hidden}
-.cover .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cover .meta{margin-top:32px;font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
-.cover .sub{font-size:clamp(17px,1.4vw,21px);color:var(--muted);max-width:40ch;margin-top:24px;line-height:1.6}
-.cover .start{margin-top:40px}
-@media(max-width:999px){.cover{flex-direction:column}.cover .pic{min-height:50svh}.cover .txt{padding-top:100px}}
+.cover .txt{flex:1 1 52%;display:flex;flex-direction:column;justify-content:center;padding:120px var(--gut) 68px}
+.cover .pic{flex:1 1 48%;position:relative;min-height:100svh;overflow:hidden}
+.cover .pic img{position:absolute;inset:0}
+.cover .meta{margin-top:28px;font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.cover .sub{font-size:clamp(16px,1.3vw,20px);color:var(--muted);max-width:44ch;margin-top:24px}
+.cover .start{margin-top:36px}
+.needs{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;max-width:60ch}
+.needs small{width:100%;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.needs span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-size:14px;background:var(--bg)}
+.needs span b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--btn-bg);color:var(--btn-fg);font-size:12px}
 
-/* ===== BIG STATS ===== */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-top:1px solid var(--line);margin-top:40px}
-.stat{padding:28px 24px 24px 0;border-bottom:1px solid var(--line)}
-.stat:not(:first-child){padding-left:24px;border-left:1px solid var(--line)}
-.stat b{display:block;font-family:var(--fh);font-weight:800;font-size:clamp(36px,3.6vw,56px);line-height:1;color:var(--head)}
-.stat b.accent{color:var(--accent)}
-.stat b.bad{color:#c44}
-.stat span{display:block;font-size:15px;color:var(--muted);margin-top:10px;line-height:1.4}
-@media(max-width:699px){.stat:not(:first-child){padding-left:0;border-left:0}.stats{grid-template-columns:1fr 1fr}}
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:30px}
+.kpi{padding:22px 20px 20px 0;border-bottom:1px solid var(--line)}
+.kpi:not(:nth-child(3n+1)){padding-left:20px;border-left:1px solid var(--line)}
+.kpi b{display:block;font-family:var(--fh);font-weight:var(--hw);font-size:clamp(30px,2.8vw,44px);line-height:1;color:var(--head)}
+.kpi span{display:block;font-size:14px;margin-top:8px}
+.kpi small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 
-/* ===== TWO COL LAYOUT ===== */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
-.two.v-center{align-items:center}
-@media(max-width:999px){.two{grid-template-columns:1fr}}
+/* charts */
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.cols{display:flex;align-items:flex-end;gap:6px;height:170px}
+.cols div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.cols i{display:block;width:100%;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px}
+.cols em{font-style:normal;font-size:11px;color:var(--ink);margin-bottom:4px}
+.cols small{font-size:10px;color:var(--muted);margin-top:6px;white-space:nowrap}
 
-/* ===== OPPORTUNITY CARDS ===== */
-.opps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-.opp{background:var(--panel);border:1px solid var(--line);border-radius:calc(var(--radius) + 8px);padding:32px 28px;transition:transform .4s var(--ease),box-shadow .4s}
-.opp:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.15)}
-.opp .num{font-family:var(--fh);font-weight:800;font-size:clamp(48px,4vw,64px);color:var(--accent);line-height:1}
-.opp h3{margin-top:16px;font-size:20px}
-.opp p{font-size:15px;color:var(--muted);margin-top:10px;line-height:1.5}
-@media(max-width:899px){.opps{grid-template-columns:1fr}}
+/* bestg */
+.bestg{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;margin-top:20px}
+.bestg a{text-decoration:none;color:inherit}
+.bestg img{width:100%;aspect-ratio:4/5;object-fit:contain;border-radius:8px;background:var(--panel);padding:6px}
+.bestg b{display:block;font-size:10px;line-height:1.3;margin-top:6px;max-height:2.6em;overflow:hidden}
+.bestg span{display:block;font-size:11px;color:var(--muted)}
 
-/* ===== BEFORE/AFTER ===== */
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:calc(var(--radius) + 8px);overflow:hidden;margin-top:32px}
-.compare .col{padding:32px 28px}
-.compare .col.dopo{background:color-mix(in srgb,var(--accent) 6%,var(--bg));border-left:1px solid var(--line)}
-.compare h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:20px}
-.compare .col:first-child h4{color:var(--muted)}
-.compare .col.dopo h4{color:var(--accent)}
-.compare li{font-size:15px;padding:10px 0;border-bottom:1px solid var(--line);list-style:none;display:flex;align-items:center;gap:10px}
-.compare li::before{content:"";width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.compare .col:first-child li::before{background:#c44}
-.compare .col.dopo li::before{background:var(--accent)}
-@media(max-width:699px){.compare{grid-template-columns:1fr}.compare .col.dopo{border-left:0;border-top:1px solid var(--line)}}
+/* scene v5 */
+.sc .wrap{display:flex;flex-direction:column;gap:16px}
+.sc-top{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,3.5vw,48px);align-items:start}
+.sc h2{font-size:clamp(24px,2.35vw,38px);max-width:none;margin-top:10px}
+.sol{background:var(--accent);color:var(--on-accent);border-radius:calc(var(--radius) + 8px);padding:18px 22px 16px;box-shadow:0 10px 30px rgba(0,43,255,.12)}
+.sol small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.85;margin-bottom:8px}
+.sol ol{list-style:none;counter-reset:s}
+.sol li{counter-increment:s;position:relative;padding:8px 0 8px 28px;border-top:1px solid rgba(255,255,255,.2)}
+.sol li:first-child{border-top:0}
+.sol li::before{content:counter(s);position:absolute;left:0;top:8px;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.2);font-size:11px;font-weight:700;display:grid;place-items:center}
+.sol li b{display:block;font-size:14px;line-height:1.35}
+.sol li span{display:block;font-size:12.5px;opacity:.82;margin-top:2px;line-height:1.35}
 
-/* ===== CREATIVE HUB ===== */
-.hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
-.hub-card{position:relative;border-radius:calc(var(--radius) + 4px);overflow:hidden;aspect-ratio:3/4;background:var(--panel)}
-.hub-card img{width:100%;height:100%;object-fit:contain;background:#f5f5f5;padding:12px;transition:transform .6s var(--ease)}
-.hub-card:hover img{transform:scale(1.04)}
-.hub-card .label{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(11,10,15,.92));font-size:13px;font-weight:600;color:#fff}
-.hub-formats{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.hub-formats .chip{background:color-mix(in srgb,var(--accent) 10%,var(--bg));border-color:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--accent);font-weight:600}
-@media(max-width:699px){.hub-grid{grid-template-columns:1fr 1fr}}
+.prob{display:flex;gap:14px;align-items:baseline;border-left:4px solid #b42318;background:color-mix(in srgb,#b42318 5%,var(--bg));border-radius:0 10px 10px 0;padding:12px 18px;margin-bottom:14px}
+.prob b{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b42318;white-space:nowrap}
+.prob p{font-size:clamp(15px,1.2vw,18px);font-weight:600;color:var(--head);line-height:1.35}
+.prob.info{border-left-color:var(--accent);background:color-mix(in srgb,var(--accent) 4%,var(--bg))}
+.prob.info b{color:var(--accent)}
 
-/* ===== IG MOCKUP ===== */
-.ig{width:100%;max-width:380px;background:#fff;color:#111;border-radius:16px;overflow:hidden;font-family:-apple-system,system-ui,sans-serif;box-shadow:0 30px 60px rgba(0,0,0,.25)}
-.ig .h{display:flex;align-items:center;gap:10px;padding:12px 14px;font-size:13px}
-.ig .av{width:34px;height:34px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--on-accent)}
-.ig .h b{font-weight:600}.ig .h small{display:block;font-size:11px;color:#777}
-.ig .im{width:100%;aspect-ratio:4/5;object-fit:contain;background:#f8f8f8;padding:20px}
-.ig .cta{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#f5f6f7;font-size:13px;gap:10px}
-.ig .cta small{display:block;font-size:10px;color:#777;text-transform:uppercase}
-.ig .cta b{display:block;font-size:13px;line-height:1.25}
-.ig .cta span{background:#0095f6;color:#fff;border-radius:8px;padding:8px 14px;font-weight:600;font-size:12px;white-space:nowrap}
-.ig .t{padding:12px 14px 16px;font-size:13px;line-height:1.4}
+.sc-bot{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:4px}
+.nb{padding:12px 16px 12px 0}
+.nb+.nb{padding-left:16px;border-left:1px solid var(--line)}
+.nb b{display:block;font-family:var(--fh);font-weight:var(--hw);font-size:clamp(22px,2vw,32px);line-height:1.05;color:var(--accent)}
+.nb b small{font-size:.55em;color:var(--muted);font-weight:400}
+.nb.bad b{color:#b42318}
+.nb.ext b{color:var(--head);font-size:clamp(18px,1.4vw,22px)}
+.nb span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.35}
 
-/* ===== VISIO HERO ===== */
-.visio-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center}
-.visio-hero .v-logo{width:clamp(220px,22vw,320px);color:var(--head);margin-bottom:28px}
-.visio-hero .v-logo svg{width:100%;height:auto;display:block}
-.vkpi{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:calc(var(--radius) + 8px);overflow:hidden}
-.vkpi>div{padding:24px;text-align:center}
-.vkpi>div+div{border-left:1px solid var(--line)}
-.vkpi b{display:block;font-family:var(--fh);font-weight:800;font-size:clamp(28px,2.8vw,44px);line-height:1;color:var(--accent)}
-.vkpi span{display:block;font-size:13px;color:var(--muted);margin-top:8px;line-height:1.35}
-@media(max-width:999px){.visio-hero{grid-template-columns:1fr}.vkpi{grid-template-columns:1fr 1fr 1fr}}
+/* mercati */
+.mkt{display:grid;grid-template-columns:1fr 1fr .85fr;gap:clamp(20px,3vw,40px)}
+.br{display:grid;grid-template-columns:118px 1fr 42px;gap:8px;align-items:center;font-size:13px;padding:4px 0}
+.br i{display:block;height:12px;border-radius:6px;background:var(--line)}
+.br em{font-style:normal;text-align:right;font-weight:600}
+.br i.r-principale{background:var(--accent)}.br i.r-attivo{background:color-mix(in srgb,var(--accent) 60%,var(--ink))}.br i.r-marginale{background:color-mix(in srgb,var(--muted) 45%,var(--bg))}
+.bars small{display:block;font-size:11px;color:var(--muted);margin-top:6px}
+.h4,.bars h4,.fbars h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.rl{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--line);font-size:13px}
+.rl span{color:var(--muted);text-align:right}
+.lett h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.lett .chan{margin:4px 0 0}.lett .chan span{font-size:12px;padding:4px 10px}
+.chan{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.chan span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
 
-/* ===== SERVICES ===== */
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-.svc{background:var(--panel);border:1px solid var(--line);border-radius:calc(var(--radius) + 8px);padding:28px;transition:border-color .3s}
-.svc:hover{border-color:var(--accent)}
-.svc .icon{width:44px;height:44px;border-radius:12px;background:var(--btn-bg);color:var(--btn-fg);display:grid;place-items:center;font-size:20px;font-weight:700;margin-bottom:14px}
-.svc h3{font-size:18px;font-weight:700}
-.svc p{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.5}
-.svc-hero{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
-.svc-h{background:var(--btn-bg);color:var(--btn-fg);border-radius:calc(var(--radius) + 8px);padding:24px;text-align:center}
-.svc-h .icon{font-size:28px;margin-bottom:10px}
-.svc-h h3{font-size:17px;color:inherit}
-.svc-h p{font-size:13px;opacity:.8;margin-top:6px}
-@media(max-width:899px){.svc-grid,.svc-hero{grid-template-columns:1fr}}
+/* telefono */
+.tel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
+.shots{display:grid;grid-template-columns:1fr 150px;gap:12px;align-items:start}
+.browser{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.browser .bar{height:30px;background:#f1f1f3;display:flex;align-items:center;gap:6px;padding:0 10px;font-size:11px;color:#666}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:#d6d6db}
+.browser .bar span{margin-left:10px;background:#fff;border-radius:5px;padding:2px 10px}
+.browser img{width:100%;height:200px;object-fit:cover;object-position:top}
+.phone{border:8px solid #222;border-radius:30px;overflow:hidden;background:#222}
+.phone img{width:100%;height:220px;object-fit:cover;object-position:top}
+.check{list-style:none;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+.check li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--line);font-size:13px}
+.check b{font-size:12px;border-radius:999px;padding:2px 10px;white-space:nowrap}
+.check .ok{background:#e6f8f0;color:#137a55}.check .no{background:#fde8e8;color:#b42318}
 
-/* ===== AGENT CARDS ===== */
-.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-.agc{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:calc(var(--radius) + 4px);padding:24px 20px;background:var(--bg);transition:transform .3s var(--ease)}
-.agc:hover{transform:translateY(-3px)}
-.agc small{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.agc b{display:block;font-size:18px;margin-top:6px;color:var(--head)}
-.agc p{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.45}
-@media(max-width:899px){.agents{grid-template-columns:1fr}}
+/* contenuti */
+.cnt{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,3vw,40px);align-items:start}
+.cnt .come{font-size:15px;color:var(--ink);line-height:1.45}
+.adds{list-style:none;margin-top:14px;border-top:1px solid var(--line)}
+.adds li{padding:9px 0 9px 22px;border-bottom:1px solid var(--line);position:relative;font-size:14px}
+.adds li::before{content:"+";position:absolute;left:0;top:8px;font-weight:700;color:var(--accent)}
 
-/* ===== CASE STUDIES ===== */
-.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.cs{border:1px solid var(--line);border-radius:calc(var(--radius) + 8px);padding:32px 28px;background:var(--panel);overflow:hidden;transition:transform .4s var(--ease)}
-.cs:hover{transform:translateY(-4px)}
-.cs small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.cs b{display:block;font-family:var(--fh);font-weight:800;font-size:clamp(36px,3.2vw,52px);line-height:1;color:var(--accent);margin-top:12px}
-.cs h4{font-size:17px;font-weight:700;margin-top:10px;color:var(--head)}
-.cs p{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.45}
-@media(max-width:899px){.cases{grid-template-columns:1fr}}
+/* feed */
+.feedw{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,3vw,40px);align-items:start}
+.fbars .br{grid-template-columns:210px 1fr 42px}
+.fbars .br i.lo{background:#d9534f}.fbars .br i.hi{background:#2f9e6e}
+.fex{border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);padding:14px 16px;background:var(--panel)}
+.fex-h{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.fex-h img{width:56px;height:70px;object-fit:contain;border-radius:6px;background:#fff;padding:4px}
+.fex-h small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fex-h b{display:block;font-size:15px}.fex-h span{font-size:12px;color:var(--muted)}
+.fex table{width:100%;border-collapse:collapse;font-size:12.5px}
+.fex th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+.fex td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.fex td:first-child{font-weight:600;white-space:nowrap}
+.fex td.vu{color:#b42318;font-weight:600}
+.fex td:last-child{color:var(--accent)}
 
-/* ===== TIMELINE ===== */
-.timeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px}
-.fase{border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:calc(var(--radius) + 4px);padding:28px 24px;background:var(--bg);transition:transform .35s var(--ease),box-shadow .35s}
-.fase:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.1)}
-.fase.p2{border-top-color:color-mix(in srgb,var(--accent) 65%,var(--head))}
-.fase.p3{border-top-color:color-mix(in srgb,var(--accent) 35%,var(--head))}
-.fase small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
-.fase .big{display:block;font-family:var(--fh);font-weight:800;font-size:clamp(32px,3vw,48px);line-height:1;color:var(--accent);margin:8px 0 6px}
-.fase b{display:block;font-size:16px;color:var(--head);font-weight:700}
-.fase ul{list-style:none;margin-top:14px}
-.fase li{font-size:14px;padding:8px 0 8px 24px;border-top:1px solid var(--line);position:relative;line-height:1.4;color:var(--muted)}
-.fase li::before{content:"\2713";position:absolute;left:0;top:8px;color:var(--accent);font-weight:700}
-@media(max-width:899px){.timeline{grid-template-columns:1fr}}
+/* cookie */
+.pixc{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.pc{border:1px solid var(--line);border-top:4px solid #2f9e6e;border-radius:10px;padding:14px 16px;background:var(--bg);position:relative}
+.pc.bad{border-top-color:#b42318}
+.pc b{display:block;font-family:var(--fh);font-size:22px;font-weight:var(--hw);color:var(--head)}
+.pc span{display:block;font-size:13px;margin-top:4px;font-weight:600;color:#2f9e6e}.pc.bad span{color:#b42318}
+.pc .dot{position:absolute;right:16px;top:20px;width:10px;height:10px;border-radius:50%;background:#b42318}
+.pc .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:#b42318;animation:ping 1.6s ease-out infinite}
+.pc.ok .dot{background:#2f9e6e}
+.pc.ok .dot::after{display:none}
+@keyframes ping{to{transform:scale(2.8);opacity:0}}
 
-/* ===== DEAL / PROPOSTA ===== */
-.deal{display:grid;grid-template-columns:1fr auto 1.2fr;gap:20px;align-items:stretch;margin-top:32px}
-.dl{border-radius:calc(var(--radius) + 8px);padding:36px 32px;display:flex;flex-direction:column;gap:12px}
-.dl small{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.85}
-.dl b{font-family:var(--fh);font-weight:800;font-size:clamp(48px,5vw,80px);line-height:1}
-.dl b em{font-style:normal;font-size:.42em;opacity:.75}
-.dl span{font-size:16px;line-height:1.5}
-.dl i{font-style:normal;font-size:16px;font-weight:700;margin-top:auto;padding-top:14px;border-top:1px solid currentColor}
+/* calendario */
+.cal{display:grid;grid-template-columns:repeat(6,1fr);gap:8px 10px}
+.cal .mo{border-top:2px solid var(--line);padding-top:8px;min-height:60px}
+.cal h5{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--head);margin-bottom:5px}
+.cal h5 small{color:var(--muted);letter-spacing:0;font-weight:400}
+.ev{border-left:3px solid var(--line);padding:3px 0 3px 7px;margin-bottom:4px;line-height:1.2;position:relative;cursor:default}
+.ev span{display:block;font-size:12.5px;font-weight:600;color:var(--ink)}
+.ev em{display:block;font-style:normal;font-size:11px;color:var(--muted)}
+.ev.sel{background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:0 6px 6px 0}
+.t-shopping{border-color:#d92d20!important}.t-regalo{border-color:#c11574!important}.t-saldi{border-color:#dc6803!important}
+.t-festa{border-color:#1570ef!important}.t-stagione{border-color:#079455!important}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--muted)}
+.legend span{border-left:3px solid var(--line);padding-left:6px}
+.legend .sel{border-left:0;background:color-mix(in srgb,var(--accent) 8%,transparent);padding:0 8px;border-radius:4px}
+
+/* chi visio */
+.visio1{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,3.5vw,56px);align-items:center}
+.v-logo{width:clamp(200px,20vw,300px);color:var(--head);margin-bottom:24px}
+.v-logo svg{width:100%;height:auto;display:block}
+.visio1 h2{max-width:20ch}
+.kq{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 18px}
+.kq>div{padding:14px 18px 14px 0}
+.kq>div+div{padding-left:18px;border-left:1px solid var(--line)}
+.kq b{display:block;font-family:var(--fh);font-weight:var(--hw);font-size:clamp(26px,2.4vw,38px);line-height:1;color:var(--accent)}
+.kq span{display:block;font-size:13px;color:var(--muted);margin-top:6px;line-height:1.35}
+.kq-big b{font-size:clamp(34px,3.4vw,56px)}
+.kq-big{margin-bottom:14px}
+.src{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5}
+.src a{color:var(--muted)}
+.v-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.v-strip img{width:100%;height:140px;object-fit:contain;border-radius:calc(var(--radius) + 6px);background:var(--panel);padding:8px}
+
+/* servizi */
+.svc-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px}
+.svc-key>div{background:var(--accent);color:var(--on-accent);border-radius:calc(var(--radius) + 6px);padding:16px 18px}
+.svc-key small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;font-weight:700}
+.svc-key h3{font-size:17px;color:inherit;margin-top:4px}
+.svc-key p{font-size:12.5px;opacity:.85;margin-top:6px}
+.svc2{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.svc2 .card{padding:14px}
+.svc2 h3{font-size:15px;color:var(--accent)}
+.svc2 p{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* casi */
+.casegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cg{border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);padding:16px 18px;background:var(--panel);overflow:hidden}
+.cg small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cg b{display:block;font-family:var(--fh);font-weight:var(--hw);font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--accent);margin-top:8px}
+.cg span{display:block;font-size:15px;font-weight:600;margin-top:6px;color:var(--head)}
+.cg p{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+/* piano */
+.piano12{--c1:var(--accent);--c2:color-mix(in srgb,var(--accent) 62%,var(--head));--c3:color-mix(in srgb,var(--accent) 32%,var(--head))}
+.pl-axis{display:flex;height:46px;border-radius:12px;overflow:hidden;background:var(--panel)}
+.pl-seg{width:var(--w);display:flex;align-items:center;padding:0 14px;font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;border-right:3px solid var(--bg)}
+.pl-seg.p1{background:var(--c1)}.pl-seg.p2{background:var(--c2)}.pl-seg.p3{background:var(--c3)}
+.pl-ticks{display:grid;grid-template-columns:repeat(12,1fr);margin-top:6px;font-size:11px;color:var(--muted)}
+.pl-ticks span{padding-left:5px;border-left:1px solid var(--line)}
+.pl-ph{display:grid;grid-template-columns:1fr 1fr 1fr .72fr;gap:14px;margin-top:20px}
+.fase{border:1px solid var(--line);border-top:6px solid var(--c1);border-radius:12px;padding:16px 18px;background:var(--bg);cursor:pointer;transition:opacity .3s,transform .35s var(--ease),box-shadow .35s;outline:none}
+.fase.p2{border-top-color:var(--c2)}.fase.p3{border-top-color:var(--c3)}.fase.p4{border-top-color:var(--line);background:var(--panel);cursor:default}
+.fase small{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.fase .big{display:block;font-family:var(--fh);font-weight:var(--hw);font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--head);margin:6px 0 4px}
+.fase.p1 .big{color:var(--c1)}
+.fase b{display:block;font-size:14px;color:var(--muted);font-weight:600}
+.fase ul{list-style:none;margin-top:10px}
+.fase li{font-size:14px;padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative;line-height:1.35}
+.fase li::before{content:"&#10003;";position:absolute;left:0;top:7px;color:var(--accent);font-weight:700}
+.fase p{font-size:13px;color:var(--muted);margin-top:10px}
+.fase[data-p]:hover,.fase[data-p]:focus{transform:translateY(-5px);box-shadow:0 16px 34px rgba(0,0,0,.06)}
+
+/* risultati */
+.res3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:8px}
+.res3 .card small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.res3 .card b{display:block;font-family:var(--fh);font-weight:var(--hw);font-size:clamp(26px,2.4vw,36px);line-height:1.1;margin:10px 0;color:var(--accent)}
+.res3 .card p{font-size:13px;color:var(--muted)}
+
+/* come lavoriamo */
+.agent2{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,3.5vw,48px);align-items:start}
+.ag{display:grid;gap:12px}
+.agc{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 18px;background:var(--bg)}
+.agc small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.agc b{display:block;font-size:17px;margin-top:2px}
+.agc p{font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.4}
+.asks2 div{border-radius:14px;padding:14px 18px;background:var(--wv-bg);color:var(--wv-ink);font-family:"Satoshi",sans-serif;font-size:15px;margin-bottom:8px}
+
+/* proposta */
+.deal{display:grid;grid-template-columns:1fr auto 1.25fr;gap:16px;align-items:stretch}
+.dl{border-radius:calc(var(--radius) + 8px);padding:28px 30px;display:flex;flex-direction:column;gap:8px}
+.dl small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.85}
+.dl b{font-family:var(--fh);font-weight:var(--hw);font-size:clamp(44px,4.6vw,76px);line-height:1}
+.dl b em{font-style:normal;font-size:.45em;opacity:.8}
+.dl span{font-size:15px;line-height:1.4}
+.dl i{font-style:normal;font-size:15px;font-weight:700;margin-top:auto;padding-top:10px;border-top:1px solid currentColor}
 .fee{background:var(--panel);border:1px solid var(--line);color:var(--ink)}
-.rs{background:var(--btn-bg);color:var(--btn-fg)}
-.plus{align-self:center;font-family:var(--fh);font-size:64px;color:var(--accent);line-height:1}
-.offer-list{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:28px;list-style:none;border-top:1px solid var(--line)}
-.offer-list li{padding:14px 0 14px 28px;border-bottom:1px solid var(--line);position:relative;font-size:16px;line-height:1.45}
-.offer-list li::before{content:"";position:absolute;left:0;top:22px;width:10px;height:10px;border-radius:3px;background:var(--accent)}
-@media(max-width:899px){.deal{grid-template-columns:1fr}.plus{text-align:center}.offer-list{grid-template-columns:1fr}}
+.rs{background:var(--accent);color:var(--on-accent)}
+.rs b em{font-size:1.25em;display:inline-block}
+.rs .tbd{font-family:var(--fb);font-size:22px;font-weight:600;letter-spacing:0;opacity:.9}
+.plus{align-self:center;font-family:var(--fh);font-size:56px;color:var(--accent);line-height:1}
+.offer2{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,3.5vw,48px);margin-top:20px}
+.offer2 ul{list-style:none;border-top:1px solid var(--line)}
+.offer2 li{padding:10px 0 10px 24px;border-bottom:1px solid var(--line);position:relative;font-size:15px}
+.offer2 li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:9px;border-radius:2px;background:var(--accent)}
+.offer2 .why{color:var(--muted);font-size:15px}
 
-/* ===== END SLIDE ===== */
+/* end */
 .end{padding:0}
-.end .bg-gradient{position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,169,110,.14) 0%,rgba(11,10,15,.97) 60%)}
-.end .wrap{position:relative;z-index:2;padding:140px var(--gut) 80px;color:#fff;text-align:center;display:flex;flex-direction:column;align-items:center}
-.end h2{color:#fff;font-size:clamp(38px,4.6vw,68px);max-width:16ch}
-.end p{color:rgba(255,255,255,.82);max-width:48ch;margin-top:20px;font-size:clamp(17px,1.4vw,20px);line-height:1.6}
-.end .btn{margin-top:36px}
-.end .me{margin-top:48px;font-size:14px;color:rgba(255,255,255,.6);display:flex;gap:28px;flex-wrap:wrap;align-items:center;justify-content:center}
+.end .bg-gradient{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,43,255,.1) 0%,#111118 60%)}
+.end .wrap{position:relative;z-index:2;padding:120px var(--gut) 60px;color:#fff}
+.end h2{color:#fff;font-size:clamp(34px,4vw,62px);max-width:18ch}
+.end p{color:rgba(255,255,255,.88);max-width:52ch;margin-top:18px;font-size:clamp(16px,1.3vw,19px)}
+.end .btn{margin-top:30px;background:#fff;color:var(--accent)}
+.end .btn:hover{box-shadow:0 8px 24px rgba(255,255,255,.15)}
+.end .me{margin-top:40px;font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:28px;flex-wrap:wrap;align-items:center}
 .end .me .vd{width:150px;color:#fff}
 .end .me .vd svg{width:100%;height:auto;display:block}
 
-/* ===== CALENDAR ===== */
-.cal-compact{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.cal-item{border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);padding:20px;background:var(--bg);transition:border-color .3s}
-.cal-item:hover{border-color:var(--accent)}
-.cal-item .month{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.cal-item .event{font-size:16px;font-weight:700;color:var(--head);margin-top:8px}
-.cal-item .desc{font-size:13px;color:var(--muted);margin-top:4px}
-.cal-item.highlight{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 5%,var(--bg))}
-@media(max-width:699px){.cal-compact{grid-template-columns:1fr 1fr}}
+/* comp */
+.comp{width:100%;border-collapse:collapse}
+.comp th{text-align:left;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:10px 12px 10px 0;border-bottom:1px solid var(--line);font-weight:600}
+.comp td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+.comp td:first-child{font-family:var(--fh);font-weight:var(--hw);font-size:18px;width:22%}
+.comp td small{display:block;font-size:12px;color:var(--muted);font-family:var(--fb);font-weight:400}
+
+/* ===== CREATIVE STUDIO (interactive) ===== */
+.studio2{display:grid;grid-template-columns:1fr 400px;gap:clamp(24px,3.5vw,56px);align-items:center}
+.ig{width:100%;max-width:400px;background:#fff;color:#111;border-radius:12px;overflow:hidden;font-family:-apple-system,system-ui,sans-serif;box-shadow:0 20px 50px rgba(0,0,0,.1);border:1px solid rgba(0,0,0,.08);transition:all .5s var(--ease)}
+.ig .h{display:flex;align-items:center;gap:9px;padding:10px 12px;font-size:13px}
+.ig .av{width:30px;height:30px;border-radius:50%;background:var(--accent);display:grid;place-items:center;overflow:hidden;color:#fff;font-size:11px;font-weight:700}
+.ig .h b{font-weight:600}.ig .h small{display:block;font-size:11px;color:#777}
+.ig .im{width:100%;object-fit:contain;background:#f9f9fb;padding:16px;transition:all .5s var(--ease)}
+.ig .cta{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#f5f6f7;font-size:13px;gap:10px}
+.ig .cta small{display:block;font-size:10px;color:#777;text-transform:uppercase}
+.ig .cta b{display:block;font-size:13px;line-height:1.25}
+.ig .cta span{background:#0095f6;color:#fff;border-radius:6px;padding:7px 12px;font-weight:600;font-size:12px;white-space:nowrap}
+.ig .t{padding:10px 12px 14px;font-size:13px;line-height:1.4}
+
+/* format switcher */
+.fmt-bar{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.fmt-bar button{font-size:13px;font-weight:600;letter-spacing:.04em;border:2px solid var(--line);border-radius:999px;padding:8px 18px;color:var(--muted);transition:all .25s var(--ease);cursor:pointer;background:transparent}
+.fmt-bar button.active{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 6%,transparent)}
+.fmt-bar button:hover:not(.active){border-color:color-mix(in srgb,var(--accent) 40%,transparent);color:var(--ink)}
+
+/* mockup states */
+.ig[data-fmt="feed"] .im{aspect-ratio:4/5}
+.ig[data-fmt="story"]{max-width:260px;border-radius:20px}
+.ig[data-fmt="story"] .im{aspect-ratio:9/16}
+.ig[data-fmt="story"] .h,.ig[data-fmt="story"] .cta,.ig[data-fmt="story"] .t{display:none}
+.ig[data-fmt="story"]::after{content:"trepiprofumerie";position:absolute;bottom:20px;left:16px;font-size:13px;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.ig[data-fmt="square"] .im{aspect-ratio:1/1}
+.ig[data-fmt="shopping"]{max-width:320px;border-radius:8px;font-family:Arial,sans-serif}
+.ig[data-fmt="shopping"] .h{display:none}
+.ig[data-fmt="shopping"] .im{aspect-ratio:1/1;padding:24px;background:#fff}
+.ig[data-fmt="shopping"] .cta{background:#fff;border-top:1px solid #e8e8e8;flex-direction:column;align-items:flex-start;gap:4px;padding:12px}
+.ig[data-fmt="shopping"] .cta small{font-size:11px;color:#1a73e8;text-transform:none;letter-spacing:0}
+.ig[data-fmt="shopping"] .cta b{font-size:16px;font-weight:400;color:#111}
+.ig[data-fmt="shopping"] .cta span{background:#f8f9fa;color:#1a73e8;font-size:13px;padding:6px 0;border-radius:0;font-weight:400}
+.ig[data-fmt="shopping"] .t{font-size:14px;color:#70757a;padding:8px 12px}
+
+/* partner logos */
+.plogos{display:flex;flex-wrap:wrap;gap:10px}
+.plogos span{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 20px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+.plogos img{height:28px;width:auto;max-width:150px;object-fit:contain}
+.chi2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:18px}
+.chi2 .chips{margin-top:0;gap:6px}.chi2 .chip{color:var(--ink);font-size:12px}
+.chip.main{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg);font-weight:700}
+.meth{list-style:none;counter-reset:m;margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+.meth li{counter-increment:m;font-size:14px;padding:4px 0;border-bottom:1px solid var(--line)}
+.meth li::before{content:counter(m);display:inline-block;width:22px;font-weight:700;color:var(--accent)}
+
+/* paper report */
+.attr{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4.5vw,72px);align-items:center}
+.paper{background:#fff;color:#111;border-radius:6px;padding:28px;box-shadow:0 40px 90px -30px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.06);font-family:var(--fb);max-width:470px;justify-self:center;width:100%}
+.paper .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:14px}
+.paper .hd span{font-size:12px;color:#777}
+.paper h4{font-family:var(--fh);font-size:22px;margin-top:18px}
+.paper .sm{font-size:12px;color:#777}
+.paper table{width:100%;border-collapse:collapse;margin-top:14px}
+.paper td{padding:9px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.paper td:last-child{text-align:right;font-weight:600}
+.paper .ft{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.paper .st{font-size:12px;padding:4px 10px;border-radius:999px;background:#f2f2f4}
+.paper .st.sent{background:#e6f8f0;color:#1FA67A}
+
+/* themes */
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.th h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.th.pos h4{color:#137a55}.th.neg h4{color:#b42318}
+.th .t{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px;background:var(--bg)}
+.th .t b{font-size:14px}.th .t small{font-size:11px;color:var(--muted);margin-left:6px}
+.th .t q{display:block;font-size:12px;color:var(--muted);margin-top:4px;quotes:"\00AB" "\00BB"}
+
+/* product strip for cover */
+.product-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:100%}
+.product-strip img{width:100%;height:100%;object-fit:cover}
+
+/* responsive */
+@media(max-width:999px){
+  .head,.today,.moment,.site,.studio,.money,.offer{grid-template-columns:1fr}
+  .cover{flex-direction:column}.cover .pic{min-height:46svh}.cover .txt{padding-top:96px}
+  .kpis{grid-template-columns:repeat(2,1fr)}.kpi:not(:nth-child(3n+1)){padding-left:0;border-left:0}.kpi:nth-child(2n){padding-left:16px;border-left:1px solid var(--line)}
+  .sc-top,.mkt,.tel,.cnt,.feedw,.chi2,.agent2,.attr,.visio1{grid-template-columns:1fr}
+  .bestg{grid-template-columns:repeat(4,1fr)}
+  .themes,.deal,.offer2,.casegrid,.svc2{grid-template-columns:1fr}
+  .studio2{grid-template-columns:1fr}
+  .cal{grid-template-columns:repeat(3,1fr)}
+  .pl-ph{grid-template-columns:1fr}
+  .plus{justify-self:center}
+  .slide{padding-top:80px}
+  .fbars .br{grid-template-columns:150px 1fr 40px}
+  .br{grid-template-columns:96px 1fr 40px}
+  .nb+.nb{border-left:0;padding-left:0}
+}
+@media(max-width:599px){.cal{grid-template-columns:repeat(2,1fr)}.kq>div+div{border-left:0;padding-left:0}.kq{grid-template-columns:1fr 1fr}}
 
 /* ===== MOTION ===== */
-.motion .rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease) var(--d,0ms),transform 1s var(--ease) var(--d,0ms)}
-.motion .rv.from-r{transform:translateX(60px) scale(.97)}
+.motion .rv{opacity:0;transform:translateY(26px);transition:opacity .75s var(--ease) var(--d,0ms),transform .95s var(--ease) var(--d,0ms)}
+.motion .rv.from-r{transform:translateX(56px) scale(.97)}
 .motion .slide.in .rv{opacity:1;transform:none}
 .motion .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .03em .12em;margin:0 -.03em -.12em}
 .motion .w>span{display:inline-block;transform:translateY(112%);transition:transform 1s var(--ease) calc(var(--wd,0ms) + 60ms)}
 .motion .slide.in .w>span{transform:none}
-.motion .cover .pic img{transform:scale(1.12);transition:transform 8s cubic-bezier(.2,.6,.2,1)}
-.motion .cover.in .pic img{transform:scale(1)}
-.sol,.dl.rs{background-image:radial-gradient(460px circle at var(--mx,-300px) var(--my,-300px),rgba(255,255,255,.11),transparent 45%)}
+.motion .slide:not(.in) .br i,.motion .slide:not(.in) .stars i,.motion .slide:not(.in) .spd-bar i{width:0!important}
+.motion .br i,.motion .stars i{transition:width 1.3s var(--ease) calc(var(--d,0ms) + 350ms)}
+.motion .slide:not(.in) .ev{opacity:0;transform:translateY(10px)}
+.motion .ev{transition:opacity .5s ease calc(var(--d,0ms) + 150ms),transform .6s var(--ease) calc(var(--d,0ms) + 150ms),background .2s}
+.ev:hover{background:color-mix(in srgb,var(--accent) 6%,transparent);border-radius:0 6px 6px 0}
+.motion .cover .pic .ph{transform:scale(1.14);transition:transform 8s cubic-bezier(.2,.6,.2,1)}
+.motion .cover.in .pic .ph{transform:scale(1)}
+.sol,.dl.rs{background-image:radial-gradient(460px circle at var(--mx,-300px) var(--my,-300px),rgba(255,255,255,.15),transparent 45%)}
+.tilt{transition:transform .18s ease-out!important;will-change:transform}
 .motion .slide.in .plus{animation:spinin .9s var(--ease) .55s both}
 @keyframes spinin{from{transform:rotate(-180deg) scale(.3);opacity:0}}
-html.shot *{transition:none!important;animation:none!important}
-
-/* ===== RESPONSIVE FINE-TUNE ===== */
-@media(max-width:999px){.slide{padding-top:88px}}
+.motion .slide.in .rs b em{animation:breathe 2.6s ease-in-out 1.6s infinite}
+@keyframes breathe{50%{transform:scale(1.1)}}
+.bestg a img,.mo2 .ph2 img{transition:transform .7s var(--ease)}
+.bestg a:hover img{transform:scale(1.05)}
+.plogos span{transition:transform .3s var(--ease),box-shadow .3s}
+.plogos span:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.05)}
+.motion .slide:not(.in) .pl-seg{clip-path:inset(0 100% 0 0)}
+.motion .pl-seg{transition:clip-path .8s var(--ease) var(--sd,0s),opacity .3s}
+.piano12[data-f="1"] .fase:not(.p1),.piano12[data-f="2"] .fase:not(.p2),.piano12[data-f="3"] .fase:not(.p3){opacity:.38}
+.piano12[data-f="1"] .pl-seg:not(.p1),.piano12[data-f="2"] .pl-seg:not(.p2),.piano12[data-f="3"] .pl-seg:not(.p3){opacity:.3}
+html.shot *{transition:none !important;animation:none !important}
 </style>
 </head>
 <body>
@@ -269,344 +462,629 @@ html.shot *{transition:none!important;animation:none!important}
 <!-- ==================== 01 COVER ==================== -->
 <section class="slide cover" data-title="Copertina">
   <div class="txt">
-    <div class="kicker">Analisi e piano di crescita &middot; Ottobre 2026</div>
-    <h1 style="margin-top:24px">Il fatturato cresce.<br>Il margine no.</h1>
-    <p class="sub">Tre Pi Profumerie vende in 26 Paesi europei da Marcianise. Il volume c'e (+15,7%), ma il margine netto si ferma allo 0,5%. In questa analisi vi mostriamo dove si recupera e come.</p>
-    <div class="start" style="margin-top:44px"><button class="btn" data-go="1">Scopri l'analisi &darr;</button></div>
-    <div class="meta">Visio Digital Partner &middot; Tecnologia Wevion</div>
+    <div class="kicker">Analisi e piano di crescita per Tre Pi Profumerie &middot; Ottobre 2026</div>
+    <h1 style="margin-top:22px">750 profumi online, margine vicino allo zero: dove recuperare</h1>
+    <p class="sub">Tre Pi Profumerie vende in 26 Paesi europei da un unico negozio fisico a Marcianise. Il fatturato cresce (+15,7%), ma il margine netto si ferma allo 0,5%. Questa analisi identifica le leve per trasformare il volume in profitto.</p>
+    <div class="needs">
+      <small>Le priorit&agrave; per Tre Pi Profumerie</small>
+      <span><b>1</b>Contenuti prodotto e feed</span>
+      <span><b>2</b>Campagne strutturate</span>
+      <span><b>3</b>Margine e strategia prezzo</span>
+    </div>
+    <div class="start"><button class="btn" data-go="1">Inizia &darr;</button></div>
+    <div class="meta">Visio Digital Partner &middot; tecnologia Wevion</div>
   </div>
   <div class="pic">
-    <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/hugo-boss-bottled-beyond-eau-de-parfum-100-ml-tre-pi-profumerie.jpg?v=1757947202" alt="Hugo Boss Bottled Beyond">
-  </div>
-</section>
-
-<!-- ==================== 02 IL QUADRO ==================== -->
-<section class="slide" data-title="Il quadro">
-  <div class="wrap">
-    <div class="kicker">01 &middot; Il quadro</div>
-    <h2>I numeri che contano, oggi</h2>
-    <p class="lead">Tre Pi Profumerie ha costruito un business europeo da un solo punto vendita. I fondamentali ci sono. Quello che manca e il sistema per trasformare il volume in profitto.</p>
-    <div class="stats">
-      <div class="stat"><b>750</b><span>prodotti nel negozio online</span></div>
-      <div class="stat"><b>26</b><span>Paesi europei raggiunti</span></div>
-      <div class="stat"><b>4,1<small style="font-size:.5em;color:var(--muted)">/5</small></b><span>Trustpilot, 2.795 recensioni</span></div>
-      <div class="stat"><b class="accent">+15,7%</b><span>crescita del fatturato</span></div>
-      <div class="stat"><b class="bad">0,5%</b><span>margine netto</span></div>
-      <div class="stat"><b class="bad">1</b><span>foto per prodotto, in media</span></div>
+    <div class="product-strip">
+      <img class="ph" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue">
+      <img class="ph" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/hugo-boss-bottled-beyond-eau-de-parfum-100-ml-tre-pi-profumerie.jpg?v=1757947202" alt="Hugo Boss Bottled Beyond">
+      <img class="ph" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/66307-for-her-narciso-rodriguez-for-her-pure-musc-edizione-limitata-26963-150-ml-pure-musc-jpg_1.jpg?v=1737050363" alt="Narciso Rodriguez Pure Musc">
+      <img class="ph" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132" alt="Paco Rabanne One Million">
     </div>
   </div>
 </section>
 
-<!-- ==================== 03 LE 3 LEVE ==================== -->
-<section class="slide" data-title="Le tre leve">
+<!-- ==================== 02 DOVE VENDE OGGI ==================== -->
+<section class="slide sc" data-title="Dove vende oggi">
   <div class="wrap">
-    <div class="kicker">02 &middot; Dove intervenire</div>
-    <h2>Tre leve per passare dal volume al profitto</h2>
-    <p class="lead">Non servono piu prodotti o piu Paesi. Serve lavorare meglio su quello che c'e gia.</p>
-    <div class="opps">
-      <div class="opp">
-        <div class="num">01</div>
-        <h3>Contenuti prodotto</h3>
-        <p>Solo il 42% dei prodotti ha una descrizione. I bestseller hanno una foto sola, zero video, nessuna nota olfattiva. Il cliente non ha motivo di scegliere Tre Pi rispetto a un competitor.</p>
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">01 &middot; Dove vende oggi</div>
+        <h2>Italia come mercato principale, 26 Paesi europei raggiunti, 2.795 recensioni su Trustpilot</h2>
       </div>
-      <div class="opp">
-        <div class="num">02</div>
-        <h3>Campagne strutturate</h3>
-        <p>Il feed pubblicitario parte incompleto: tipo prodotto compilato nel 28% dei casi. Le campagne Meta e Google non possono performare senza dati di catalogo puliti.</p>
-      </div>
-      <div class="opp">
-        <div class="num">03</div>
-        <h3>Margine e pricing</h3>
-        <p>Il fatturato cresce del 15,7% ma il margine e quasi zero. Servono bundle, soglie di spedizione piu intelligenti e una strategia prezzo che protegga i margini.</p>
-      </div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Concentrare la spesa pubblicitaria sui mercati che rendono</b><span>Analisi costo per ordine per Paese, taglio dei mercati in perdita</span></li>
+          <li><b>Potenziare il servizio clienti multilingua</b><span>Automazioni email in italiano, inglese, francese</span></li>
+          <li><b>Usare le recensioni come leva di conversione</b><span>Widget e contenuti da 2.795 recensioni reali</span></li>
+        </ol>
+      </aside>
     </div>
-  </div>
-</section>
-
-<!-- ==================== 04 OGGI vs CON VISIO ==================== -->
-<section class="slide" data-title="Oggi vs Con Visio">
-  <div class="wrap">
-    <div class="kicker">03 &middot; Il catalogo</div>
-    <h2>Come cambia il negozio con il nostro intervento</h2>
-    <p class="lead">Un confronto diretto su quello che il cliente vede oggi e quello che vedra dopo il primo mese di lavoro insieme.</p>
-    <div class="compare">
-      <div class="col">
-        <h4>Oggi</h4>
-        <ul>
-          <li>1 foto per prodotto su sfondo bianco</li>
-          <li>Zero video nelle schede</li>
-          <li>Descrizioni assenti o minime</li>
-          <li>Nessuna nota olfattiva</li>
-          <li>Tipo prodotto compilato nel 28% dei casi</li>
-          <li>Nessuna wishlist</li>
-          <li>Spedizione gratuita da 79,90 (competitor: 50)</li>
-        </ul>
-      </div>
-      <div class="col dopo">
-        <h4>Con Visio</h4>
-        <ul>
-          <li>4-6 foto per prodotto + ambientate</li>
-          <li>Video brevi dal Creative Hub, senza shooting</li>
-          <li>Descrizioni ottimizzate per SEO e conversione</li>
-          <li>Piramide olfattiva completa su ogni fragranza</li>
-          <li>Feed completo per Google Shopping e Meta</li>
-          <li>Wishlist e pagamento a rate attivi</li>
-          <li>Soglie di spedizione ottimizzate per margine</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== 05 CREATIVE HUB ==================== -->
-<section class="slide" data-title="Creative Hub">
-  <div class="wrap">
-    <div class="two v-center">
-      <div>
-        <div class="kicker">04 &middot; Creative Hub Wevion</div>
-        <h2>I vostri prodotti, pronti per le campagne</h2>
-        <p class="lead">Dal catalogo esistente generiamo foto, video e annunci in tutti i formati, in 3 lingue, senza shooting. Ogni prodotto diventa una campagna in pochi minuti.</p>
-        <div class="hub-formats">
-          <span class="chip">Feed 4:5</span>
-          <span class="chip">Storie 9:16</span>
-          <span class="chip">Google Shopping</span>
-          <span class="chip">Italiano</span>
-          <span class="chip">English</span>
-          <span class="chip">Fran&ccedil;ais</span>
+    <div class="sc-mid">
+      <div class="prob info"><b>Cosa dicono i dati</b><p>Tre Pi Profumerie dichiara vendite in 26 Paesi europei con 3 lingue attive (IT, EN, FR), ma con soli 7 dipendenti l'operativit&agrave; su tutti i mercati &egrave; inevitabilmente sottile.</p></div>
+      <div class="mkt">
+        <div class="bars"><h4>Recensioni per Paese</h4>
+          <div class="br"><span>Italia</span><i style="width:74%" class="r-principale"></i><em>74%</em></div>
+          <div class="br"><span>Francia</span><i style="width:12%" class="r-attivo"></i><em>12%</em></div>
+          <div class="br"><span>Germania</span><i style="width:5%" class="r-marginale"></i><em>5%</em></div>
+          <div class="br"><span>Spagna</span><i style="width:3%" class="r-marginale"></i><em>3%</em></div>
+          <div class="br"><span>Altri 22 Paesi</span><i style="width:6%" class="r-marginale"></i><em>6%</em></div>
+          <small>Su 2.795 recensioni Trustpilot con il Paese indicato</small>
+        </div>
+        <div class="bars"><h4>Canali e lingue attive</h4>
+          <div class="rl"><b>Shopify</b><span>piattaforma principale</span></div>
+          <div class="rl"><b>Instagram</b><span>5.915 follower</span></div>
+          <div class="rl"><b>Facebook</b><span>17.000 follower</span></div>
+          <div class="chan"><span>IT</span><span>EN</span><span>FR</span></div>
+        </div>
+        <div class="lett"><h4>Lettura</h4>
+          <div class="rl"><b>Italia</b><span>mercato principale</span></div>
+          <div class="rl"><b>Francia</b><span>mercato attivo</span></div>
+          <div class="rl"><b>Germania</b><span>ordini sporadici</span></div>
+          <div class="rl"><b>Spagna</b><span>ordini sporadici</span></div>
         </div>
       </div>
+    </div>
+    <div class="sc-bot">
+      <div class="nb"><b>4,1<small>/5</small></b><span>Trustpilot, 2.795 recensioni</span></div>
+      <div class="nb"><b>26</b><span>Paesi europei raggiunti</span></div>
+      <div class="nb"><b>3</b><span>lingue attive nel negozio</span></div>
+      <div class="nb"><b>1</b><span>negozio fisico a Marcianise (CE)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 03 I PRODOTTI CHE VENDONO ==================== -->
+<section class="slide sc" data-title="I prodotti che vendono">
+  <div class="wrap">
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">02 &middot; I prodotti che vendono</div>
+        <h2>750 prodotti online, 20.000 referenze dichiarate: i pi&ugrave; venduti con una sola foto</h2>
+      </div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Arricchire le schede dei pi&ugrave; venduti</b><span>Pi&ugrave; immagini, video brevi, descrizioni ottimizzate</span></li>
+          <li><b>Portare online le referenze mancanti</b><span>Da 750 a copertura completa del catalogo fisico</span></li>
+          <li><b>Strategie di prezzo per proteggere il margine</b><span>Bundle, kit regalo, soglie di spedizione gratuita</span></li>
+        </ol>
+      </aside>
+    </div>
+    <div class="sc-mid">
+      <div class="prob"><b>Il problema</b><p>La maggior parte dei prodotti ha una sola foto, nessun video, e molti campi del catalogo sono vuoti. I pi&ugrave; venduti competono solo sul prezzo, senza contenuti che giustifichino la scelta.</p></div>
+      <div class="bestg">
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue"><b>D&amp;G Light Blue EDT</b><span>100 ml</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/66307-for-her-narciso-rodriguez-for-her-pure-musc-edizione-limitata-26963-150-ml-pure-musc-jpg_1.jpg?v=1737050363" alt="Narciso Rodriguez Pure Musc"><b>Narciso Rodriguez Pure Musc</b><span>150 ml</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/hugo-boss-bottled-beyond-eau-de-parfum-100-ml-tre-pi-profumerie.jpg?v=1757947202" alt="Hugo Boss Bottled Beyond"><b>Hugo Boss Bottled Beyond</b><span>100 ml</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/calvin_klein-ck_one_1.jpg?v=1737003411" alt="CK One"><b>Calvin Klein CK One</b><span>EDT</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132" alt="Paco Rabanne One Million"><b>Paco Rabanne One Million</b><span>100 ml</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/pupa-matita-occhi-multiplay-pearly-sky-03_1.jpg?v=1737101392" alt="Pupa Matita Occhi"><b>Pupa Matita Occhi Multiplay</b><span>Make-up</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/gel-definition-forte_1.jpg?v=1737005310" alt="Biopoint Gel"><b>Biopoint Gel Definition Forte</b><span>Hair care</span></a>
+        <a href="https://trepiprofumerie.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/ac2500.jpg?v=1737009457" alt="Atelier Cologne"><b>Atelier Cologne</b><span>Fragranza</span></a>
+      </div>
+      <p class="note">I pi&ugrave; venduti secondo l'ordinamento del negozio, letto il 2 ottobre 2026.</p>
+    </div>
+    <div class="sc-bot">
+      <div class="nb"><b>750</b><span>prodotti nel negozio online</span></div>
+      <div class="nb"><b>20.000</b><span>referenze dichiarate (negozio fisico)</span></div>
+      <div class="nb bad"><b>1</b><span>foto in media per prodotto</span></div>
+      <div class="nb bad"><b>0</b><span>video nelle schede prodotto</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 04 COSA DICONO I CLIENTI ==================== -->
+<section class="slide sc" data-title="Cosa dicono i clienti">
+  <div class="wrap">
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">03 &middot; Cosa dicono i clienti</div>
+        <h2>4,1 su 5 con 2.795 recensioni: i temi da usare e quelli da risolvere</h2>
+      </div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Trasformare i temi positivi in contenuti per gli annunci</b><span>Originalit&agrave; e prezzi competitivi come argomenti principali</span></li>
+          <li><b>Attivare flussi post-acquisto per raccogliere pi&ugrave; recensioni</b><span>Automazione email con richiesta recensione al momento giusto</span></li>
+        </ol>
+      </aside>
+    </div>
+    <div class="sc-mid">
+      <div class="themes">
+        <div class="th pos">
+          <h4>Da usare negli annunci</h4>
+          <div class="t"><b>Prodotti originali garantiti</b><q>Acquisto frequente, prodotti sempre originali e prezzi competitivi rispetto alla grande distribuzione.</q></div>
+          <div class="t"><b>Prezzi competitivi</b><q>Ottimo rapporto qualit&agrave;-prezzo, spedizione rapida e imballaggio curato.</q></div>
+        </div>
+        <div class="th neg">
+          <h4>Da risolvere</h4>
+          <div class="t"><b>Tempi di spedizione</b><q>Da verificare: alcune recensioni segnalano attese superiori ai tempi dichiarati.</q></div>
+          <div class="t"><b>Assistenza clienti</b><q>Da verificare: risposte lente in caso di problemi con l'ordine.</q></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-bot">
+      <div class="nb"><b>4,1</b><span>su 5, Trustpilot</span></div>
+      <div class="nb"><b>2.795</b><span>recensioni pubbliche</span></div>
+      <div class="nb ext"><b>Fonte</b><span>Recensioni pubbliche su Trustpilot, lette il 2 ottobre 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 05 IL NEGOZIO DA TELEFONO ==================== -->
+<section class="slide sc" data-title="Il negozio da telefono">
+  <div class="wrap">
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">04 &middot; Il negozio da telefono</div>
+        <h2>Schede prodotto con una foto sola, nessun video, informazioni minime</h2>
+      </div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Arricchire le schede con foto multiple e video brevi</b><span>Dalle foto esistenti, senza shooting</span></li>
+          <li><b>Aggiungere le informazioni mancanti</b><span>Ingredienti, note olfattive, guida alla scelta</span></li>
+          <li><b>Ottimizzare il percorso mobile</b><span>Velocit&agrave;, navigazione e checkout</span></li>
+        </ol>
+      </aside>
+    </div>
+    <div class="sc-mid">
+      <div class="prob"><b>Il problema</b><p>La scheda prodotto mostra una sola immagine su sfondo bianco. Nessun video, nessuna nota olfattiva, nessuna guida alla scelta. Il cliente non ha motivo di preferire Tre Pi Profumerie rispetto a un qualsiasi altro rivenditore online.</p></div>
+      <div class="tel">
+        <div>
+          <ul class="check">
+            <li><span>Foto multiple</span><b class="no">manca</b></li>
+            <li><span>Video prodotto</span><b class="no">manca</b></li>
+            <li><span>Note olfattive</span><b class="no">manca</b></li>
+            <li><span>Recensioni in scheda</span><b class="ok">c'&egrave;</b></li>
+            <li><span>Spedizione gratuita da 79,90 &euro;</span><b class="ok">c'&egrave;</b></li>
+            <li><span>Wishlist</span><b class="no">manca</b></li>
+            <li><span>Pagamento a rate</span><b class="no">manca</b></li>
+            <li><span>Navigazione per brand</span><b class="ok">c'&egrave;</b></li>
+          </ul>
+        </div>
+        <div>
+          <div class="card" style="padding:18px">
+            <h3 style="font-size:15px;margin-bottom:8px">Cosa vedono i competitor</h3>
+            <p style="font-size:13px;color:var(--muted)">Ditano propone 4-6 foto per prodotto, video, note olfattive dettagliate e spedizione gratuita da 50 &euro; (contro 79,90 &euro; di Tre Pi). Douglas e Sabbioni offrono esperienze multimediali complete.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-bot">
+      <div class="nb bad"><b>1</b><span>foto per prodotto, contro le 4-6 dei competitor</span></div>
+      <div class="nb"><b>79,90 &euro;</b><span>soglia spedizione gratuita</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 06 CONTENUTI E FEED ==================== -->
+<section class="slide sc" data-title="Contenuti e feed">
+  <div class="wrap">
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">05 &middot; Il feed dei prodotti</div>
+        <h2>Campi vuoti nel catalogo: il feed pubblicitario parte svantaggiato</h2>
+      </div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Compilare i campi mancanti del catalogo</b><span>Tipo, descrizione, genere, fascia d'et&agrave;</span></li>
+          <li><b>Arricchire il feed per Google Shopping e Meta</b><span>Titoli ottimizzati, attributi completi, immagini aggiuntive</span></li>
+          <li><b>Generare contenuti dal Creative Hub</b><span>Foto ambientate e video brevi senza shooting</span></li>
+        </ol>
+      </aside>
+    </div>
+    <div class="sc-mid">
+      <div class="prob"><b>Il problema</b><p>Molti prodotti non hanno il tipo compilato, le descrizioni sono brevi o assenti, e il feed pubblicitario parte con informazioni incomplete. Gli annunci Shopping appaiono con meno dettagli rispetto ai competitor.</p></div>
+      <div class="feedw">
+        <div class="fbars"><h4>Prodotti con il campo compilato</h4>
+          <div class="br"><span>Titolo</span><i style="width:98%" class="hi"></i><em>98%</em></div>
+          <div class="br"><span>Prezzo</span><i style="width:100%" class="hi"></i><em>100%</em></div>
+          <div class="br"><span>Immagine principale</span><i style="width:95%" class="hi"></i><em>95%</em></div>
+          <div class="br"><span>Descrizione</span><i style="width:42%" class="lo"></i><em>42%</em></div>
+          <div class="br"><span>Tipo prodotto</span><i style="width:28%" class="lo"></i><em>28%</em></div>
+          <div class="br"><span>Seconda immagine</span><i style="width:15%" class="lo"></i><em>15%</em></div>
+          <div class="br"><span>Video</span><i style="width:2%" class="lo"></i><em>0%</em></div>
+        </div>
+        <div class="fex">
+          <div class="fex-h">
+            <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="">
+            <div><small>Un prodotto tra i pi&ugrave; venduti</small><b>D&amp;G Light Blue EDT 100ml</b><span>Profumo</span></div>
+          </div>
+          <table>
+            <tr><th>Campo</th><th>Oggi</th><th>Arricchimento</th></tr>
+            <tr><td>Tipo prodotto</td><td class="vu">vuoto</td><td>Eau de Toilette &gt; Uomo</td></tr>
+            <tr><td>Descrizione</td><td>Breve, senza note olfattive</td><td>Piramide olfattiva completa</td></tr>
+            <tr><td>Immagini</td><td>1 foto</td><td>4 foto + 1 video</td></tr>
+            <tr><td>Tag</td><td class="vu">vuoto</td><td>Fresco, Estate, Mediterraneo</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="sc-bot">
+      <div class="nb bad"><b>28%</b><span>dei prodotti con tipo compilato</span></div>
+      <div class="nb bad"><b>42%</b><span>dei prodotti con descrizione</span></div>
+      <div class="nb ext"><b>Fonte</b><span>Catalogo pubblico del negozio, letto il 2 ottobre 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 07 CREATIVITA PER LE CAMPAGNE (INTERACTIVE) ==================== -->
+<section class="slide" data-title="Creativit&agrave; per le campagne">
+  <div class="wrap">
+    <div class="head">
       <div>
-        <div class="ig">
+        <div class="kicker">06 &middot; Creativit&agrave; per le campagne</div>
+        <h2>Un prodotto, un formato, un messaggio: varianti pronte in pochi minuti</h2>
+      </div>
+      <p class="lead">Dal Creative Hub di Wevion: le foto esistenti del catalogo diventano annunci per feed, storie e shopping senza shooting e senza passaggi in pi&ugrave;.</p>
+    </div>
+    <div class="studio2">
+      <div>
+        <div class="card" style="padding:20px">
+          <h3 style="font-size:15px;color:var(--accent);margin-bottom:12px">Scegli il formato</h3>
+          <div class="fmt-bar" id="fmtBar">
+            <button class="active" data-fmt="feed">Feed 4:5</button>
+            <button data-fmt="story">Storie 9:16</button>
+            <button data-fmt="square">Quadrato 1:1</button>
+            <button data-fmt="shopping">Google Shopping</button>
+          </div>
+          <h3 style="font-size:15px;color:var(--accent);margin:18px 0 10px">Angoli di comunicazione</h3>
+          <div class="chips" style="margin-top:0">
+            <span class="chip">Prezzo competitivo</span>
+            <span class="chip">Originalit&agrave; garantita</span>
+            <span class="chip">Spedizione gratuita</span>
+            <span class="chip">Offerta stagionale</span>
+          </div>
+          <h3 style="font-size:15px;color:var(--accent);margin:18px 0 10px">Lingue</h3>
+          <div class="chips" style="margin-top:0">
+            <span class="chip">Italiano</span>
+            <span class="chip">English</span>
+            <span class="chip">Fran&ccedil;ais</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div class="ig" id="mockup" data-fmt="feed" style="position:relative">
           <div class="h"><span class="av">TP</span><div><b>trepiprofumerie</b><small>Sponsorizzato</small></div></div>
           <img class="im" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/hugo-boss-bottled-beyond-eau-de-parfum-100-ml-tre-pi-profumerie.jpg?v=1757947202" alt="Hugo Boss Bottled Beyond">
-          <div class="cta"><div><small>trepiprofumerie.com</small><b>Hugo Boss Bottled Beyond EDP</b></div><span>Acquista</span></div>
-          <div class="t"><b>trepiprofumerie</b> La nuova fragranza Hugo Boss Bottled Beyond. Originale, garantito. Spedizione gratuita da 79,90.</div>
+          <div class="cta"><div><small>trepiprofumerie.com</small><b>Hugo Boss Bottled Beyond EDP</b></div><span>Acquista ora</span></div>
+          <div class="t"><b>trepiprofumerie</b> La nuova fragranza Hugo Boss Bottled Beyond. Originale, garantito. Spedizione gratuita da 79,90 &euro;.</div>
         </div>
       </div>
     </div>
-    <div class="hub-grid" style="margin-top:40px">
-      <div class="hub-card">
-        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue">
-        <div class="label">D&amp;G Light Blue EDT</div>
-      </div>
-      <div class="hub-card">
-        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/66307-for-her-narciso-rodriguez-for-her-pure-musc-edizione-limitata-26963-150-ml-pure-musc-jpg_1.jpg?v=1737050363" alt="Narciso Rodriguez">
-        <div class="label">Narciso Rodriguez Pure Musc</div>
-      </div>
-      <div class="hub-card">
-        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132" alt="Paco Rabanne One Million">
-        <div class="label">Paco Rabanne One Million</div>
-      </div>
-      <div class="hub-card">
-        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/calvin_klein-ck_one_1.jpg?v=1737003411" alt="Calvin Klein CK One">
-        <div class="label">Calvin Klein CK One</div>
-      </div>
-    </div>
-    <p class="note">Anteprime composte con le foto e i prezzi pubblici del catalogo Tre Pi Profumerie.</p>
+    <p class="note">Anteprima composta con le foto e i prezzi pubblici del catalogo. Clicca i formati per vedere l'adattamento.</p>
   </div>
 </section>
 
-<!-- ==================== 06 I MOMENTI CHE CONTANO ==================== -->
-<section class="slide" data-title="I momenti che contano">
+<!-- ==================== 08 COOKIE E MISURA ==================== -->
+<section class="slide sc" data-title="Cookie e misura">
   <div class="wrap">
-    <div class="kicker">05 &middot; Il calendario</div>
-    <h2>I momenti dell'anno in cui la profumeria vende di piu</h2>
-    <p class="lead">Ogni momento e una campagna pronta: creativita, offerte e budget pianificati prima che la domanda arrivi.</p>
-    <div class="cal-compact">
-      <div class="cal-item highlight">
-        <div class="month">Novembre</div>
-        <div class="event">Black Friday</div>
-        <div class="desc">La giornata piu importante per il volume online</div>
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">07 &middot; Cookie e misura</div>
+        <h2>Meta Pixel, Google Ads, GA4 e Clarity installati: verificare il consenso</h2>
       </div>
-      <div class="cal-item highlight">
-        <div class="month">Dicembre</div>
-        <div class="event">Natale</div>
-        <div class="desc">Cofanetti regalo, il mese col margine piu alto</div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Verificare la sequenza consenso-pixel</b><span>I pixel devono partire solo dopo il consenso esplicito</span></li>
+          <li><b>Attivare il tracciamento lato server</b><span>Conversioni pi&ugrave; accurate e conformi alla normativa</span></li>
+          <li><b>Collegare tutti gli eventi del percorso d'acquisto</b><span>Dalla homepage al checkout, senza buchi</span></li>
+        </ol>
+      </aside>
+    </div>
+    <div class="sc-mid">
+      <div class="prob"><b>Il problema</b><p>Sono presenti 4 tracker e una piattaforma di consenso (iubenda), ma occorre verificare che i pixel non partano prima del consenso dell'utente.</p></div>
+      <div class="pixc">
+        <div class="pc ok"><i class="dot"></i><b>Meta Pixel</b><span>Installato</span></div>
+        <div class="pc ok"><i class="dot"></i><b>Google Ads</b><span>Installato</span></div>
+        <div class="pc ok"><i class="dot"></i><b>GA4</b><span>Installato</span></div>
+        <div class="pc ok"><i class="dot"></i><b>Clarity</b><span>Installato</span></div>
+        <div class="pc ok"><i class="dot"></i><b>iubenda</b><span>CMP attiva</span></div>
+        <div class="pc ok"><i class="dot"></i><b>Trustpilot</b><span>Widget attivo</span></div>
       </div>
-      <div class="cal-item highlight">
-        <div class="month">Febbraio</div>
-        <div class="event">San Valentino</div>
-        <div class="desc">Fragranze da regalo, coppie, cofanetti</div>
-      </div>
-      <div class="cal-item highlight">
-        <div class="month">Maggio</div>
-        <div class="event">Festa della Mamma</div>
-        <div class="desc">Terza ricorrenza per volume nel beauty</div>
-      </div>
-      <div class="cal-item">
-        <div class="month">Gennaio</div>
-        <div class="event">Saldi invernali</div>
-        <div class="desc">Smaltimento stock, acquisizione nuovi clienti</div>
-      </div>
-      <div class="cal-item">
-        <div class="month">Marzo</div>
-        <div class="event">Festa della Donna</div>
-        <div class="desc">Fragranze e skincare, target femminile</div>
-      </div>
-      <div class="cal-item">
-        <div class="month">Giugno</div>
-        <div class="event">Fragranze estive</div>
-        <div class="desc">Lancio collezioni fresche e solari</div>
-      </div>
-      <div class="cal-item">
-        <div class="month">Settembre</div>
-        <div class="event">Back to beauty</div>
-        <div class="desc">Routine autunnali, nuove collezioni</div>
-      </div>
+    </div>
+    <div class="sc-bot">
+      <div class="nb"><b>4</b><span>tracker pubblicitari installati</span></div>
+      <div class="nb"><b>1</b><span>piattaforma di consenso (iubenda)</span></div>
+      <div class="nb ext"><b>Da verificare</b><span>Sequenza di attivazione dei pixel rispetto al consenso, con accesso al negozio</span></div>
     </div>
   </div>
 </section>
 
-<!-- ==================== 07 CHI E VISIO ==================== -->
-<section class="slide" data-title="Chi e Visio">
+<!-- ==================== 09 CALENDARIO COMMERCIALE ==================== -->
+<section class="slide sc" data-title="L'anno commerciale">
   <div class="wrap">
-    <div class="visio-hero">
-      <div>
-        <div class="v-logo" aria-label="Visio Digital Partner">
-          <svg xmlns="http://www.w3.org/2000/svg" width="332" height="30" fill="currentColor" viewBox="0 0 332 30"><path d="M15.002 0c3.632 0 7.142 1.315 9.872 3.705a14.968 14.968 0 0 1 4.975 9.164 1.31 1.31 0 0 1-1.115 1.482 1.309 1.309 0 0 1-1.481-1.115c-.858-6.05-6.129-10.618-12.251-10.618-6.824 0-12.378 5.555-12.378 12.38 0 6.823 5.554 12.377 12.378 12.377 5.989 0 11.11-4.268 12.179-10.15a1.314 1.314 0 0 1 2.584.469c-1.293 7.13-7.498 12.305-14.757 12.305h-.006C6.729 29.999 0 23.269 0 15.002 0 6.73 6.73 0 15.002 0Z"/></svg>
-        </div>
-        <div class="kicker">06 &middot; Chi e Visio Digital Partner</div>
-        <h2>Un solo partner per la crescita del canale diretto</h2>
-        <p class="lead">Pubblicita, contenuti, sito, SEO e dati. Con la tecnologia proprietaria Wevion, gestiamo tutto il flusso di vendita online. Un solo interlocutore, un solo obiettivo: far crescere il fatturato.</p>
+    <div class="sc-top">
+      <div class="sc-t">
+        <div class="kicker">08 &middot; L'anno commerciale</div>
+        <h2>I momenti dell'anno in cui la profumeria vende di pi&ugrave;</h2>
       </div>
-      <div>
-        <div class="vkpi">
-          <div><b>+40%</b><span>crescita media fatturato online nel primo anno</span></div>
-          <div><b>30+</b><span>brand gestiti in Italia e in Europa</span></div>
-          <div><b>6</b><span>anni di attivita</span></div>
-        </div>
-        <div class="agents" style="margin-top:20px">
-          <div class="agc"><small>Ogni 24 ore</small><b>Agenti automatici</b><p>Controllano spesa, risultati e anomalie su tutte le piattaforme. Anche nei weekend.</p></div>
-          <div class="agc"><small>Sempre attivo</small><b>Assistente AI</b><p>Conosce campagne, negozio, email e catalogo. Risponde, analizza, prepara le modifiche.</p></div>
-          <div class="agc"><small>Una persona decide</small><b>Il team approva</b><p>Ogni modifica passa da una persona, entro limiti fissati insieme.</p></div>
-        </div>
+      <aside class="sol">
+        <small>Cosa possiamo fare</small>
+        <ol>
+          <li><b>Pianificare campagne per ogni momento chiave</b><span>Creativit&agrave;, offerte e budget pronti prima della domanda</span></li>
+          <li><b>Preparare landing e collezioni stagionali</b><span>Pagine dedicate per Natale, San Valentino, Festa della Mamma</span></li>
+          <li><b>Automazioni email per ogni ricorrenza</b><span>Flussi CRM segmentati per occasione e prodotto</span></li>
+        </ol>
+      </aside>
+    </div>
+    <div class="cal">
+      <div class="mo"><h5>Nov <small>2026</small></h5>
+        <div class="ev t-shopping sel"><span>Black Friday</span><em>27 nov</em></div>
+        <div class="ev t-regalo"><span>Regali anticipo Natale</span><em>da met&agrave; mese</em></div>
+      </div>
+      <div class="mo"><h5>Dic</h5>
+        <div class="ev t-regalo sel"><span>Natale</span><em>1-24 dic</em></div>
+        <div class="ev t-regalo"><span>Cofanetti regalo</span><em>tutto il mese</em></div>
+      </div>
+      <div class="mo"><h5>Gen <small>2027</small></h5>
+        <div class="ev t-saldi"><span>Saldi invernali</span><em>da 4 gen</em></div>
+      </div>
+      <div class="mo"><h5>Feb</h5>
+        <div class="ev t-regalo sel"><span>San Valentino</span><em>14 feb</em></div>
+      </div>
+      <div class="mo"><h5>Mar</h5>
+        <div class="ev t-festa"><span>Festa della Donna</span><em>8 mar</em></div>
+        <div class="ev t-stagione"><span>Primavera</span><em>lancio fragranze</em></div>
+      </div>
+      <div class="mo"><h5>Apr</h5>
+        <div class="ev t-festa"><span>Pasqua</span><em>cofanetti</em></div>
+      </div>
+      <div class="mo"><h5>Mag</h5>
+        <div class="ev t-regalo sel"><span>Festa della Mamma</span><em>11 mag</em></div>
+      </div>
+      <div class="mo"><h5>Giu</h5>
+        <div class="ev t-stagione"><span>Fragranze estive</span><em>tutto il mese</em></div>
+      </div>
+      <div class="mo"><h5>Lug</h5>
+        <div class="ev t-saldi"><span>Saldi estivi</span><em>da 1 lug</em></div>
+        <div class="ev t-shopping"><span>Prime Day</span><em>controfferta</em></div>
+      </div>
+      <div class="mo"><h5>Ago</h5>
+        <div class="ev t-stagione"><span>Back to beauty</span><em>fine mese</em></div>
+      </div>
+      <div class="mo"><h5>Set</h5>
+        <div class="ev t-stagione"><span>Nuove collezioni autunno</span><em>tutto il mese</em></div>
+        <div class="ev t-stagione"><span>Skincare routine</span><em>back to school</em></div>
+      </div>
+      <div class="mo"><h5>Ott</h5>
+        <div class="ev t-stagione"><span>Fragranze autunnali</span><em>tutto il mese</em></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span class="t-shopping">sconti online</span>
+      <span class="t-regalo">regali</span>
+      <span class="t-saldi">saldi</span>
+      <span class="t-festa">feste</span>
+      <span class="t-stagione">stagioni</span>
+      <span class="sel">momenti chiave per Tre Pi</span>
+    </div>
+    <div class="sc-bot" style="margin-top:14px">
+      <div class="nb"><b>12+</b><span>momenti commerciali nei prossimi 12 mesi</span></div>
+      <div class="nb"><b>4</b><span>ricorrenze da regalo (Natale, S. Valentino, Festa della Mamma, Donna)</span></div>
+      <div class="nb"><b>3</b><span>periodi di saldi e giornate di sconti</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 10 CHI E VISIO ==================== -->
+<section class="slide" data-title="Chi &egrave; Visio">
+  <div class="wrap visio1">
+    <div class="v-txt">
+      <div class="v-logo" aria-label="Visio Digital Partner">
+        <svg xmlns="http://www.w3.org/2000/svg" width="332" height="30" fill="currentColor" viewBox="0 0 332 30"><path d="M15.002 0c3.632 0 7.142 1.315 9.872 3.705a14.968 14.968 0 0 1 4.975 9.164 1.31 1.31 0 0 1-1.115 1.482 1.309 1.309 0 0 1-1.481-1.115c-.858-6.05-6.129-10.618-12.251-10.618-6.824 0-12.378 5.555-12.378 12.38 0 6.823 5.554 12.377 12.378 12.377 5.989 0 11.11-4.268 12.179-10.15a1.314 1.314 0 0 1 2.584.469c-1.293 7.13-7.498 12.305-14.757 12.305h-.006C6.729 29.999 0 23.269 0 15.002 0 6.73 6.73 0 15.002 0Z"/></svg>
+      </div>
+      <div class="kicker">09 &middot; Chi &egrave; Visio Digital Partner</div>
+      <h2>Commerce Flow Orchestrator per brand che vendono online</h2>
+      <p class="lead">Pubblicit&agrave;, contenuti, sito, SEO e dati con la tecnologia di Wevion. Un solo interlocutore per la crescita del canale diretto.</p>
+      <div class="kq kq-big" style="margin-top:20px">
+        <div><b>+40%</b><span>crescita media del fatturato online dei clienti nel primo anno</span></div>
+        <div><b>30+</b><span>brand gestiti in Italia e in Europa</span></div>
+        <div><b>6</b><span>anni di attivit&agrave;</span></div>
+      </div>
+      <p class="src">Fonte: <a href="https://visiodp.com" target="_blank">visiodp.com</a>, risultati come dichiarati pubblicamente.</p>
+    </div>
+    <div>
+      <div class="v-strip">
+        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="">
+        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/66307-for-her-narciso-rodriguez-for-her-pure-musc-edizione-limitata-26963-150-ml-pure-musc-jpg_1.jpg?v=1737050363" alt="">
+        <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132" alt="">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== 08 COSA FACCIAMO PER VOI ==================== -->
+<!-- ==================== 11 COSA FACCIAMO ==================== -->
 <section class="slide" data-title="Cosa facciamo">
   <div class="wrap">
-    <div class="kicker">07 &middot; Per Tre Pi Profumerie</div>
-    <h2>Tutto quello che serve, niente che non serva</h2>
-    <div class="svc-hero">
-      <div class="svc-h"><div class="icon">&#9881;</div><h3>Feed e catalogo</h3><p>Arricchimento completo per Google Shopping e Meta</p></div>
-      <div class="svc-h"><div class="icon">&#9733;</div><h3>Campagne</h3><p>Meta e Google Ads strutturate per mercato e lingua</p></div>
-      <div class="svc-h"><div class="icon">&#9993;</div><h3>CRM</h3><p>Flussi post-acquisto, recupero carrello, email in 3 lingue</p></div>
-      <div class="svc-h"><div class="icon">&#9998;</div><h3>Contenuti</h3><p>Foto e video dal Creative Hub, senza shooting</p></div>
+    <div class="kicker">10 &middot; Cosa facciamo</div>
+    <h2 style="margin-bottom:24px">Un solo interlocutore per la crescita online</h2>
+    <div class="svc-key">
+      <div><small>Per Tre Pi Profumerie</small><h3>Feed e catalogo</h3><p>Arricchimento del feed prodotti per Google Shopping e Meta: titoli, descrizioni, tipi, immagini aggiuntive.</p></div>
+      <div><small>Per Tre Pi Profumerie</small><h3>Gestione campagne</h3><p>Campagne Meta e Google Ads strutturate per mercato, con budget e creativit&agrave; ottimizzati.</p></div>
+      <div><small>Per Tre Pi Profumerie</small><h3>CRM e automazioni</h3><p>Flussi post-acquisto, recupero carrello, segmentazione per frequenza e valore. Email in 3 lingue.</p></div>
+      <div><small>Per Tre Pi Profumerie</small><h3>Contenuti prodotto</h3><p>Foto aggiuntive e video brevi dal Creative Hub, senza shooting, nell'identit&agrave; del brand.</p></div>
     </div>
-    <div class="svc-grid">
-      <div class="svc"><h3>SEO</h3><p>Posizionamento organico per ricerche di brand e prodotto nei mercati attivi</p></div>
-      <div class="svc"><h3>Sito e conversione</h3><p>Ottimizzazione del tema Shopify per velocita, navigazione e checkout</p></div>
-      <div class="svc"><h3>Dati e report</h3><p>Dashboard condivisa con i numeri che contano, ogni settimana, nel formato scelto dalla direzione</p></div>
-      <div class="svc"><h3>Creativita e UGC</h3><p>Immagini, video e contenuti in stile creator dal Creative Hub Wevion</p></div>
+    <div class="svc2">
+      <div class="card"><h3>SEO</h3><p>Posizionamento organico per ricerche di brand e prodotto</p></div>
+      <div class="card"><h3>Sito e conversione</h3><p>Ottimizzazione del tema Shopify per velocit&agrave; e tasso di conversione</p></div>
+      <div class="card"><h3>Dati e report</h3><p>Dashboard condivisa con i numeri che contano, ogni settimana</p></div>
+      <div class="card"><h3>Creativit&agrave; e UGC</h3><p>Immagini, video e contenuti in stile creator dal Creative Hub</p></div>
     </div>
   </div>
 </section>
 
-<!-- ==================== 09 RISULTATI ==================== -->
-<section class="slide" data-title="Risultati">
+<!-- ==================== 12 CASI E RISULTATI ==================== -->
+<section class="slide" data-title="Casi e risultati">
   <div class="wrap">
-    <div class="kicker">08 &middot; Risultati ottenuti</div>
-    <h2>Quello che abbiamo fatto per altri brand</h2>
-    <p class="lead">Settori diversi, stesso metodo. I numeri sono quelli dichiarati pubblicamente su visiodp.com.</p>
-    <div class="cases">
-      <div class="cs">
+    <div><div class="kicker">11 &middot; Casi e risultati</div><h2 style="margin-bottom:20px">Risultati ottenuti per altri brand</h2></div>
+    <div class="casegrid">
+      <div class="cg">
         <small>Beauty &middot; e-commerce</small>
         <b>+65%</b>
-        <h4>Fatturato online in 6 mesi</h4>
-        <p>Brand beauty con 400+ referenze. Feed arricchito, campagne Meta e Google ottimizzate.</p>
+        <span>Fatturato online in 6 mesi</span>
+        <p>Brand beauty con catalogo da 400+ referenze, campagne Meta e Google ottimizzate con feed arricchito.</p>
       </div>
-      <div class="cs">
+      <div class="cg">
         <small>Food &middot; DTC</small>
         <b>+120%</b>
-        <h4>Ordini nel primo trimestre</h4>
-        <p>Lancio e-commerce con strategia CRM e campagne performance dal primo giorno.</p>
+        <span>Ordini nel primo trimestre</span>
+        <p>Azienda alimentare con lancio e-commerce, strategia CRM e campagne performance dal primo giorno.</p>
       </div>
-      <div class="cs">
+      <div class="cg">
         <small>Fashion &middot; multi-mercato</small>
         <b>3,2x</b>
-        <h4>Ritorno sulla spesa pubblicitaria</h4>
-        <p>Vendite in 8 Paesi, feed multilingua e campagne localizzate per mercato.</p>
+        <span>Ritorno sulla spesa pubblicitaria</span>
+        <p>Brand moda con vendite in 8 Paesi, feed multilingua e campagne localizzate per mercato.</p>
       </div>
     </div>
+    <p class="src">Fonte: <a href="https://visiodp.com/case-study" target="_blank">visiodp.com/case-study</a>.</p>
   </div>
 </section>
 
-<!-- ==================== 10 LA STRATEGIA ==================== -->
+<!-- ==================== 13 LA STRATEGIA ==================== -->
 <section class="slide" data-title="La strategia">
   <div class="wrap">
-    <div class="kicker">09 &middot; Il piano, mese per mese</div>
-    <h2>Tre fasi: sistemare, costruire, crescere</h2>
-    <p class="lead">Partiamo dalle basi, costruiamo il sistema, poi lo facciamo scalare. Ogni fase ha obiettivi misurabili.</p>
-    <div class="timeline">
-      <div class="fase" tabindex="0">
-        <small>Le basi</small><span class="big">Mese 1</span><b>Sistemare</b>
-        <ul>
-          <li>Audit completo del negozio e dei dati</li>
-          <li>Verifica e correzione tracciamento</li>
-          <li>Arricchimento feed dei 100 top seller</li>
-          <li>Struttura delle prime campagne</li>
-        </ul>
+    <div class="kicker">12 &middot; La strategia, mese per mese</div>
+    <h2 style="margin-bottom:20px">Da sistemare all'avvio, da costruire nei mesi, da far crescere nell'anno</h2>
+    <div class="piano12" id="piano12">
+      <div class="pl-axis">
+        <div class="pl-seg p1" style="--w:8.333%;--sd:.25s">1</div>
+        <div class="pl-seg p2" style="--w:25%;--sd:.55s">2-4</div>
+        <div class="pl-seg p3" style="--w:66.667%;--sd:.95s">5-12</div>
       </div>
-      <div class="fase p2" tabindex="0">
-        <small>Costruzione</small><span class="big">Mesi 2-4</span><b>Costruire</b>
-        <ul>
-          <li>Catalogo completo: 750 prodotti arricchiti</li>
-          <li>Flussi email e recupero carrello</li>
-          <li>Campagne per Natale e San Valentino</li>
-          <li>Contenuti Creative Hub per i top seller</li>
-        </ul>
-      </div>
-      <div class="fase p3" tabindex="0">
-        <small>Crescita</small><span class="big">Mesi 5-12</span><b>Crescere</b>
-        <ul>
-          <li>Ottimizzazione campagne per mercato</li>
-          <li>SEO per brand e prodotto</li>
-          <li>Calendario editoriale completo</li>
-          <li>Analisi margini e strategia prezzo</li>
-        </ul>
+      <div class="pl-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+      <div class="pl-ph">
+        <div class="fase p1" data-p="1" tabindex="0">
+          <small>Le basi</small><span class="big">Mese 1</span><b>Da sistemare all'avvio</b>
+          <ul>
+            <li>Audit completo del negozio e dei dati</li>
+            <li>Verifica e correzione tracciamento (pixel, consenso, eventi)</li>
+            <li>Arricchimento feed dei 100 prodotti pi&ugrave; venduti</li>
+            <li>Struttura delle prime campagne Meta e Google</li>
+          </ul>
+        </div>
+        <div class="fase p2" data-p="2" tabindex="0">
+          <small>Costruzione</small><span class="big">Mesi 2-4</span><b>Da costruire</b>
+          <ul>
+            <li>Arricchimento completo del catalogo (750 prodotti)</li>
+            <li>Flussi email post-acquisto e recupero carrello</li>
+            <li>Campagne per Natale e San Valentino</li>
+            <li>Contenuti dal Creative Hub per i top seller</li>
+          </ul>
+        </div>
+        <div class="fase p3" data-p="3" tabindex="0">
+          <small>Crescita</small><span class="big">Mesi 5-12</span><b>Da far crescere</b>
+          <ul>
+            <li>Ottimizzazione continua delle campagne per mercato</li>
+            <li>SEO per ricerche di brand e prodotto</li>
+            <li>Calendario editoriale per ogni momento commerciale</li>
+            <li>Analisi margini e strategia prezzo</li>
+          </ul>
+        </div>
+        <div class="fase p4">
+          <small>Risultati</small><span class="big">12-24 mesi</span><b>Misurati sui dati di vendita</b>
+          <p>Gli ordini di grandezza attesi sono nella pagina seguente.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== 11 LA PROPOSTA ==================== -->
+<!-- ==================== 14 COME LAVORIAMO ==================== -->
+<section class="slide" data-title="Come lavoriamo">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="kicker">13 &middot; Come lavoriamo</div>
+        <h2>Agenti automatici sulle campagne, un assistente AI, una persona che approva</h2>
+      </div>
+      <p class="lead">Agenti automatici sulle campagne ogni 24 ore, un assistente AI che conosce tutte le piattaforme collegate, una persona che approva.</p>
+    </div>
+    <div class="agent2">
+      <div class="ag">
+        <div class="agc"><small>Ogni 24 ore</small><b>Agenti di controllo</b><p>Spesa, risultati e anomalie su Meta, Google e TikTok, weekend compresi. Avvisi via email, app o Telegram.</p></div>
+        <div class="agc"><small>Sempre disponibile</small><b>Assistente AI multi-agente</b><p>Conosce campagne, negozio, email e catalogo: risponde, analizza e prepara le modifiche.</p></div>
+        <div class="agc"><small>Una persona decide</small><b>Il team approva</b><p>Ogni modifica passa da una persona del team, entro limiti di autonomia fissati insieme.</p></div>
+      </div>
+      <div class="asks2">
+        <h4 class="h4">Domande possibili all'assistente</h4>
+        <div>Quali sono i 10 profumi pi&ugrave; venduti questa settimana in Francia?</div>
+        <div>Il costo per ordine di ieri &egrave; salito rispetto alla media?</div>
+        <div>Prepara una campagna per il Black Friday con i prodotti da uomo</div>
+        <p class="note">Dal browser, in qualsiasi momento, con i dati di tutte le piattaforme collegate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 15 I NUMERI ==================== -->
+<section class="slide" data-title="Un posto solo per i numeri">
+  <div class="wrap attr">
+    <div>
+      <div class="kicker">14 &middot; Come lavoriamo: i numeri</div>
+      <h2>Un solo posto per tutti i numeri che contano</h2>
+      <p class="lead">Tutti i canali collegati, un report automatico ogni settimana nel formato scelto dalla direzione.</p>
+      <div class="chips"><span class="chip">Meta</span><span class="chip">Google</span><span class="chip">Negozio</span><span class="chip">Email</span><span class="chip">Report su misura</span></div>
+    </div>
+    <div class="paper">
+      <div class="hd"><b style="font-family:var(--fh);font-size:18px">Tre Pi Profumerie</b><span>Ogni luned&igrave; &middot; 8:00</span></div>
+      <h4>Report per la direzione</h4><div class="sm">Le metriche scelte dalla direzione, nel formato preferito</div>
+      <table>
+        <tr><td>Vendite online della settimana</td><td>dal negozio</td></tr>
+        <tr><td>Spesa pubblicitaria</td><td>tutte le piattaforme</td></tr>
+        <tr><td>Vendite per ogni euro investito</td><td>sul negozio</td></tr>
+        <tr><td>Nuovi clienti</td><td>dal negozio</td></tr>
+        <tr><td>Cosa facciamo questa settimana</td><td>dal team</td></tr>
+      </table>
+      <div class="ft"><span class="sm">PDF, email o link &middot; inviato in automatico</span><span class="st sent">Esempio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 16 LA PROPOSTA ==================== -->
 <section class="slide" data-title="La proposta">
   <div class="wrap">
-    <div class="kicker">10 &middot; La proposta</div>
-    <h2>Un canone per il servizio, una percentuale sulla crescita</h2>
+    <div class="kicker">15 &middot; La proposta</div>
+    <h2 style="margin-bottom:26px">Un canone per il servizio, una percentuale sulla crescita</h2>
     <div class="deal">
       <div class="dl fee">
         <small>Canone mensile</small>
-        <b><em>da</em> 3.000&euro;</b>
-        <span>Strategia, campagne, contenuti, sito, SEO e dati. Piattaforma Wevion e agenti inclusi.</span>
+        <b><em>da</em> 3.000 &euro;</b>
+        <span>al mese, per il servizio gestito: strategia, campagne, contenuti, sito, SEO e dati, con piattaforma e agenti inclusi</span>
       </div>
       <div class="plus">+</div>
       <div class="dl rs">
-        <small>Revenue share</small>
-        <b><em>%</em> <span style="font-family:var(--fb);font-size:22px;font-weight:600">da concordare</span></b>
-        <span>Una percentuale sulle vendite online, fissata insieme dopo l'audit sui dati reali del negozio.</span>
+        <small>Pi&ugrave; una revenue share</small>
+        <b><em>%</em> <span class="tbd">da concordare</span></b>
+        <span>una percentuale sulle vendite online, fissata insieme dopo l'audit sui dati reali del negozio</span>
         <i>Il compenso cresce solo se cresce il fatturato</i>
       </div>
     </div>
-    <ul class="offer-list">
-      <li>Nessun vincolo di durata: si misura mese per mese</li>
-      <li>Budget pubblicitario a parte, gestito in trasparenza su Wevion</li>
-      <li>Il canone copre il servizio completo: nessun costo nascosto</li>
-      <li>La revenue share si attiva solo sulle vendite online tracciate</li>
-    </ul>
+    <div class="offer2">
+      <ul>
+        <li>Nessun vincolo di durata minima: si misura mese per mese</li>
+        <li>Budget pubblicitario a parte, gestito in trasparenza sulla piattaforma Wevion</li>
+        <li>Il canone copre il servizio completo: nessun costo nascosto</li>
+        <li>La revenue share si attiva solo sulle vendite online tracciate</li>
+      </ul>
+      <p class="why">Il modello allinea gli interessi: Visio guadagna di pi&ugrave; solo quando Tre Pi Profumerie vende di pi&ugrave;. Il rischio &egrave; condiviso, il risultato &egrave; misurabile.</p>
+    </div>
   </div>
 </section>
 
-<!-- ==================== 12 CTA ==================== -->
+<!-- ==================== 17 PROSSIMO PASSO ==================== -->
 <section class="slide end" data-title="Il prossimo passo">
   <div class="bg-gradient"></div>
   <div class="wrap">
-    <div class="kicker" style="color:#fff;justify-content:center">11 &middot; Il prossimo passo</div>
+    <div class="kicker" style="color:#fff">16 &middot; Il prossimo passo</div>
     <h2>30 minuti per vedere i numeri insieme</h2>
-    <p>Una call con gli accessi al negozio: guardiamo i dati reali, verifichiamo le ipotesi e definiamo le priorita del primo mese.</p>
+    <p>Il prossimo passo &egrave; una call di 30 minuti con gli accessi al negozio: guardiamo i dati reali, verifichiamo le ipotesi di questa analisi e definiamo le priorit&agrave; del primo mese.</p>
     <a class="btn" href="https://calendly.com/visiodp">Prenota la call</a>
     <div class="me">
       <span class="vd">
@@ -619,6 +1097,7 @@ html.shot *{transition:none!important;animation:none!important}
 
 </main>
 
+<!-- ===== NAVIGATION ===== -->
 <script>
 (() => {
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -642,6 +1121,33 @@ addEventListener('keydown', e => { if (['ArrowDown', 'PageDown', ' '].includes(e
   else if (['ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); } });
 })();
 </script>
+
+<!-- ===== CREATIVE HUB FORMAT SWITCHER ===== -->
+<script>
+(() => {
+  const bar = document.getElementById('fmtBar');
+  const mockup = document.getElementById('mockup');
+  if (!bar || !mockup) return;
+
+  bar.addEventListener('click', e => {
+    const btn = e.target.closest('[data-fmt]');
+    if (!btn) return;
+    bar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    mockup.style.opacity = '0';
+    mockup.style.transform = 'scale(0.96)';
+    setTimeout(() => {
+      mockup.setAttribute('data-fmt', btn.dataset.fmt);
+      mockup.style.opacity = '1';
+      mockup.style.transform = 'scale(1)';
+    }, 250);
+  });
+
+  mockup.style.transition = 'all .4s cubic-bezier(.16,1,.3,1)';
+})();
+</script>
+
+<!-- ===== MOTION & ANIMATIONS ===== -->
 <script>
 (() => {
   const SHOT = location.search.includes('shot');
@@ -656,28 +1162,31 @@ addEventListener('keydown', e => { if (['ArrowDown', 'PageDown', ' '].includes(e
     h.innerHTML = h.textContent.trim().split(/\s+/).map((w, i) => `<span class="w"><span style="--wd:${i * 45}ms">${esc(w)}</span></span>`).join(' ');
   });
 
-  const SEL = ['.kicker', '.lead', '.sub', '.start', '.meta', '.stat', '.opp', '.compare', '.hub-card',
-    '.ig', '.hub-formats', '.cal-item', '.vkpi', '.agc', '.svc-h', '.svc', '.cs', '.fase',
-    '.deal > *', '.offer-list', '.note', '.two > *', '.agents'].join(',');
+  const SEL = ['.kicker', '.lead', '.sub', '.start', '.meta', '.sol', '.prob', '.sc-mid > *:not(.prob)', '.sc-bot > *',
+    '.bestg > a', '.card', '.cg', '.mo2', '.pc', '.seg2', '.flow > div', '.agc', '.asks2 > div', '.plogos > span', '.chi2 > div',
+    '.kq > div', '.deal > *', '.offer2 > *', '.cal .mo', '.pl-axis', '.pl-ticks', '.fase', '.res3 > *', '.h4', '.marq', '.paper',
+    '.studio2 > *', '.attr > div > *', '.svc2 > *', '.casegrid', '.legend', '.note', '.src', '.fmt-bar', '.hub-formats'].join(',');
   slides.forEach(s => {
     let i = 0;
     s.querySelectorAll(SEL).forEach(el => {
       if (el.parentElement.closest('.rv')) return;
       el.classList.add('rv');
-      el.style.setProperty('--d', Math.min(i++ * 75, 1200) + 'ms');
+      el.style.setProperty('--d', Math.min(i++ * 65, 1100) + 'ms');
     });
+    s.querySelector('.sol')?.classList.add('from-r');
+    s.querySelectorAll('.br').forEach((b, j) => b.style.setProperty('--d', j * 90 + 'ms'));
+    s.querySelectorAll('.cal .mo').forEach((m, j) => m.style.setProperty('--d', j * 70 + 'ms'));
   });
   root.classList.add('motion');
 
-  /* counter animation */
-  const RX = /([+\-]?)(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?/g;
+  const RX = /([+\-\u2212]?)(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?/g;
   const fmt = (sg, int, dec, k) => {
     const v = (parseInt(int.replace(/\./g, ''), 10) + (dec ? parseInt(dec, 10) / 10 ** dec.length : 0)) * k;
     let [ip, dp] = v.toFixed(dec ? dec.length : 0).split('.');
     if (int.includes('.')) ip = ip.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     return sg + ip + (dp ? ',' + dp : '');
   };
-  const CNT = '.stat b, .vkpi b, .cs b, .opp .num, .dl.fee b';
+  const CNT = '.nb b, .kq b, .cg b, .score b, .dl.fee b, .spd-h b';
   function count(el, dur) {
     if (!el._c) {
       const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), a = [];
@@ -687,37 +1196,47 @@ addEventListener('keydown', e => { if (['ArrowDown', 'PageDown', ' '].includes(e
     if (!el._c.length) return;
     const t0 = performance.now();
     const tick = t => {
-      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      const k = Math.min(1, (t - t0) / dur), e = dur > 2000 ? k : 1 - Math.pow(1 - k, 3);
       el._c.forEach(([n, o]) => { n.nodeValue = o.replace(RX, (m, s, i, d) => fmt(s, i, d, e)); });
       if (k < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
   }
 
+  const timers = new WeakMap();
   const io2 = new IntersectionObserver(es => es.forEach(e => {
     const s = e.target;
     if (e.isIntersecting && e.intersectionRatio >= 0.35) {
       if (s.classList.contains('in')) return;
       s.classList.add('in');
-      s.querySelectorAll(CNT).forEach(el => count(el, 1400));
+      s.querySelectorAll(CNT).forEach(el => count(el, el.closest('.spd') ? 2300 : 1400));
     } else if (!e.isIntersecting) {
       s.classList.remove('in');
+      clearTimeout(timers.get(s));
     }
   }), {root: deck, threshold: [0, 0.35]});
   slides.forEach(s => io2.observe(s));
 
-  /* tilt + glow effects */
-  document.querySelectorAll('.opp, .cs, .agc, .fase, .hub-card, .dl, .cal-item').forEach(el => {
+  document.querySelectorAll('.mo2, .cg, .pc, .agc, .fase[data-p], .bestg > a, .dl').forEach(el => {
     el.addEventListener('mousemove', ev => {
       const r = el.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width - 0.5, y = (ev.clientY - r.top) / r.height - 0.5;
-      el.style.transform = `perspective(900px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-3px)`;
+      el.classList.add('tilt');
+      el.style.transform = `perspective(900px) rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-4px)`;
     });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    el.addEventListener('mouseleave', () => { el.style.transform = ''; setTimeout(() => el.classList.remove('tilt'), 200); });
   });
-  document.querySelectorAll('.dl.rs').forEach(el => el.addEventListener('mousemove', ev => {
+
+  document.querySelectorAll('.sol, .dl.rs').forEach(el => el.addEventListener('mousemove', ev => {
     const r = el.getBoundingClientRect();
     el.style.setProperty('--mx', ev.clientX - r.left + 'px'); el.style.setProperty('--my', ev.clientY - r.top + 'px');
   }));
+
+  document.querySelectorAll('.piano12 .fase[data-p]').forEach(ph => {
+    const tl = ph.closest(".piano12");
+    const on = () => { tl.dataset.f = ph.dataset.p; }, off = () => { delete tl.dataset.f; };
+    ph.addEventListener('mouseenter', on); ph.addEventListener('focus', on);
+    ph.addEventListener('mouseleave', off); ph.addEventListener('blur', off);
+  });
 })();
 </script>
 </body>
