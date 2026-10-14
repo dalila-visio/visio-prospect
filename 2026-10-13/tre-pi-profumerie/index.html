@@ -383,8 +383,51 @@ h3{font-size:clamp(18px,1.35vw,22px);line-height:1.2}
 html.shot *{transition:none !important;animation:none !important}
 
 /* product strip for cover */
-.product-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:100%}
+.product-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:100%;position:relative}
 .product-strip img{width:100%;height:100%;object-fit:cover}
+.product-strip::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(11,10,15,.35) 30%,rgba(11,10,15,.15) 70%,rgba(11,10,15,.3) 100%);pointer-events:none}
+
+/* Wevion MCP widget */
+.mcp{background:#fff;border-radius:18px;padding:0;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.18);overflow:hidden;font-family:-apple-system,system-ui,sans-serif;color:#111;position:relative}
+.mcp-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #eee;font-size:13px;color:#777}
+.mcp-head b{color:#111;font-weight:600}
+.mcp-head .tag{font-size:11px;background:#f0f0f5;border-radius:6px;padding:3px 8px;color:#777}
+.mcp-body{min-height:260px;position:relative;overflow:hidden}
+.mcp-conv{position:absolute;inset:0;padding:16px 18px;opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.mcp-conv.active{opacity:1;transform:none;pointer-events:auto;position:relative}
+.mcp-user{background:#f4f3ff;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:14px;color:#333;border-left:3px solid #7C6CFF}
+.mcp-bot{padding:0 2px}
+.mcp-bot .who{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.mcp-bot .who i{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#7C6CFF,#a78bfa);display:grid;place-items:center}
+.mcp-bot .who i::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.mcp-bot .who span{font-size:12px;color:#777}
+.mcp-bot .reply{font-size:13.5px;color:#222;line-height:1.5;margin-bottom:10px}
+.mcp-approval{border:1.5px solid #e8e5ff;border-radius:12px;padding:12px 14px;background:#faf9ff;margin-top:8px}
+.mcp-approval .lbl{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#555;margin-bottom:8px}
+.mcp-approval .lbl::before{content:"";width:14px;height:14px;border:2px solid #7C6CFF;border-radius:50%;display:inline-block}
+.mcp-approval ul{list-style:none;margin:0;padding:0}
+.mcp-approval li{font-size:13px;color:#444;padding:3px 0 3px 10px;position:relative}
+.mcp-approval li::before{content:"-";position:absolute;left:0;color:#7C6CFF;font-weight:700}
+.mcp-btns{display:flex;gap:8px;margin-top:12px}
+.mcp-btns button{font-size:13px;font-weight:600;border-radius:8px;padding:8px 18px;cursor:default}
+.mcp-btns .approve{background:#7C6CFF;color:#fff;border:0}
+.mcp-btns .review{background:#fff;color:#555;border:1.5px solid #ddd}
+.mcp-foot{padding:10px 18px;border-top:1px solid #eee;font-size:11px;color:#999;text-align:right}
+.mcp-dots{display:flex;gap:6px;justify-content:center;padding:8px 0 12px}
+.mcp-dots i{width:7px;height:7px;border-radius:50%;background:#ddd;transition:all .3s}
+.mcp-dots i.on{background:#7C6CFF;transform:scale(1.3)}
+
+/* cookie warning state */
+.pc.warn{border-top-color:#dc6803}
+.pc.warn span{color:#dc6803}
+.pc.warn .dot{background:#dc6803}
+.pc.warn .dot::after{background:#dc6803}
+
+/* spacing boost for dense slides */
+.sc .wrap{gap:18px}
+.sc-top{gap:clamp(22px,3.5vw,48px)}
+.sc-bot{margin-top:8px}
+.mkt{gap:clamp(24px,3.5vw,44px)}
 </style>
 </head>
 <body>
@@ -528,7 +571,7 @@ html.shot *{transition:none !important;animation:none !important}
     <div class="sc-top">
       <div class="sc-t">
         <div class="kicker">03 &middot; Cosa dicono i clienti</div>
-        <h2>4,1 su 5 con 2.795 recensioni: i temi da usare e quelli da risolvere</h2>
+        <h2>4,1 su 5 con 2.795 recensioni: i temi da usare e dove intervenire</h2>
       </div>
       <aside class="sol">
         <small>Cosa possiamo fare</small>
@@ -546,9 +589,9 @@ html.shot *{transition:none !important;animation:none !important}
           <div class="t"><b>Prezzi competitivi</b><q>Ottimo rapporto qualit&agrave;-prezzo, spedizione rapida e imballaggio curato.</q></div>
         </div>
         <div class="th neg">
-          <h4>Da risolvere</h4>
-          <div class="t"><b>Tempi di spedizione</b><q>Da verificare: alcune recensioni segnalano attese superiori ai tempi dichiarati.</q></div>
-          <div class="t"><b>Assistenza clienti</b><q>Da verificare: risposte lente in caso di problemi con l'ordine.</q></div>
+          <h4>Aree dove possiamo intervenire subito</h4>
+          <div class="t"><b>Tempi di spedizione</b><q>Ottimizzare la comunicazione sui tempi di consegna e le automazioni di tracking per ridurre le richieste di assistenza.</q></div>
+          <div class="t"><b>Velocit&agrave; di risposta</b><q>Flussi automatici per le richieste pi&ugrave; frequenti, cos&igrave; il team si concentra sui casi complessi.</q></div>
         </div>
       </div>
     </div>
@@ -727,9 +770,9 @@ html.shot *{transition:none !important;animation:none !important}
     <div class="sc-mid">
       <div class="prob"><b>Il problema</b><p>Sono presenti 4 tracker e una piattaforma di consenso (iubenda), ma occorre verificare che i pixel non partano prima del consenso dell'utente.</p></div>
       <div class="pixc">
-        <div class="pc ok"><i class="dot"></i><b>Meta Pixel</b><span>Installato</span></div>
-        <div class="pc ok"><i class="dot"></i><b>Google Ads</b><span>Installato</span></div>
-        <div class="pc ok"><i class="dot"></i><b>GA4</b><span>Installato</span></div>
+        <div class="pc warn"><i class="dot"></i><b>Meta Pixel</b><span>Consenso da verificare</span></div>
+        <div class="pc warn"><i class="dot"></i><b>Google Ads</b><span>Consenso da verificare</span></div>
+        <div class="pc warn"><i class="dot"></i><b>GA4</b><span>Consenso da verificare</span></div>
         <div class="pc ok"><i class="dot"></i><b>Clarity</b><span>Installato</span></div>
         <div class="pc ok"><i class="dot"></i><b>iubenda</b><span>CMP attiva</span></div>
         <div class="pc ok"><i class="dot"></i><b>Trustpilot</b><span>Widget attivo</span></div>
@@ -959,12 +1002,48 @@ html.shot *{transition:none !important;animation:none !important}
         <div class="agc"><small>Sempre disponibile</small><b>Assistente AI multi-agente</b><p>Conosce campagne, negozio, email e catalogo: risponde, analizza e prepara le modifiche.</p></div>
         <div class="agc"><small>Una persona decide</small><b>Il team approva</b><p>Ogni modifica passa da una persona del team, entro limiti di autonomia fissati insieme.</p></div>
       </div>
-      <div class="asks2">
-        <h4 class="h4">Domande possibili all'assistente</h4>
-        <div>Quali sono i 10 profumi pi&ugrave; venduti questa settimana in Francia?</div>
-        <div>Il costo per ordine di ieri &egrave; salito rispetto alla media?</div>
-        <div>Prepara una campagna per il Black Friday con i prodotti da uomo</div>
-        <p class="note">Dal browser, in qualsiasi momento, con i dati di tutte le piattaforme collegate.</p>
+      <div>
+        <div class="mcp" id="mcpWidget">
+          <div class="mcp-head"><b>La tua AI &middot; Wevion MCP</b><span class="tag">Anteprima</span></div>
+          <div class="mcp-body">
+            <!-- Conv 1: vendite -->
+            <div class="mcp-conv active" data-conv="0">
+              <div class="mcp-user">Come sono andate le vendite ieri in Italia?</div>
+              <div class="mcp-bot">
+                <div class="who"><i></i><span>Il tuo assistente AI</span></div>
+                <div class="reply">Ieri 247 ordini in Italia, +12% rispetto alla media settimanale. Fatturato &euro;9.840. I top 3: D&amp;G Light Blue (38 unit&agrave;), Paco Rabanne One Million (29), Narciso Rodriguez Pure Musc (24). ROAS complessivo Meta: 2,8x.</div>
+              </div>
+            </div>
+            <!-- Conv 2: CPA -->
+            <div class="mcp-conv" data-conv="1">
+              <div class="mcp-user">Quanto costa oggi un nuovo cliente dal sito?</div>
+              <div class="mcp-bot">
+                <div class="who"><i></i><span>Il tuo assistente AI</span></div>
+                <div class="reply">CPA medio ultimi 7 giorni: &euro;14,20 (-6% vs settimana precedente).<br>Meta: &euro;11,80 &middot; Google: &euro;18,40 &middot; Organico: &euro;0.<br>Il costo di acquisizione Meta &egrave; in calo grazie ai nuovi contenuti caricati gioved&igrave;.</div>
+              </div>
+            </div>
+            <!-- Conv 3: azione con approvazione -->
+            <div class="mcp-conv" data-conv="2">
+              <div class="mcp-user">Metti in pausa tutto sotto 1.5 ROAS dopo &euro;50 di spesa, su Meta e TikTok.</div>
+              <div class="mcp-bot">
+                <div class="who"><i></i><span>Il tuo assistente AI</span></div>
+                <div class="reply">Ecco il piano, 3 azioni su 2 piattaforme:</div>
+                <div class="mcp-approval">
+                  <div class="lbl">In attesa della tua approvazione</div>
+                  <ul>
+                    <li>Metti in pausa 4 ad set Meta sotto 1.5 ROAS</li>
+                    <li>Metti in pausa 2 ad group TikTok sotto 1.5 ROAS</li>
+                    <li>Lascia i budget invariati</li>
+                  </ul>
+                  <div class="mcp-btns"><button class="approve">Approva</button><button class="review">Rivedi</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mcp-dots"><i class="on"></i><i></i><i></i></div>
+          <div class="mcp-foot">Il tuo client MCP chiede prima di ogni azione.</div>
+        </div>
+        <p class="note" style="margin-top:12px">Dal browser, in qualsiasi momento, con i dati di tutte le piattaforme collegate.</p>
       </div>
     </div>
   </div>
@@ -1008,8 +1087,8 @@ html.shot *{transition:none !important;animation:none !important}
       <div class="plus">+</div>
       <div class="dl rs">
         <small>Pi&ugrave; una revenue share</small>
-        <b><em>%</em> <span class="tbd">da concordare</span></b>
-        <span>una percentuale sulle vendite online, fissata insieme dopo l'audit sui dati reali del negozio</span>
+        <b><em>%</em> <span class="tbd">3-5%</span></b>
+        <span>sul venduto online, percentuale definita insieme dopo l'audit sui dati reali del negozio e i margini della categoria</span>
         <i>Il compenso cresce solo se cresce il fatturato</i>
       </div>
     </div>
@@ -1082,7 +1161,7 @@ addEventListener('keydown', e => { if (['ArrowDown', 'PageDown', ' '].includes(e
   });
 
   const SEL = ['.kicker', '.lead', '.sub', '.start', '.meta', '.sol', '.prob', '.sc-mid > *:not(.prob)', '.sc-bot > *',
-    '.bestg > a', '.card', '.cg', '.mo2', '.pc', '.seg2', '.flow > div', '.agc', '.asks2 > div', '.plogos > span', '.chi2 > div',
+    '.bestg > a', '.card', '.cg', '.mo2', '.pc', '.seg2', '.flow > div', '.agc', '.mcp', '.plogos > span', '.chi2 > div',
     '.kq > div', '.deal > *', '.offer2 > *', '.cal .mo', '.pl-axis', '.pl-ticks', '.fase', '.res3 > *', '.h4', '.marq', '.paper',
     '.studio2 > *', '.attr > div > *', '.svc2 > *', '.casegrid', '.legend', '.note', '.src'].join(',');
   slides.forEach(s => {
@@ -1156,6 +1235,43 @@ addEventListener('keydown', e => { if (['ArrowDown', 'PageDown', ' '].includes(e
     ph.addEventListener('mouseenter', on); ph.addEventListener('focus', on);
     ph.addEventListener('mouseleave', off); ph.addEventListener('blur', off);
   });
+})();
+</script>
+<script>
+/* ===== WEVION MCP WIDGET AUTOPLAY ===== */
+(() => {
+  const widget = document.getElementById('mcpWidget');
+  if (!widget) return;
+  const convs = widget.querySelectorAll('.mcp-conv');
+  const dots = widget.querySelectorAll('.mcp-dots i');
+  const total = convs.length;
+  let cur = 0, timer = null;
+
+  function show(idx) {
+    cur = ((idx % total) + total) % total;
+    convs.forEach((c, i) => c.classList.toggle('active', i === cur));
+    dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+  }
+
+  function next() { show(cur + 1); }
+
+  function start() { stop(); timer = setInterval(next, 5500); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  dots.forEach((d, i) => d.addEventListener('click', () => { show(i); start(); }));
+  widget.addEventListener('mouseenter', stop);
+  widget.addEventListener('mouseleave', start);
+
+  /* Start only when slide is visible */
+  const slide = widget.closest('.slide');
+  if (slide) {
+    const obs = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) start(); else stop(); });
+    }, { threshold: 0.4 });
+    obs.observe(slide);
+  } else {
+    start();
+  }
 })();
 </script>
 </body>
