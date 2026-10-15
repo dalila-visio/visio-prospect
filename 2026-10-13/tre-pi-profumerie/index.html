@@ -196,6 +196,9 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .seg-ctl button{border:1px solid var(--line-2);border-radius:999px;padding:10px 17px;font-size:14px;color:var(--ink-2);min-height:42px;transition:all .3s var(--ease)}
 .seg-ctl button.on{background:var(--camel-2);color:#fff;border-color:var(--camel-2)}
 .seg-ctl button:hover{border-color:var(--camel-2)}
+.hub-live-panel{display:none;animation:fadeUp .5s var(--ease)}
+.hub-live-panel.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .hub-shop{margin-top:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2);padding:17px 18px}
 .hub-shop .lab{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 .hub-shop-row{display:flex;align-items:center;gap:14px;margin-top:12px}
@@ -677,43 +680,68 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 <!-- ================================================================
      07 PRODUCT FEED (LOGIC UNTOUCHED)
      ================================================================ -->
-<section class="slide" data-title="Product feed">
+<section class="slide" data-title="Contenuti AI per il catalogo">
   <div class="wrap">
-    <div class="head"><div><div class="kicker rv">07 - Product feed</div>
-    <h2 class="rv d1">Dal product feed alla creativita, valorizziamo ogni prodotto</h2></div>
-    <p class="lead rv d2">Ogni scheda diventa la base per contenuti nuovi, immagini e video pronti per sito e campagne.</p></div>
-    <div class="feed3">
-      <div class="fc rv d2">
-        <div class="ft">01 - Il prodotto oggi</div>
-        <h4>La scheda di partenza</h4>
-        <div class="fc-media light"><img class="pad" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="Light Blue"></div>
-        <div class="pname">Dolce &amp; Gabbana Light Blue Eau de Toilette 100 ml</div>
-        <div class="pprice">70,78 EUR</div>
-        <p>Una foto sola, poche righe di descrizione, nessun video.</p>
-        <div class="tovalue"><em>Da valorizzare</em><span>Piu immagini, un video e una scheda completa con note e dettagli.</span></div>
-      </div>
-      <div class="fc rv d3">
-        <div class="ft">02 - Il prodotto prende vita</div>
-        <h4>Immagini e video nuovi</h4>
-        <div class="fc-media">
-          <video id="feedVideo" src="data:video/mp4," muted loop playsinline preload="metadata" poster="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353"></video>
-          <div class="fc-play" id="feedPlay"><i></i></div>
-          <span class="fc-badge">Esempio - segnaposto</span>
+    <div style="display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,4vw,56px);align-items:center">
+      <div>
+        <div class="kicker rv">07 - Creative Hub dal vivo</div>
+        <h2 class="rv d1" style="font-size:clamp(26px,3vw,42px)">Immagini, video, UGC e contenuti per il <em>vostro catalogo</em></h2>
+        <p class="lead rv d2" style="margin-top:16px">Si parte da un prodotto del catalogo. Gli agenti del Creative Hub generano foto, video e contenuti pronti per campagne e schede prodotto, nella lingua e nel formato giusto. Nessuno shooting, nessun export manuale.</p>
+        <div class="seg-ctl rv d3" style="margin-top:22px" id="hubLiveTabs">
+          <button class="on" data-tab="img">Immagini</button>
+          <button data-tab="vid">Video</button>
+          <button data-tab="ugc">UGC</button>
+          <button data-tab="brand">Brand Kit</button>
         </div>
-        <p class="concept">Un breve video del prodotto nel suo ambiente, luce da spa, movimento di camera lento. Il concept e pronto, i video definitivi li fornisce il team.</p>
+        <p class="note rv d4">Esempio dimostrativo con contenuti generati per un caso reale (Spotlight, gioielleria). Per Tre Pi Profumerie i contenuti saranno generati dal vostro catalogo.</p>
       </div>
-      <div class="fc rv d4">
-        <div class="ft">03 - Zoom sulla scheda</div>
-        <h4>La scheda arricchita</h4>
-        <div class="fc-media" id="zoomMedia"><img id="zoomImg" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="Scheda arricchita"></div>
-        <div class="colors"><i style="background:#1b2b4a"></i><i style="background:#8a9bb3"></i><i style="background:#c9a98e"></i></div>
-        <div class="pname">Light Blue Eau de Toilette 100 ml</div>
-        <div class="pprice">70,78 EUR</div>
-        <div class="mini-cta">Aggiungi al carrello</div>
-        <div class="fc-strip" id="zoomStrip"><button class="on" data-v="foto">Foto</button><button data-v="video">Video</button><button data-v="dett">Dettaglio</button></div>
+      <div class="rv d3">
+        <div style="background:var(--wv-bg);border:1px solid var(--wv-line);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,43,255,.12)">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--wv-line)">
+            <div style="display:flex;align-items:center;gap:10px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="14" fill="#7C8CFF" viewBox="0 0 332 30"><path d="M15.002 0c3.632 0 7.142 1.315 9.872 3.705a14.968 14.968 0 0 1 4.975 9.164 1.31 1.31 0 0 1-1.115 1.482 1.309 1.309 0 0 1-1.481-1.115c-.858-6.05-6.129-10.618-12.251-10.618-6.824 0-12.378 5.555-12.378 12.38 0 6.823 5.554 12.377 12.378 12.377 5.989 0 11.11-4.268 12.179-10.15a1.314 1.314 0 0 1 2.584.469c-1.293 7.13-7.498 12.305-14.757 12.305h-.006C6.729 29.999 0 23.269 0 15.002 0 6.73 6.73 0 15.002 0Z"/></svg>
+              <span style="font-family:var(--mono);font-size:12px;color:var(--wv-ink-3)">Creative Hub</span>
+            </div>
+            <span style="font-family:var(--mono);font-size:11px;color:var(--wv-ink-3);border:1px solid var(--wv-line);border-radius:6px;padding:3px 8px">Esempio</span>
+          </div>
+          <div id="hubLiveContent" style="padding:16px">
+            <div class="hub-live-panel on" data-panel="img">
+              <p style="font-size:13px;color:var(--wv-ink-2);margin-bottom:12px">Foto prodotto primarie, varianti e indossato. 80+ contenuti per categoria.</p>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/slider-01.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/slider-02.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/slider-03.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/slider-04.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover">
+              </div>
+            </div>
+            <div class="hub-live-panel" data-panel="vid">
+              <p style="font-size:13px;color:var(--wv-ink-2);margin-bottom:12px">Video prodotto per campagne e social. 20+ video per ADV e schede prodotto.</p>
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+                <div style="aspect-ratio:16/9;background:linear-gradient(135deg,var(--wv-panel),var(--wv-panel-2));border-radius:8px;display:grid;place-items:center"><span style="font-size:40px;opacity:.5">&#9654;</span></div>
+                <div style="aspect-ratio:16/9;background:linear-gradient(135deg,var(--wv-panel-2),var(--wv-panel));border-radius:8px;display:grid;place-items:center"><span style="font-size:40px;opacity:.5">&#9654;</span></div>
+              </div>
+              <p style="font-size:11px;color:var(--wv-ink-3);margin-top:8px">I video vengono generati dal catalogo e sono pronti per Meta, TikTok e Google Shopping.</p>
+            </div>
+            <div class="hub-live-panel" data-panel="ugc">
+              <p style="font-size:13px;color:var(--wv-ink-2);margin-bottom:12px">Contenuti in stile creator: avatar AI, unboxing, recensioni, tutorial.</p>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-1.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-2.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-3.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover">
+              </div>
+            </div>
+            <div class="hub-live-panel" data-panel="brand">
+              <p style="font-size:13px;color:var(--wv-ink-2);margin-bottom:12px">Il Brand Kit raccoglie logo, colori, font e tono di voce. Ogni contenuto parte da li.</p>
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/timeline-01.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover">
+                <img src="https://www.visiodp.com/stream-ai/spotlight/timeline-02.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover">
+              </div>
+              <img src="https://www.visiodp.com/stream-ai/spotlight/concl-4.webp" alt="" style="width:100%;border-radius:8px;margin-top:8px;aspect-ratio:21/9;object-fit:cover">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="note rv d5">Esempi di come apparirebbe una scheda con i nuovi contenuti, a partire dalle foto del vostro catalogo. Rilevazione: ottobre 2026.</p>
   </div>
 </section>
 
@@ -1012,19 +1040,10 @@ function hubRender(anim) {
 }
 hubRender(false);
 
-/* 07 product feed: video + strip */
-const feedVideo = $('#feedVideo'), feedPlay = $('#feedPlay');
-if (feedPlay && feedVideo) {
-  feedPlay.onclick = () => { if (feedVideo.paused) { feedVideo.play().catch(() => {}); feedPlay.classList.add('hid'); } else { feedVideo.pause(); feedPlay.classList.remove('hid'); } };
-  feedVideo.addEventListener('pause', () => feedPlay.classList.remove('hid'));
-  feedVideo.addEventListener('play', () => feedPlay.classList.add('hid'));
-  onEnter['Product feed'] = () => { if (reduce) return; feedVideo.play().then(() => feedPlay.classList.add('hid')).catch(() => {}); };
-}
-const ZOOM = { foto:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353', video:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353', dett:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353' };
-$$('#zoomStrip button').forEach(b => b.onclick = () => {
-  $$('#zoomStrip button').forEach(x => x.classList.toggle('on', x === b));
-  const img = $('#zoomImg'); img.style.opacity = '0';
-  setTimeout(() => { img.src = ZOOM[b.dataset.v]; img.style.objectFit = b.dataset.v === 'dett' ? 'contain' : 'cover'; img.style.background = b.dataset.v === 'dett' ? '#f7f5f1' : ''; img.style.padding = b.dataset.v === 'dett' ? '10%' : '0'; img.style.opacity = '1'; }, reduce ? 0 : 160);
+/* 07 Creative Hub dal vivo: tab switching */
+$$('#hubLiveTabs button').forEach(b => b.onclick = () => {
+  $$('#hubLiveTabs button').forEach(x => x.classList.toggle('on', x === b));
+  $$('.hub-live-panel').forEach(p => p.classList.toggle('on', p.dataset.panel === b.dataset.tab));
 });
 
 /* 08 chat assistente -- Enhanced with 5 suggestions + typing + Approva/Rivedi */
