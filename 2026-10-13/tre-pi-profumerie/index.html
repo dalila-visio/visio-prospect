@@ -50,6 +50,19 @@ body{font-family:var(--font-sans);color:var(--black);background:var(--white);lin
 .pill-blue{background:var(--blue);color:#fff}
 .pill-blue-outline{border:1.5px solid var(--blue);color:var(--blue)}
 
+/* ============ SLIDE 03: BARS + CHANNELS + KPI STRIP ============ */
+.bar-row{display:grid;grid-template-columns:100px 1fr 36px;gap:8px;align-items:center;font-size:13px;padding:4px 0}
+.bar-row span{color:var(--gray-700)}.bar-row em{font-style:normal;text-align:right;font-weight:600;color:var(--gray-700)}
+.bar-track{height:12px;background:var(--gray-100);border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;background:var(--blue);transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.bar-fill.bar-secondary{background:color-mix(in srgb,var(--blue) 60%,var(--gray-400))}
+.bar-fill.bar-muted{background:var(--gray-300)}
+.channel-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--gray-100);font-size:13px}
+.channel-row b{color:var(--black)}.channel-row span{color:var(--gray-500);text-align:right}
+.kpi-strip-item{padding:18px 20px}
+.kpi-strip-item b{display:block;font-family:var(--font-sans);font-weight:800;font-size:clamp(28px,2.8vw,42px);line-height:1;color:var(--black)}
+.kpi-strip-item span{display:block;font-size:12.5px;color:var(--gray-500);margin-top:6px}
+
 /* ============ BUTTONS ============ */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:100px;font-family:var(--font-sans);font-weight:600;font-size:15px;cursor:pointer;border:none;transition:all .35s cubic-bezier(.25,.8,.25,1);text-decoration:none}
 .btn-blue{background:var(--blue);color:#fff}
@@ -376,6 +389,7 @@ body{font-family:var(--font-sans);color:var(--black);background:var(--white);lin
     <span class="pill pill-blue-outline">Performance</span>
   </div>
   <p class="cover-for reveal reveal-d4">Presentazione per Tre Pi Profumerie</p>
+  <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--gray-400);margin-top:8px" class="reveal reveal-d5">RICHMOND E-COMMERCE FORUM 2026</p>
   <a href="#slide-02" class="btn btn-blue reveal reveal-d5">Iniziamo <span style="font-size:18px;line-height:1">&#8595;</span></a>
 </div>
 </section>
@@ -462,64 +476,85 @@ body{font-family:var(--font-sans);color:var(--black);background:var(--white);lin
 <!-- ================================================================
      SLIDE 03 -- FOTOGRAFIA DELLO SHOP
      ================================================================ -->
-<section class="slide" id="slide-03" data-title="Fotografia dello Shop">
+<section class="slide" id="slide-03" data-title="Dove vende oggi">
 <div class="slide-inner">
-  <div class="kicker reveal">Fotografia</div>
-  <h2 class="slide-title reveal reveal-d1">Dove vende oggi <span class="accent">Tre Pi Profumerie</span>.</h2>
-  <p class="slide-subtitle reveal reveal-d2">Una profumeria di Marcianise (CE) con un'anima digitale: oltre 10.000 prodotti online, 26 mercati europei, 1.099 collezioni e una community social in crescita.</p>
+  <div class="kicker reveal">01 &middot; Dove vende oggi</div>
 
-  <div class="snapshot-grid reveal reveal-d3">
+  <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start" class="reveal reveal-d1">
+    <!-- LEFT: Title + data -->
     <div>
-      <div class="fact-grid">
-        <div class="fact-card">
-          <div class="fact-value">Shopify (tema Sleek v2.3.0)</div>
-          <div class="fact-label">Piattaforma</div>
+      <h2 class="slide-title" style="margin-bottom:16px">Italia come mercato principale, 26 Paesi europei raggiunti, 2.795 recensioni su Trustpilot</h2>
+
+      <!-- COSA DICONO I DATI -->
+      <div style="display:flex;gap:12px;align-items:baseline;border-left:4px solid var(--blue);background:rgba(0,43,255,.04);border-radius:0 10px 10px 0;padding:12px 16px;margin:20px 0">
+        <b style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);white-space:nowrap">Cosa dicono i dati</b>
+        <p style="font-size:15px;font-weight:500;color:var(--black);line-height:1.4">Tre Pi Profumerie dichiara vendite in 26 Paesi europei con 3 lingue attive (IT, EN, FR), ma con soli 7 dipendenti l'operativita su tutti i mercati e inevitabilmente sottile.</p>
+      </div>
+
+      <!-- 3 COLUMNS -->
+      <div style="display:grid;grid-template-columns:1fr 1fr .85fr;gap:24px;margin-top:16px">
+        <!-- Recensioni per Paese -->
+        <div>
+          <h4 style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin-bottom:10px">Recensioni per Paese</h4>
+          <div class="bar-row"><span>Italia</span><div class="bar-track"><div class="bar-fill" style="width:74%"></div></div><em>74%</em></div>
+          <div class="bar-row"><span>Francia</span><div class="bar-track"><div class="bar-fill bar-secondary" style="width:12%"></div></div><em>12%</em></div>
+          <div class="bar-row"><span>Germania</span><div class="bar-track"><div class="bar-fill bar-muted" style="width:5%"></div></div><em>5%</em></div>
+          <div class="bar-row"><span>Spagna</span><div class="bar-track"><div class="bar-fill bar-muted" style="width:3%"></div></div><em>3%</em></div>
+          <div class="bar-row"><span>Altri 22 Paesi</span><div class="bar-track"><div class="bar-fill bar-muted" style="width:6%"></div></div><em>6%</em></div>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--gray-400);margin-top:6px">Su 2.795 recensioni Trustpilot con il Paese indicato</p>
         </div>
-        <div class="fact-card">
-          <div class="fact-value"><span data-count="26">0</span></div>
-          <div class="fact-label">Paesi attivi</div>
+        <!-- Canali e lingue -->
+        <div>
+          <h4 style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin-bottom:10px">Canali e lingue attive</h4>
+          <div class="channel-row"><b>Shopify</b><span>piattaforma principale</span></div>
+          <div class="channel-row"><b>Instagram</b><span>5.915 follower</span></div>
+          <div class="channel-row"><b>Facebook</b><span>17.000 follower</span></div>
+          <div style="display:flex;gap:6px;margin-top:12px">
+            <span class="pill pill-blue-outline" style="font-size:11px;padding:4px 10px">IT</span>
+            <span class="pill pill-blue-outline" style="font-size:11px;padding:4px 10px">EN</span>
+            <span class="pill pill-blue-outline" style="font-size:11px;padding:4px 10px">FR</span>
+          </div>
         </div>
-        <div class="fact-card">
-          <div class="fact-value"><span data-count="3">0</span></div>
-          <div class="fact-label">Lingue (IT, EN, FR)</div>
-        </div>
-        <div class="fact-card">
-          <div class="fact-value"><span data-count="1">0</span></div>
-          <div class="fact-label">Store fisico</div>
-        </div>
-        <div class="fact-card">
-          <div class="fact-value">5.9K + 17K</div>
-          <div class="fact-label">IG + Facebook</div>
-        </div>
-        <div class="fact-card">
-          <div class="fact-value">4.1 / 5</div>
-          <div class="fact-label">Trustpilot</div>
+        <!-- Lettura -->
+        <div>
+          <h4 style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin-bottom:10px">Lettura</h4>
+          <div class="channel-row"><b>Italia</b><span style="color:var(--blue);font-weight:600">mercato principale</span></div>
+          <div class="channel-row"><b>Francia</b><span>mercato attivo</span></div>
+          <div class="channel-row"><b>Germania</b><span style="color:var(--gray-400)">ordini sporadici</span></div>
+          <div class="channel-row"><b>Spagna</b><span style="color:var(--gray-400)">ordini sporadici</span></div>
         </div>
       </div>
     </div>
-    <div>
-      <div class="sidebar-card">
-        <div class="card-label">Catalogo online</div>
-        <div class="card-number"><span data-count="10629">0</span></div>
-        <div class="card-text">prodotti pubblicati su Shopify (1.099 collezioni)</div>
-      </div>
-      <div class="sidebar-card">
-        <div class="card-label">Fascia prezzo</div>
-        <div style="font-size:18px;font-weight:700;color:var(--black);margin-top:4px">da 1,43 a 144+ EUR</div>
-      </div>
-      <div class="sidebar-card">
-        <div class="card-label">Categorie</div>
-        <div class="cat-pills">
-          <span class="pill pill-outline">Profumi</span>
-          <span class="pill pill-outline">Make-up</span>
-          <span class="pill pill-outline">Capelli</span>
-          <span class="pill pill-outline">Skincare</span>
+
+    <!-- RIGHT: Box blu COSA POSSIAMO FARE -->
+    <div style="background:var(--blue);color:#fff;border-radius:var(--radius);padding:24px 22px;box-shadow:0 8px 24px rgba(0,43,255,.15)">
+      <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:12px">Cosa possiamo fare</div>
+      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:12px">
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 0">
+          <span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:11px;font-weight:700;flex-shrink:0">1</span>
+          <div><b style="font-size:14px;display:block">Concentrare la spesa pubblicitaria sui mercati che rendono</b><span style="font-size:12.5px;opacity:.8">Analisi costo per ordine per Paese, taglio dei mercati in perdita</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-top:1px solid rgba(255,255,255,.15)">
+          <span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:11px;font-weight:700;flex-shrink:0">2</span>
+          <div><b style="font-size:14px;display:block">Potenziare il servizio clienti multilingua</b><span style="font-size:12.5px;opacity:.8">Automazioni email in italiano, inglese, francese</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-top:1px solid rgba(255,255,255,.15)">
+          <span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:11px;font-weight:700;flex-shrink:0">3</span>
+          <div><b style="font-size:14px;display:block">Usare le recensioni come leva di conversione</b><span style="font-size:12.5px;opacity:.8">Widget e contenuti da 2.795 recensioni reali</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <p class="slide-note reveal reveal-d4">Osservazioni da sito pubblico, prima del confronto. Da validare con i dati della piattaforma e di Analytics.</p>
+  <!-- KPI STRIP -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);margin-top:28px" class="reveal reveal-d2">
+    <div class="kpi-strip-item"><b>4,1<small style="font-size:.5em;color:var(--gray-400)">/5</small></b><span>Trustpilot, 2.795 recensioni</span></div>
+    <div class="kpi-strip-item" style="border-left:1px solid var(--gray-200)"><b><span data-count="26">0</span></b><span>Paesi europei raggiunti</span></div>
+    <div class="kpi-strip-item" style="border-left:1px solid var(--gray-200)"><b><span data-count="3">0</span></b><span>lingue attive nel negozio</span></div>
+    <div class="kpi-strip-item" style="border-left:1px solid var(--gray-200)"><b><span data-count="1">0</span></b><span>negozio fisico a Marcianise (CE)</span></div>
+  </div>
+
+  <p class="slide-note reveal reveal-d3">Fonte: sito pubblico trepiprofumerie.com, Trustpilot, profili social. Rilevazione: ottobre 2026. Da validare con i dati della piattaforma e di Analytics.</p>
 </div>
 </section>
 
@@ -825,8 +860,9 @@ body{font-family:var(--font-sans);color:var(--black);background:var(--white);lin
       <div class="chat-suggestions" id="chatSuggestions">
         <button class="chat-sug-btn" data-ci="0">Come lavorano le campagne in Italia?</button>
         <button class="chat-sug-btn" data-ci="1">Stato di oggi</button>
-        <button class="chat-sug-btn" data-ci="2">Report settimanale</button>
+        <button class="chat-sug-btn" data-ci="2">Mandami il report di questa settimana</button>
         <button class="chat-sug-btn" data-ci="3">Anomalie aperte</button>
+        <button class="chat-sug-btn" data-ci="4">Metti in pausa gli annunci sotto soglia</button>
       </div>
     </div>
     <!-- BLOCKS -->
@@ -1050,6 +1086,7 @@ body{font-family:var(--font-sans);color:var(--black);background:var(--white);lin
   </div>
 
   <div class="signature reveal reveal-d4">Visio Digital Partner -- Commerce Flow Orchestrator</div>
+  <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.35);margin-top:12px" class="reveal reveal-d4">RICHMOND E-COMMERCE FORUM 2026</div>
   <div class="visio-logo-footer reveal reveal-d5">
     <svg xmlns="http://www.w3.org/2000/svg" width="332" height="30" fill="#fff" viewBox="0 0 332 30"><path d="M15.002 0c3.632 0 7.142 1.315 9.872 3.705a14.968 14.968 0 0 1 4.975 9.164 1.31 1.31 0 0 1-1.115 1.482 1.309 1.309 0 0 1-1.481-1.115c-.858-6.05-6.129-10.618-12.251-10.618-6.824 0-12.378 5.555-12.378 12.38 0 6.823 5.554 12.377 12.378 12.377 5.989 0 11.11-4.268 12.179-10.15a1.314 1.314 0 0 1 2.584.469c-1.293 7.13-7.498 12.305-14.757 12.305h-.006C6.729 29.999 0 23.269 0 15.002 0 6.73 6.73 0 15.002 0Z"/></svg>
   </div>
@@ -1098,13 +1135,15 @@ var copyData={
 
 var chatResponses=[
   {q:'Come lavorano le campagne in Italia?',
-   a:'<span class="demo-label">esempio dimostrativo</span><strong>Flusso campagne Italia:</strong><ul><li>Il catalogo viene letto e le schede prioritarie selezionate</li><li>Il Creative Hub genera le creativita per formato e obiettivo</li><li>Le campagne vengono attivate su Meta e Google</li><li>Il monitoraggio e continuo: alert automatici se un KPI esce dalla soglia</li><li>Report settimanale ogni lunedi alle 8:00</li></ul>'},
+   a:'<span class="demo-label">esempio dimostrativo</span><strong>Flusso campagne Italia:</strong><ul><li>Il catalogo alimenta il Creative Hub: le schede dei prodotti prioritari vengono lette automaticamente</li><li>Gli agenti generano creativita per formato (Feed, Stories, Shopping) e lingua (IT, EN, FR)</li><li>Gli obiettivi arrivano dalla fase di Direzione: ogni campagna ha un target misurabile</li><li>Le campagne sono monitorate 24h: spesa, performance, stato di ogni attivita</li><li>Se un KPI esce dalla soglia, ricevete un alert con diagnosi e azione suggerita</li><li>La decisione resta sempre vostra: nulla va online senza la vostra approvazione</li></ul>'},
   {q:'Stato di oggi',
-   a:'<span class="demo-label">esempio dimostrativo</span><strong>Stato attivita -- oggi:</strong><ul><li>Campagne: attive e in monitoraggio</li><li>Creative Hub: nessuna generazione in coda</li><li>Catalogo: ultimo aggiornamento feed completato</li><li>Alert: nessuna anomalia rilevata</li></ul><em style="font-size:10px;color:#adb5bd;display:block;margin-top:6px">I dati reali saranno visibili dopo l\'audit.</em>'},
-  {q:'Report settimanale',
-   a:'<span class="demo-label">esempio dimostrativo</span><strong>Report settimanale:</strong><br>Ogni lunedi alle 8:00 ricevete via email il report automatico con:<ul><li>Performance campagne (spesa, ROAS, CPA)</li><li>Andamento vendite e-commerce</li><li>Stato catalogo e feed</li><li>Azioni suggerite per la settimana</li></ul>Il report e richiedibile in qualsiasi momento anche da questa chat.'},
+   a:'<span class="demo-label">esempio dimostrativo</span><strong>Stato attivita -- oggi:</strong><ul><li>Campagne Meta Italia: attive, monitoraggio in corso</li><li>Campagne Google Shopping: attive su IT e FR</li><li>Creative Hub: 3 creativita in coda per la collezione natalizia</li><li>Feed catalogo: ultimo aggiornamento completato alle 06:00</li><li>Alert: nessuna anomalia rilevata nelle ultime 24 ore</li></ul><em style="font-size:10px;color:#adb5bd;display:block;margin-top:6px">I dati reali saranno visibili dopo l\'audit e l\'accesso alla piattaforma.</em>'},
+  {q:'Mandami il report di questa settimana',
+   a:'<span class="demo-label">esempio dimostrativo</span><strong>Report settimanale pronto.</strong><br>Il report arriva in automatico <strong>ogni lunedi alle 8:00</strong> via email, ma potete richiederlo in qualsiasi momento da questa chat.<br><br><strong>Tre versioni disponibili:</strong><ul><li><strong>Direzione:</strong> vendite, spesa, ROAS, nuovi clienti, sintesi settimanale</li><li><strong>Marketing:</strong> campagne per canale, creativita attive, performance per mercato</li><li><strong>Vendite:</strong> prodotti piu venduti, ordini per Paese, clienti ricorrenti</li></ul><strong>Formato:</strong> PDF, email o link condivisibile.<br><em style="font-size:10px;color:#adb5bd;display:block;margin-top:6px">Richiedibile come e quando volete. I numeri mostrati qui sono dimostrativi.</em>'},
   {q:'Anomalie aperte',
-   a:'<span class="demo-label">esempio dimostrativo</span><strong>Sistema alert:</strong><br>Il monitoraggio controlla in tempo reale:<ul><li>CPA sopra soglia</li><li>ROAS sotto soglia</li><li>Feed con errori o prodotti rifiutati</li><li>Calo improvviso di traffico o conversioni</li></ul>Quando una soglia viene superata, ricevete una notifica immediata con la diagnosi e l\'azione suggerita.<br><em style="font-size:10px;color:#adb5bd;display:block;margin-top:6px">Le soglie vengono definite insieme durante l\'audit.</em>'}
+   a:'<span class="demo-label">esempio dimostrativo</span><strong>Sistema alert -- monitoraggio 24h:</strong><br>Gli agenti controllano spesa, risultati e anomalie ogni 24 ore, anche nei weekend.<ul><li>CPA sopra soglia su un gruppo di inserzioni</li><li>ROAS sotto la soglia minima definita</li><li>Prodotti rifiutati nel feed Shopping</li><li>Calo improvviso di traffico o conversioni</li></ul>Quando scatta un alert, ricevete la notifica con la diagnosi e l\'azione suggerita. <strong>L\'azione la decidete voi.</strong><br><em style="font-size:10px;color:#adb5bd;display:block;margin-top:6px">Le soglie vengono definite insieme durante l\'audit.</em>'},
+  {q:'Metti in pausa gli annunci sotto soglia',
+   a:'<span class="demo-label">esempio dimostrativo</span><strong>Piano proposto -- 3 azioni su 2 piattaforme:</strong><br><div style="border:1.5px solid rgba(0,43,255,.15);border-radius:10px;padding:14px;margin:10px 0;background:rgba(0,43,255,.03)"><div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--blue);margin-bottom:8px"><span style="width:14px;height:14px;border:2px solid var(--blue);border-radius:50%;display:inline-block"></span> In attesa della vostra approvazione</div><ul style="margin:0;padding-left:18px"><li>Metti in pausa 4 ad set Meta con ROAS sotto soglia</li><li>Metti in pausa 2 ad group TikTok sotto soglia</li><li>Lascia invariati i budget sulle campagne che performano</li></ul><div style="display:flex;gap:8px;margin-top:12px"><span style="background:var(--blue);color:#fff;padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600">Approva</span><span style="background:var(--gray-100);color:var(--gray-600);padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid var(--gray-200)">Rivedi</span></div></div><em style="font-size:10px;color:#adb5bd;display:block;margin-top:6px">Nulla va online senza la vostra approvazione. Le decisioni restano sempre al cliente.</em>'}
 ];
 
 /* ==========================================================
