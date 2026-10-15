@@ -152,7 +152,31 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .kpi-strip-item span{display:block;font-size:12.5px;color:var(--gray-500);margin-top:6px}
 .pill-blue-outline{display:inline-block;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:600;font-family:var(--mono);border:1.5px solid var(--blue);color:var(--blue)}
 
-/* ---------- 04 Tre colonne ---------- */
+/* ---------- 04 Mockup browser ecommerce ---------- */
+.eco-browser{border:1px solid var(--line-2);border-radius:14px;overflow:hidden;background:#fff;margin-top:24px}
+.eco-browser-bar{padding:9px 16px;background:var(--gray-50);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px}
+.eco-browser-bar .dots3{display:flex;gap:5px}
+.eco-browser-bar .dots3 i{width:8px;height:8px;border-radius:50%;background:#ccc}
+.eco-browser-bar .url{margin-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3);background:var(--gray-100);padding:4px 12px;border-radius:6px;flex:1;max-width:420px}
+.eco-mock{position:relative;display:grid;grid-template-columns:.32fr .68fr;min-height:380px}
+.eco-mock-sidebar{background:var(--gray-50);padding:18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.eco-mock-sidebar .cat{font-size:12px;color:var(--ink-3);padding:6px 10px;border-radius:6px;cursor:default;transition:background .2s}
+.eco-mock-sidebar .cat.on{background:var(--gray-200);color:var(--ink);font-weight:500}
+.eco-mock-main{padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
+.eco-prod-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;position:relative}
+.eco-prod-card img{width:100%;aspect-ratio:1;object-fit:contain;background:var(--gray-50);padding:8px}
+.eco-prod-card .info{padding:10px}
+.eco-prod-card .info .brand{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase}
+.eco-prod-card .info .pname{font-size:13px;font-weight:500;color:var(--ink);margin-top:3px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.eco-prod-card .info .pprice{font-size:14px;font-weight:700;color:var(--ink);margin-top:4px}
+/* hotspot */
+.eco-hotspot{position:absolute;z-index:4;cursor:pointer;display:flex;align-items:center;gap:6px}
+.eco-hotspot .dot{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700;flex:none;box-shadow:0 0 0 4px rgba(0,43,255,.15);animation:hotPulse 2s infinite}
+@keyframes hotPulse{0%,100%{box-shadow:0 0 0 4px rgba(0,43,255,.15)}50%{box-shadow:0 0 0 8px rgba(0,43,255,.08)}}
+.eco-hotspot .label{background:#fff;border:1px solid var(--line-2);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--ink);line-height:1.4;box-shadow:0 4px 16px rgba(0,0,0,.08);max-width:200px;opacity:0;transform:translateX(-6px);transition:all .3s var(--ease);pointer-events:none}
+.eco-hotspot:hover .label,.eco-hotspot.show .label{opacity:1;transform:none}
+.eco-hotspot .label b{color:var(--blue);display:block;margin-bottom:2px}
+@media (max-width:999px){.eco-mock{grid-template-columns:1fr}.eco-mock-sidebar{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--line)}.eco-mock-main{grid-template-columns:repeat(2,1fr)}.eco-hotspot .label{display:none}}
 .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
 .col{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:22px 20px;display:flex;flex-direction:column}
 .col .ic{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--camel-2)}
@@ -172,7 +196,42 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .col.op li::before{background:var(--blue)}
 @media (max-width:899px){.cols3{grid-template-columns:1fr}}
 
-/* ---------- 05 Recensioni ---------- */
+/* ---------- 05 Selettore prodotti OGGI vs CON VISIO ---------- */
+.prod-sel{display:flex;gap:6px;margin-top:20px;flex-wrap:wrap}
+.prod-sel button{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border:1px solid var(--line-2);border-radius:10px;font-size:13px;font-weight:500;color:var(--ink-2);transition:all .3s var(--ease);background:#fff}
+.prod-sel button img{width:36px;height:36px;border-radius:6px;object-fit:contain;background:var(--gray-50);flex:none}
+.prod-sel button.on{border-color:var(--blue);color:var(--blue);background:rgba(0,43,255,.03)}
+.prod-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.prod-panel{border-radius:14px;overflow:hidden;transition:opacity .4s var(--ease)}
+.prod-panel.oggi{border:1px solid var(--line-2)}
+.prod-panel.visio{border:2px solid var(--blue);position:relative}
+.prod-panel .browser-top{padding:9px 16px;display:flex;align-items:center;gap:6px}
+.prod-panel.oggi .browser-top{background:var(--gray-50);border-bottom:1px solid var(--line)}
+.prod-panel.visio .browser-top{background:rgba(0,43,255,.03);border-bottom:1px solid rgba(0,43,255,.1)}
+.prod-panel .browser-top .d3{display:flex;gap:5px}
+.prod-panel.oggi .browser-top .d3 i{width:8px;height:8px;border-radius:50%;background:#ccc}
+.prod-panel.visio .browser-top .d3 i{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.prod-panel.visio .browser-top .d3 i:nth-child(2){opacity:.5}
+.prod-panel.visio .browser-top .d3 i:nth-child(3){opacity:.3}
+.prod-panel .browser-top .burl{margin-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.prod-panel.visio .browser-top .burl{color:var(--blue)}
+.prod-body{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.prod-body .thumb-row{display:flex;gap:4px;margin-top:8px}
+.prod-body .thumb-row .th{width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:9px;color:var(--ink-3)}
+.prod-body .thumb-row .th.empty{border-style:dashed;border-color:var(--gray-300);color:var(--gray-400)}
+.prod-body .thumb-row .th.vid{background:#111;color:#fff;font-size:12px;border-color:#111}
+.prod-body .thumb-row .th.sel{border:2px solid var(--blue);color:var(--blue);font-weight:600}
+.prod-badge-visio{position:absolute;top:12px;right:12px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;padding:4px 10px;border-radius:6px;z-index:2}
+.prod-row{display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+.prod-row .lbl{color:var(--ink-3)}
+.prod-row .val-bad{color:#C32B2B;font-weight:600}
+.prod-row .val-good{color:var(--blue);font-weight:600}
+.prod-sizes{display:flex;gap:4px;margin-top:8px}
+.prod-sizes span{padding:3px 8px;border-radius:4px;font-size:10px;background:var(--gray-100);color:var(--ink-3)}
+.prod-sizes span.on{background:var(--blue);color:#fff;font-weight:600}
+@media (max-width:999px){.prod-compare{grid-template-columns:1fr}.prod-sel{gap:4px}}
+
+/* ---------- 06 Recensioni ---------- */
 .rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
 .rc{border:1px solid var(--line);border-radius:12px;padding:18px 17px;background:var(--bg);display:flex;flex-direction:column}
 .rc .rh{display:flex;align-items:center;gap:9px}
@@ -320,21 +379,38 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .slide.light .kicker{color:var(--blue)}
 .slide.light h2{color:var(--ink)}.slide.light h2 em{color:var(--blue)}
 .slide.light .lead,.slide.light .cal-note{color:var(--ink-2)}
-.cal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px 10px;margin-top:24px}
-.mo{border-top:2px solid rgba(0,0,0,.1);padding-top:8px;min-height:72px;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.in .mo{opacity:1;transform:none}
-.mo h5{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+/* ---------- 10 Calendario interattivo (stile Sease) ---------- */
+.cal-tabs{display:flex;gap:6px;margin-top:24px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.cal-tabs::-webkit-scrollbar{display:none}
+.cal-tabs button{flex:1 0 auto;min-width:130px;text-align:left;padding:14px 14px 12px;border-top:2px solid var(--line-2);transition:border-color .4s,background .4s;min-height:44px}
+.cal-tabs button b{display:block;font-family:var(--mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+.cal-tabs button span{display:block;margin-top:6px;font-size:15px;color:var(--ink-2)}
+.cal-tabs button.on{border-color:var(--blue);background:linear-gradient(180deg,rgba(0,43,255,.08),transparent)}
+.cal-tabs button.on b{color:var(--blue)}.cal-tabs button.on span{color:var(--ink)}
+.cal-year{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);margin-top:22px;align-items:stretch}
+.cal-img{position:relative;overflow:hidden;min-height:250px;background:var(--bg-2);border-radius:10px}
+.cal-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--gray-50);padding:10px;opacity:0;transform:scale(1.04);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
+.cal-img img.on{opacity:1;transform:none}
+.cal-img .cal-date{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#fff;background:rgba(0,0,0,.6);padding:5px 10px;border-radius:4px;z-index:2}
+.cal-detail h3{font-size:clamp(22px,2.4vw,32px);line-height:1.15}
+.cal-detail p{color:var(--ink-2);line-height:1.6;margin-top:12px;font-size:16px}
+.cal-prods{margin-top:16px}
+.cal-prods h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.cal-prodgrid{display:flex;gap:10px;flex-wrap:wrap}
+.cal-prodgrid .cp{display:flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--ink-2);background:#fff}
+.cal-prodgrid .cp img{width:32px;height:32px;border-radius:4px;object-fit:contain;background:var(--gray-50);flex:none}
+.cal-actions{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cal-actions>div{border:1px solid var(--line);padding:14px;border-radius:8px}
+.cal-actions h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.cal-actions ul{list-style:none;display:grid;gap:6px}
+.cal-actions li{font-size:14px;line-height:1.5;color:var(--ink-2);padding-left:14px;position:relative}
+.cal-actions li::before{content:"";position:absolute;left:0;top:.65em;width:5px;height:1px;background:var(--blue)}
+@media (max-width:899px){.cal-year{grid-template-columns:1fr}.cal-img{min-height:220px}.cal-actions{grid-template-columns:1fr}}
+
 .mo.key{border-top-color:var(--blue)}.mo.key h5{color:var(--blue)}
-.ev{border-left:3px solid rgba(0,0,0,.12);padding:3px 0 3px 8px;margin-top:6px}
-.ev span{display:block;font-size:13px;font-weight:500;color:var(--ink)}
-.ev em{display:block;font-style:normal;font-size:13px;color:var(--ink-3);font-family:var(--mono);margin-top:3px}
+
 .ev.key{border-left-color:var(--blue);background:linear-gradient(90deg,rgba(0,43,255,.06),transparent);border-radius:0 6px 6px 0}
-.callegend{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;font-family:var(--mono);font-size:13px;color:var(--ink-3)}
-.callegend span::before{content:"";display:inline-block;width:10px;height:2px;margin-right:8px;vertical-align:middle;background:rgba(0,0,0,.12)}
-.callegend span.key::before{background:var(--blue)}
 .cal-note{margin-top:15px;font-size:14.5px;max-width:70ch;line-height:1.55}
-@media (max-width:999px){.cal{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:560px){.cal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- 10 Partner ---------- */
 .partner-logos{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin:28px 0}
@@ -369,11 +445,11 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 @media (max-width:899px){.steps{grid-template-columns:1fr}}
 
 .shot *,.shot *::before,.shot *::after{transition:none!important;animation:none!important}
-.shot .rv,.shot .cover h1 .word,.shot .mo{opacity:1;transform:none}
+.shot .rv,.shot .cover h1 .word{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
   #deck{scroll-behavior:auto}
-  .rv,.cover h1 .word,.mo{opacity:1;transform:none}
+  .rv,.cover h1 .word{opacity:1;transform:none}
 }
 @media (max-width:620px){
   .brandpair .x,.brandpair img.w,.brandpair .dp{display:none}
@@ -559,45 +635,94 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 </section>
 
 <!-- ================================================================
-     03 DOVE VENDE OGGI (Reference B structure)
+     03 DOVE VENDE OGGI - Mockup browser con hotspot
      ================================================================ -->
 <section class="slide" data-title="Il vostro ecosistema">
   <div class="wrap">
     <div class="kicker rv">04 - Il vostro ecosistema oggi</div>
-    <h2 class="rv d1" style="max-width:none;font-size:clamp(25px,3vw,44px)">Abbiamo osservato il vostro business dall'esterno. <em>Ecco cosa abbiamo trovato.</em></h2>
-    <p class="lead rv d2" style="font-size:16px">Una profumeria di Marcianise che vende in tutta Europa. Il catalogo c'è, la reputazione c'è, i canali ci sono. Quello che manca è il sistema che li tiene insieme.</p>
+    <h2 class="rv d1" style="max-width:none;font-size:clamp(25px,3vw,44px)">Abbiamo osservato il vostro e-commerce dall'esterno. <em>Ecco cosa abbiamo trovato.</em></h2>
+    <p class="lead rv d2" style="font-size:16px">Shopify, 10.000+ prodotti, 3 lingue, 26 Paesi. La base c'è. Cliccate sui punti blu per vedere dove intervenire.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px">
-      <!-- 5 card narrative dell'ecosistema -->
-      <div class="rv d2" style="padding:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2)">
-        <div style="font-size:24px;margin-bottom:10px">&#128722;</div>
-        <b style="font-size:14px;color:var(--ink);display:block">Il negozio</b>
-        <p style="font-size:13px;color:var(--ink-2);line-height:1.5;margin-top:6px">Shopify con oltre 10.000 prodotti online, 3 lingue, spedizione in 26 Paesi. Una base solida.</p>
+    <div class="eco-browser rv d2">
+      <div class="eco-browser-bar">
+        <div class="dots3"><i></i><i></i><i></i></div>
+        <div class="url">trepiprofumerie.com</div>
       </div>
-      <div class="rv d3" style="padding:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2)">
-        <div style="font-size:24px;margin-bottom:10px">&#127758;</div>
-        <b style="font-size:14px;color:var(--ink);display:block">I mercati</b>
-        <p style="font-size:13px;color:var(--ink-2);line-height:1.5;margin-top:6px">Italia come mercato principale (74% delle recensioni). Francia attiva. Germania e Spagna sporadici. 7 persone per 26 Paesi.</p>
+      <div class="eco-mock">
+        <div class="eco-mock-sidebar">
+          <div class="cat on">Profumi donna</div>
+          <div class="cat">Profumi uomo</div>
+          <div class="cat">Make-up</div>
+          <div class="cat">Skincare</div>
+          <div class="cat">Capelli</div>
+          <div class="cat">Solari</div>
+        </div>
+        <div class="eco-mock-main">
+          <!-- Prodotto 1 -->
+          <div class="eco-prod-card">
+            <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue" loading="lazy">
+            <div class="info">
+              <div class="brand">Dolce &amp; Gabbana</div>
+              <div class="pname">Light Blue EDT 100 ml</div>
+              <div class="pprice">70,78 &euro;</div>
+            </div>
+          </div>
+          <!-- Prodotto 2 -->
+          <div class="eco-prod-card">
+            <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132" alt="One Million" loading="lazy">
+            <div class="info">
+              <div class="brand">Paco Rabanne</div>
+              <div class="pname">One Million EDT 100 ml</div>
+              <div class="pprice">74,90 &euro;</div>
+            </div>
+          </div>
+          <!-- Prodotto 3 -->
+          <div class="eco-prod-card">
+            <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg" alt="YSL Black Opium" loading="lazy">
+            <div class="info">
+              <div class="brand">Yves Saint Laurent</div>
+              <div class="pname">Black Opium EDP 50 ml</div>
+              <div class="pprice">89,02 &euro;</div>
+            </div>
+          </div>
+
+          <!-- Hotspot 1: foto -->
+          <div class="eco-hotspot" style="top:12px;right:14px" id="ecoHot1">
+            <div class="dot">1</div>
+            <div class="label"><b>1 sola foto per prodotto</b>Nessun video, nessuno scatto ambientato. Il prodotto non racconta nulla.</div>
+          </div>
+          <!-- Hotspot 2: descrizioni -->
+          <div class="eco-hotspot" style="bottom:110px;right:14px" id="ecoHot2">
+            <div class="dot">2</div>
+            <div class="label"><b>Descrizioni minime</b>2 righe, senza note olfattive, senza ingredienti, senza storytelling.</div>
+          </div>
+          <!-- Hotspot 3: varianti -->
+          <div class="eco-hotspot" style="bottom:40px;left:36%" id="ecoHot3">
+            <div class="dot">3</div>
+            <div class="label"><b>Varianti separate</b>30 ml, 50 ml e 100 ml sono 3 prodotti diversi. Il cliente non li trova.</div>
+          </div>
+        </div>
       </div>
-      <div class="rv d3" style="padding:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2)">
-        <div style="font-size:24px;margin-bottom:10px">&#11088;</div>
-        <b style="font-size:14px;color:var(--ink);display:block">La reputazione</b>
-        <p style="font-size:13px;color:var(--ink-2);line-height:1.5;margin-top:6px">4,1 su 5 con 2.795 recensioni Trustpilot. I clienti parlano di velocità e prodotti originali. Un asset da sfruttare meglio.</p>
+    </div>
+
+    <!-- Contesto aggiuntivo -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px">
+      <div class="rv d3" style="padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)">
+        <b style="font-size:28px;color:var(--blue);display:block">10.000+</b>
+        <span style="font-size:13px;color:var(--ink-2)">prodotti online, 3 lingue, 26 Paesi</span>
       </div>
-      <div class="rv d4" style="padding:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2)">
-        <div style="font-size:24px;margin-bottom:10px">&#128247;</div>
-        <b style="font-size:14px;color:var(--ink);display:block">I contenuti</b>
-        <p style="font-size:13px;color:var(--ink-2);line-height:1.5;margin-top:6px">1-2 foto per prodotto, nessun video, descrizioni brevi. Il catalogo c'è ma non racconta ancora i prodotti.</p>
+      <div class="rv d4" style="padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)">
+        <b style="font-size:28px;color:var(--blue);display:block">4,1 / 5</b>
+        <span style="font-size:13px;color:var(--ink-2)">Trustpilot su 2.795 recensioni</span>
       </div>
-      <div class="rv d4" style="padding:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2)">
-        <div style="font-size:24px;margin-bottom:10px">&#128232;</div>
-        <b style="font-size:14px;color:var(--ink);display:block">I canali</b>
-        <p style="font-size:13px;color:var(--ink-2);line-height:1.5;margin-top:6px">Instagram 5.900, Facebook 17.000. Social presenti ma non ancora collegati a campagne strutturate.</p>
+      <div class="rv d4" style="padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)">
+        <b style="font-size:28px;color:var(--blue);display:block">5.900 + 17K</b>
+        <span style="font-size:13px;color:var(--ink-2)">follower IG + FB, social non collegati ad ADV</span>
       </div>
     </div>
 
     <!-- Insight box -->
-    <div style="display:flex;gap:14px;align-items:center;border-left:4px solid var(--blue);background:rgba(0,43,255,.04);border-radius:0 12px 12px 0;padding:16px 20px;margin-top:22px" class="rv d5">
+    <div style="display:flex;gap:14px;align-items:center;border-left:4px solid var(--blue);background:rgba(0,43,255,.04);border-radius:0 12px 12px 0;padding:16px 20px;margin-top:14px" class="rv d5">
       <p style="font-size:15px;color:var(--ink);line-height:1.5"><strong>La lettura:</strong> le componenti ci sono tutte. Quello che manca è la connessione tra loro. Il catalogo non alimenta le campagne, le recensioni non finiscono nelle schede, i dati non guidano le decisioni. È esattamente il tipo di ecosistema che Visio orchestra.</p>
     </div>
 
@@ -606,85 +731,58 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 </section>
 
 <!-- ================================================================
-     05 LA SCHEDA PRODOTTO: OGGI vs CON VISIO
+     05 LA SCHEDA PRODOTTO: OGGI vs CON VISIO (selettore prodotti)
      ================================================================ -->
 <section class="slide" data-title="La scheda prodotto">
   <div class="wrap">
     <div class="kicker rv">05 - La scheda prodotto oggi</div>
     <h2 class="rv d1" style="max-width:none">Ecco cosa vede un cliente quando arriva su una <em>scheda prodotto</em></h2>
-    <p class="lead rv d2">Abbiamo preso un prodotto reale del vostro catalogo. A sinistra com'è oggi, a destra come potrebbe essere dopo il nostro intervento.</p>
+    <p class="lead rv d2">Scegliete un prodotto dal vostro catalogo. A sinistra com'è oggi, a destra come potrebbe essere con Visio.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px">
+    <!-- Selettore prodotti -->
+    <div class="prod-sel rv d2" id="prodSel"></div>
+
+    <!-- Confronto OGGI vs CON VISIO -->
+    <div class="prod-compare" id="prodCompare">
       <!-- OGGI -->
-      <div class="rv d2" style="border:1px solid var(--line-2);border-radius:14px;overflow:hidden">
-        <div style="padding:10px 16px;background:var(--gray-50);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px">
-          <div style="width:8px;height:8px;border-radius:50%;background:#ccc"></div>
-          <div style="width:8px;height:8px;border-radius:50%;background:#ccc"></div>
-          <div style="width:8px;height:8px;border-radius:50%;background:#ccc"></div>
-          <span style="margin-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3)">trepiprofumerie.com/products/dolce-gabbana-light-blue</span>
-        </div>
-        <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="prod-panel oggi rv d2">
+        <div class="browser-top"><div class="d3"><i></i><i></i><i></i></div><span class="burl" id="prodUrlOggi">trepiprofumerie.com/products/...</span></div>
+        <div class="prod-body">
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue" style="width:100%;border-radius:8px;background:var(--gray-50)">
-            <div style="display:flex;gap:4px;margin-top:8px">
-              <div style="width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:10px;color:var(--ink-3)">1 foto</div>
-              <div style="width:40px;height:40px;border-radius:4px;border:1px dashed var(--gray-300);display:grid;place-items:center;font-size:9px;color:var(--gray-400)">?</div>
-              <div style="width:40px;height:40px;border-radius:4px;border:1px dashed var(--gray-300);display:grid;place-items:center;font-size:9px;color:var(--gray-400)">?</div>
-            </div>
+            <img id="prodImgOggi" src="" alt="" style="width:100%;border-radius:8px;background:var(--gray-50)">
+            <div class="thumb-row"><div class="th">1 foto</div><div class="th empty">?</div><div class="th empty">?</div></div>
           </div>
           <div>
-            <p style="font-size:11px;color:var(--ink-3);font-family:var(--mono)">DOLCE &amp; GABBANA</p>
-            <b style="font-size:15px;color:var(--ink);display:block;margin-top:4px">Light Blue EDT 100 ml</b>
-            <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px"><span style="font-size:18px;font-weight:700;color:var(--ink)">70,78 &euro;</span><span style="font-size:13px;color:var(--gray-400);text-decoration:line-through">141,55 &euro;</span></div>
-            <p style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5">Eau de Toilette.</p>
-            <div style="margin-top:14px;display:grid;gap:6px">
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Note olfattive</span><span style="color:#C32B2B;font-weight:600">assenti</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Video</span><span style="color:#C32B2B;font-weight:600">nessuno</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Descrizione</span><span style="color:#C32B2B;font-weight:600">2 righe</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Varianti (taglie)</span><span style="color:#C32B2B;font-weight:600">prodotti separati</span></div>
-            </div>
+            <p id="prodBrandOggi" style="font-size:11px;color:var(--ink-3);font-family:var(--mono)"></p>
+            <b id="prodNameOggi" style="font-size:15px;color:var(--ink);display:block;margin-top:4px"></b>
+            <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px"><span id="prodPriceOggi" style="font-size:18px;font-weight:700;color:var(--ink)"></span></div>
+            <p id="prodDescOggi" style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5"></p>
+            <div style="margin-top:14px;display:grid;gap:6px" id="prodRowsOggi"></div>
           </div>
         </div>
       </div>
-
       <!-- CON VISIO -->
-      <div class="rv d3" style="border:2px solid var(--blue);border-radius:14px;overflow:hidden;position:relative">
-        <div style="position:absolute;top:12px;right:12px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;padding:4px 10px;border-radius:6px;z-index:2">CON VISIO</div>
-        <div style="padding:10px 16px;background:rgba(0,43,255,.03);border-bottom:1px solid rgba(0,43,255,.1);display:flex;align-items:center;gap:6px">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue)"></div>
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:.5"></div>
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:.3"></div>
-          <span style="margin-left:10px;font-family:var(--mono);font-size:11px;color:var(--blue)">trepiprofumerie.com — scheda arricchita</span>
-        </div>
-        <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="prod-panel visio rv d3">
+        <div class="prod-badge-visio">CON VISIO</div>
+        <div class="browser-top"><div class="d3"><i></i><i></i><i></i></div><span class="burl" id="prodUrlVisio">trepiprofumerie.com - scheda arricchita</span></div>
+        <div class="prod-body">
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue" style="width:100%;border-radius:8px;background:var(--gray-50)">
-            <div style="display:flex;gap:4px;margin-top:8px">
-              <div style="width:40px;height:40px;border-radius:4px;border:2px solid var(--blue);background:var(--gray-50);display:grid;place-items:center;font-size:9px;color:var(--blue);font-weight:600">1</div>
-              <div style="width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:9px;color:var(--ink-3)">2</div>
-              <div style="width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:9px;color:var(--ink-3)">3</div>
-              <div style="width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:9px;color:var(--ink-3)">4</div>
-              <div style="width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:#111;display:grid;place-items:center;font-size:12px;color:#fff">&#9654;</div>
-            </div>
+            <img id="prodImgVisio" src="" alt="" style="width:100%;border-radius:8px;background:var(--gray-50)">
+            <div class="thumb-row"><div class="th sel">1</div><div class="th">2</div><div class="th">3</div><div class="th">4</div><div class="th vid">&#9654;</div></div>
           </div>
           <div>
-            <p style="font-size:11px;color:var(--blue);font-family:var(--mono);font-weight:600">DOLCE &amp; GABBANA</p>
-            <b style="font-size:15px;color:var(--ink);display:block;margin-top:4px">Light Blue Eau de Toilette 100 ml</b>
-            <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px"><span style="font-size:18px;font-weight:700;color:var(--ink)">70,78 &euro;</span><span style="font-size:13px;color:var(--gray-400);text-decoration:line-through">141,55 &euro;</span></div>
-            <div style="display:flex;gap:4px;margin-top:8px"><span style="padding:3px 8px;border-radius:4px;font-size:10px;background:var(--gray-100);color:var(--ink-3)">30 ml</span><span style="padding:3px 8px;border-radius:4px;font-size:10px;background:var(--blue);color:#fff;font-weight:600">100 ml</span><span style="padding:3px 8px;border-radius:4px;font-size:10px;background:var(--gray-100);color:var(--ink-3)">200 ml</span></div>
-            <p style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.55">Freschezza mediterranea: cedro, mela verde e legno di bambù. Una fragranza iconica per l'estate e la vita all'aperto.</p>
-            <div style="margin-top:12px;display:grid;gap:6px">
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Note olfattive</span><span style="color:var(--blue);font-weight:600">complete</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Video</span><span style="color:var(--blue);font-weight:600">1 video AI</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Descrizione</span><span style="color:var(--blue);font-weight:600">arricchita</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span style="color:var(--ink-3)">Varianti</span><span style="color:var(--blue);font-weight:600">raggruppate</span></div>
-            </div>
+            <p id="prodBrandVisio" style="font-size:11px;color:var(--blue);font-family:var(--mono);font-weight:600"></p>
+            <b id="prodNameVisio" style="font-size:15px;color:var(--ink);display:block;margin-top:4px"></b>
+            <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px"><span id="prodPriceVisio" style="font-size:18px;font-weight:700;color:var(--ink)"></span></div>
+            <div class="prod-sizes" id="prodSizes"></div>
+            <p id="prodDescVisio" style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.55"></p>
+            <div style="margin-top:12px;display:grid;gap:6px" id="prodRowsVisio"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <p class="note rv d4">Osservazione su campione di 20 schede prodotto. Rilevazione: ottobre 2026. Nella slide successiva vediamo come il Creative Hub genera le creatività per le campagne.</p>
+    <p class="note rv d4">Osservazione su campione di 20 schede prodotto. Esempio dimostrativo. Rilevazione: ottobre 2026.</p>
   </div>
 </section>
 
@@ -850,29 +948,31 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 </section>
 
 <!-- ================================================================
-     09 CALENDARIO
+     09 CALENDARIO INTERATTIVO (stile Sease)
      ================================================================ -->
 <section class="slide light" data-title="Il vostro anno">
   <div class="wrap">
     <div class="head"><div><div class="kicker rv">10 - Il vostro anno</div>
-    <h2 class="rv d1">Il calendario dell'anno commerciale</h2></div>
-    <p class="lead rv d2">Visio pianifica le campagne per ogni momento chiave, prepara landing in base alle collezioni e automatizza flussi email per ogni ricorrenza.</p></div>
-    <div class="cal">
-      <div class="mo"><h5>Gen</h5><div class="ev"><span>Avvio anno</span><em>nuovi listini</em></div></div>
-      <div class="mo key"><h5>Feb</h5><div class="ev key"><span>San Valentino</span><em>vostro momento forte</em></div></div>
-      <div class="mo"><h5>Mar</h5><div class="ev"><span>Festa del Papa</span><em>regali</em></div></div>
-      <div class="mo"><h5>Apr</h5><div class="ev"><span>Primavera</span><em>novità stagione</em></div></div>
-      <div class="mo key"><h5>Mag</h5><div class="ev key"><span>Festa della Mamma</span><em>momento del settore</em></div></div>
-      <div class="mo key"><h5>Giu</h5><div class="ev key"><span>Solari ed estate</span><em>momento del settore</em></div></div>
-      <div class="mo"><h5>Lug</h5><div class="ev"><span>Saldi estivi</span><em>offerte</em></div></div>
-      <div class="mo"><h5>Ago</h5><div class="ev"><span>Preparazione rientro</span><em>&nbsp;</em></div></div>
-      <div class="mo key"><h5>Set</h5><div class="ev key"><span>Rientro e professionisti</span><em>collezioni haircare</em></div></div>
-      <div class="mo"><h5>Ott</h5><div class="ev"><span>Autunno</span><em>novità beauty</em></div></div>
-      <div class="mo key"><h5>Nov</h5><div class="ev key"><span>Black Friday</span><em>momento del settore</em></div></div>
-      <div class="mo key"><h5>Dic</h5><div class="ev key"><span>Natale</span><em>regali</em></div></div>
+    <h2 class="rv d1">Il calendario commerciale di Tre Pi, <em>momento per momento</em></h2></div>
+    <p class="lead rv d2">Ogni periodo dell'anno ha i suoi prodotti, i suoi clienti e le sue azioni. Scegliete un momento per vedere cosa farebbe Visio.</p></div>
+
+    <div class="cal-tabs rv d3" id="calTabs" role="tablist"></div>
+
+    <div class="cal-year rv d4">
+      <div class="cal-img" id="calImg"><span class="cal-date" id="calDate"></span></div>
+      <div class="cal-detail">
+        <h3 id="calTitle"></h3>
+        <p id="calText"></p>
+        <div class="cal-prods"><h4>Prodotti in evidenza</h4><div class="cal-prodgrid" id="calProds"></div></div>
+      </div>
     </div>
-    <div class="callegend rv d4"><span>momenti dell'anno</span><span class="key">momenti forti per voi e per il settore</span></div>
-    <p class="cal-note rv d4">Si parte prima, non la settimana prima. San Valentino lo sappiamo dalle vostre campagne passate, gli altri sono i momenti tipici del vostro mondo. Ogni momento preparato con calma rende di più.</p>
+
+    <div class="cal-actions rv d5">
+      <div><h4>Visio fa</h4><ul id="calVisio"></ul></div>
+      <div><h4>Il vostro team</h4><ul id="calTeam"></ul></div>
+    </div>
+
+    <p class="cal-note rv d6">Si parte prima, non la settimana prima. Ogni momento preparato con calma rende di piu. Esempio dimostrativo applicato al vostro settore.</p>
   </div>
 </section>
 
@@ -1044,6 +1144,61 @@ onEnter['Dove vende oggi'] = () => {
   });
 };
 
+/* 05 Selettore prodotti OGGI vs CON VISIO */
+const PRODS = [
+  {brand:'Dolce & Gabbana', name:'Light Blue EDT 100 ml', nameV:'Light Blue Eau de Toilette 100 ml', price:'70,78', slug:'dolce-gabbana-light-blue',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353',
+   descO:'Eau de Toilette.', descV:'Freschezza mediterranea: cedro, mela verde e legno di bambu. Una fragranza iconica per l\'estate e la vita all\'aperto.',
+   sizes:['30 ml','100 ml','200 ml'], sizeOn:1,
+   rows:[{l:'Note olfattive',o:'assenti',v:'complete'},{l:'Video',o:'nessuno',v:'1 video AI'},{l:'Descrizione',o:'2 righe',v:'arricchita'},{l:'Varianti',o:'prodotti separati',v:'raggruppate'}]},
+  {brand:'Paco Rabanne', name:'One Million EDT 100 ml', nameV:'One Million Eau de Toilette 100 ml', price:'74,90', slug:'paco-rabanne-one-million',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132',
+   descO:'Eau de Toilette.', descV:'Note speziate di cannella, cuoio e ambra. L\'icona maschile che conquista dal primo incontro.',
+   sizes:['50 ml','100 ml','200 ml'], sizeOn:1,
+   rows:[{l:'Note olfattive',o:'assenti',v:'complete'},{l:'Video',o:'nessuno',v:'1 video AI'},{l:'Descrizione',o:'1 riga',v:'arricchita'},{l:'Varianti',o:'prodotti separati',v:'raggruppate'}]},
+  {brand:'Yves Saint Laurent', name:'Black Opium EDP 50 ml', nameV:'Black Opium Eau de Parfum 50 ml', price:'89,02', slug:'ysl-black-opium',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg',
+   descO:'Eau de Parfum.', descV:'Caffe nero, gelsomino e vaniglia: una fragranza audace e femminile, perfetta per la sera.',
+   sizes:['30 ml','50 ml','90 ml'], sizeOn:1,
+   rows:[{l:'Note olfattive',o:'assenti',v:'complete'},{l:'Video',o:'nessuno',v:'1 video AI'},{l:'Descrizione',o:'2 righe',v:'arricchita'},{l:'Varianti',o:'prodotti separati',v:'raggruppate'}]},
+  {brand:'Pupa Milano', name:'Desert Bronzing Powder', nameV:'Desert Bronzing Powder - Terra Abbronzante', price:'9,98', slug:'pupa-desert-bronzing',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/pupa-desert-bronzing-powder-maxi-size.jpg',
+   descO:'Terra abbronzante.', descV:'Terra abbronzante effetto seta con polveri micronizzate. Dona un colorito naturale e luminoso tutto l\'anno.',
+   sizes:['Light','Medium','Dark'], sizeOn:1,
+   rows:[{l:'Ingredienti',o:'assenti',v:'INCI completo'},{l:'Tutorial',o:'nessuno',v:'1 video how-to'},{l:'Descrizione',o:'1 riga',v:'arricchita'},{l:'Shade finder',o:'assente',v:'integrato'}]},
+];
+let prodCur = 0;
+const prodSel = $('#prodSel');
+PRODS.forEach((p, i) => {
+  const b = document.createElement('button');
+  b.innerHTML = '<img src="' + p.img + '" alt="" loading="lazy">' + p.brand.split(' ')[0] + ' - ' + p.name.split(' ').slice(0,2).join(' ');
+  b.onclick = () => { prodCur = i; prodRender(); };
+  prodSel.appendChild(b);
+});
+function prodRender() {
+  const p = PRODS[prodCur];
+  $$('#prodSel button').forEach((b, i) => b.classList.toggle('on', i === prodCur));
+  $('#prodUrlOggi').textContent = 'trepiprofumerie.com/products/' + p.slug;
+  $('#prodImgOggi').src = p.img; $('#prodImgOggi').alt = p.name;
+  $('#prodBrandOggi').textContent = p.brand.toUpperCase();
+  $('#prodNameOggi').textContent = p.name;
+  $('#prodPriceOggi').textContent = p.price + ' \u20AC';
+  $('#prodDescOggi').textContent = p.descO;
+  let rowsH = ''; p.rows.forEach(r => rowsH += '<div class="prod-row"><span class="lbl">' + r.l + '</span><span class="val-bad">' + r.o + '</span></div>');
+  $('#prodRowsOggi').innerHTML = rowsH;
+  $('#prodUrlVisio').textContent = 'trepiprofumerie.com - scheda arricchita';
+  $('#prodImgVisio').src = p.img; $('#prodImgVisio').alt = p.name;
+  $('#prodBrandVisio').textContent = p.brand.toUpperCase();
+  $('#prodNameVisio').textContent = p.nameV;
+  $('#prodPriceVisio').textContent = p.price + ' \u20AC';
+  $('#prodDescVisio').textContent = p.descV;
+  let szH = ''; p.sizes.forEach((s, j) => szH += '<span' + (j === p.sizeOn ? ' class="on"' : '') + '>' + s + '</span>');
+  $('#prodSizes').innerHTML = szH;
+  let rowsVH = ''; p.rows.forEach(r => rowsVH += '<div class="prod-row"><span class="lbl">' + r.l + '</span><span class="val-good">' + r.v + '</span></div>');
+  $('#prodRowsVisio').innerHTML = rowsVH;
+}
+prodRender();
+
 /* 06 Creative Hub -- LOGIC PRESERVED FROM BASE FILE */
 const CH = [
   {name:'YSL Black Opium EDP 50 ml', brand:'Yves Saint Laurent', cat:'Profumo', price:'89,02',
@@ -1125,6 +1280,12 @@ $$('#hubLiveTabs button').forEach(b => b.onclick = () => {
 });
 onEnter['Creative Hub dal vivo'] = () => { if (hubLiveVid && !reduce) hubLiveVid.play().catch(() => {}); };
 
+/* 04 hotspot auto-reveal */
+onEnter['Il vostro ecosistema'] = () => {
+  if (reduce) { $$('.eco-hotspot').forEach(h => h.classList.add('show')); return; }
+  $$('.eco-hotspot').forEach((h, i) => setTimeout(() => h.classList.add('show'), 800 + i * 500));
+};
+
 /* 02 Ecosistema interattivo */
 $$('.eco-node').forEach(n => {
   n.onclick = () => {
@@ -1202,6 +1363,75 @@ function chatShow(k) {
   $$('#chatSugg button').forEach(b => b.classList.toggle('on', +b.dataset.k === k));
 }
 $$('#chatSugg button').forEach(b => b.onclick = () => chatShow(+b.dataset.k));
+
+/* 10 Calendario interattivo */
+const CALDATA = [
+  {k:'Gen - Feb', n:'San Valentino', date:'Campagna dal 20 gennaio',
+   t:'San Valentino: il vostro momento forte', p:'Il profumo è il regalo più cercato. Le campagne partono un mese prima: creatività a tema coppia, gift set, landing dedicata e flusso email per chi compra in ritardo.',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg',
+   prods:[{n:'YSL Black Opium 50 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg'},{n:'D&G Light Blue 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353'},{n:'Flowerbomb 50 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/viktor_rolf-flowerbomb_1_d95cea04-1844-4f9d-a778-822e6070b4b0.jpg'}],
+   visio:['Creativita coppia per Instagram e TikTok','Landing \"Regala un profumo\" con filtro per prezzo','Flusso email last-minute (consegna garantita)'],
+   team:['Selezione gift set e bundle','Conferma tempi di consegna','Approvazione creativita']},
+  {k:'Mar - Mag', n:'Festa della Mamma', date:'Campagna da meta aprile',
+   t:'Primavera: Festa della Mamma e nuove fragranze', p:'Aprile e maggio sono il secondo picco dell\'anno. Lancio delle novita di stagione, gift guide per la Festa della Mamma, campagne su make-up e skincare primaverile.',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/salvatore_ferragamo-signorina.jpg?v=1736958242',
+   prods:[{n:'Ferragamo Signorina 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/salvatore_ferragamo-signorina.jpg?v=1736958242'},{n:'Pupa Desert Bronzing',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/pupa-desert-bronzing-powder-maxi-size.jpg'}],
+   visio:['Gift guide per la mamma con fasce di prezzo','Campagne Meta e Google Shopping sui best seller','Creative Hub: contenuti primaverili per social'],
+   team:['Selezione prodotti in evidenza','Novita di stagione in catalogo','Conferma promozioni']},
+  {k:'Giu - Ago', n:'Estate e solari', date:'Campagna da fine maggio',
+   t:'Estate: solari, corpo e fragranze fresche', p:'La stagione dei solari, dei profumi freschi e della cura del corpo. Campagne su prodotti ad alta rotazione, email per la partenza e per i saldi estivi di luglio.',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353',
+   prods:[{n:'D&G Light Blue 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353'},{n:'Biopoint Solare SPF 50+',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/pupa-desert-bronzing-powder-maxi-size.jpg'}],
+   visio:['Campagne geolocalizzate per mercati estivi (IT, FR, ES)','Landing solari con filtro SPF','Saldi estivi: countdown e urgency nelle email'],
+   team:['Aggiornamento stock solari','Conferma sconti saldi','Approvazione creativita']},
+  {k:'Set - Ott', n:'Rientro beauty', date:'Campagna da inizio settembre',
+   t:'Rientro: haircare, skincare e novita autunno', p:'Settembre è il momento delle collezioni haircare professionali e delle novita beauty autunnali. Il cliente torna a comprare per se stesso dopo l\'estate.',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132',
+   prods:[{n:'One Million EDT 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132'},{n:'YSL Black Opium 50 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg'}],
+   visio:['Campagne haircare e skincare per professionisti','Lancio novita autunno con Creative Hub','Flussi email per clienti inattivi da giugno'],
+   team:['Aggiornamento catalogo autunno','Selezione linee haircare','Contenuti nuove collezioni']},
+  {k:'Nov', n:'Black Friday', date:'Campagna dalla prima settimana',
+   t:'Black Friday: il momento del settore', p:'La settimana piu intensa dell\'anno per l\'e-commerce. Campagne con budget dedicato, landing specifica, email con countdown e remarketing su chi ha visitato senza comprare.',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/viktor_rolf-flowerbomb_1_d95cea04-1844-4f9d-a778-822e6070b4b0.jpg',
+   prods:[{n:'Flowerbomb 50 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/viktor_rolf-flowerbomb_1_d95cea04-1844-4f9d-a778-822e6070b4b0.jpg'},{n:'One Million 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132'},{n:'D&G Light Blue 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353'}],
+   visio:['Budget ADV dedicato con regole di spesa giornaliera','Landing Black Friday con timer e urgency','Remarketing su visitatori ultimi 30 giorni'],
+   team:['Definizione sconti e margini','Conferma stock prodotti in promo','Approvazione piano Black Friday']},
+  {k:'Dic', n:'Natale', date:'Campagna da fine novembre',
+   t:'Natale: cofanetti, regali e last-minute', p:'Da fine novembre a Natale: gift guide per fascia di prezzo, cofanetti regalo, campagne per chi compra all\'ultimo minuto con consegna garantita.',
+   img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg',
+   prods:[{n:'YSL Black Opium 50 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg'},{n:'Ferragamo Signorina 100 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/salvatore_ferragamo-signorina.jpg?v=1736958242'},{n:'Flowerbomb 50 ml',img:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/viktor_rolf-flowerbomb_1_d95cea04-1844-4f9d-a778-822e6070b4b0.jpg'}],
+   visio:['Gift guide per prezzo: sotto 50, sotto 100, premium','Campagne last-minute con data di consegna garantita','Email countdown + remarketing carrelli abbandonati'],
+   team:['Preparazione cofanetti regalo','Conferma date ultime spedizioni','Approvazione creativita natalizie']},
+];
+const calTabsEl = $('#calTabs'), calImgEl = $('#calImg');
+CALDATA.forEach((s, i) => {
+  const b = document.createElement('button');
+  b.setAttribute('role', 'tab');
+  b.innerHTML = '<b>' + s.k + '</b><span>' + s.n + '</span>';
+  b.onclick = () => setCal(i, true);
+  calTabsEl.appendChild(b);
+  const im = document.createElement('img'); im.src = s.img; im.alt = s.t; im.loading = 'lazy';
+  calImgEl.appendChild(im);
+});
+let calTimer;
+function setCal(i, user) {
+  if (user) clearInterval(calTimer);
+  const s = CALDATA[i];
+  $$('button', calTabsEl).forEach((b, j) => { b.classList.toggle('on', j === i); b.setAttribute('aria-selected', j === i); });
+  $$('img', calImgEl).forEach((im, j) => im.classList.toggle('on', j === i));
+  $('#calDate').textContent = s.date;
+  $('#calTitle').textContent = s.t;
+  $('#calText').textContent = s.p;
+  $('#calProds').innerHTML = s.prods.map(p => '<div class="cp"><img src="' + p.img + '" alt="" loading="lazy">' + p.n + '</div>').join('');
+  $('#calVisio').innerHTML = s.visio.map(x => '<li>' + x + '</li>').join('');
+  $('#calTeam').innerHTML = s.team.map(x => '<li>' + x + '</li>').join('');
+}
+setCal(0);
+onEnter['Il vostro anno'] = () => {
+  if (reduce) return;
+  let k = 0;
+  calTimer = setInterval(() => { k = (k + 1) % CALDATA.length; setCal(k); }, 5200);
+};
 
 /* 10 Partner detail panel */
 const PARTNERS = {
