@@ -680,79 +680,22 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 <!-- ================================================================
      07 PRODUCT FEED (LOGIC UNTOUCHED)
      ================================================================ -->
-<section class="slide" data-title="Contenuti AI per il catalogo">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,4vw,56px);align-items:center">
-      <div>
-        <div class="kicker rv">07 - Creative Hub dal vivo</div>
-        <h2 class="rv d1" style="font-size:clamp(26px,3vw,42px)">Immagini, video, UGC e contenuti per il <em>vostro catalogo</em></h2>
-        <p class="lead rv d2" style="margin-top:16px">Si parte da un prodotto del catalogo. Gli agenti del Creative Hub generano foto, video e contenuti pronti per campagne e schede prodotto, nella lingua e nel formato giusto. Nessuno shooting, nessun export manuale.</p>
-        <div class="seg-ctl rv d3" style="margin-top:22px" id="hubLiveTabs">
-          <button class="on" data-tab="img">Immagini</button>
-          <button data-tab="vid">Video</button>
-          <button data-tab="ugc">UGC</button>
-          <button data-tab="brand">Brand Kit</button>
-        </div>
-        <p class="note rv d4">Esempio dimostrativo con contenuti generati per un caso reale (Spotlight, gioielleria). Per Tre Pi Profumerie i contenuti saranno generati dal vostro catalogo.</p>
+<section class="slide" data-title="Creative Hub dal vivo">
+  <div class="wrap" style="display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(28px,4vw,64px);align-items:center">
+    <div>
+      <div class="kicker rv">07 - Creative Hub dal vivo</div>
+      <h2 class="rv d1">Immagini, video, UGC e contenuti, <em>dallo stesso posto</em></h2>
+      <p class="lead rv d2">Si parte da un prodotto del catalogo. Il Creative Hub genera foto, video e contenuti pronti per campagne e schede prodotto. Nessuno shooting, nessun export manuale. Regia umana, produzione AI.</p>
+      <div class="seg-ctl rv d3" style="margin-top:22px" id="hubLiveTabs">
+        <button class="on" data-v="campagne">Immagini</button>
+        <button data-v="still-life">Video</button>
+        <button data-v="modelli">UGC</button>
+        <button data-v="feed-prodotti">Brand Kit</button>
       </div>
-      <div class="rv d3">
-        <div style="background:var(--wv-bg);border:1px solid var(--wv-line);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,43,255,.12)">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--wv-line)">
-            <div style="display:flex;align-items:center;gap:10px">
-              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="14" fill="#7C8CFF" viewBox="0 0 332 30"><path d="M15.002 0c3.632 0 7.142 1.315 9.872 3.705a14.968 14.968 0 0 1 4.975 9.164 1.31 1.31 0 0 1-1.115 1.482 1.309 1.309 0 0 1-1.481-1.115c-.858-6.05-6.129-10.618-12.251-10.618-6.824 0-12.378 5.555-12.378 12.38 0 6.823 5.554 12.377 12.378 12.377 5.989 0 11.11-4.268 12.179-10.15a1.314 1.314 0 0 1 2.584.469c-1.293 7.13-7.498 12.305-14.757 12.305h-.006C6.729 29.999 0 23.269 0 15.002 0 6.73 6.73 0 15.002 0Z"/></svg>
-              <span style="font-family:var(--mono);font-size:12px;color:var(--wv-ink-3)">Creative Hub</span>
-            </div>
-            <span style="font-family:var(--mono);font-size:11px;color:var(--wv-ink-3);border:1px solid var(--wv-line);border-radius:6px;padding:3px 8px">Esempio</span>
-          </div>
-          <div id="hubLiveContent" style="padding:16px">
-            <div class="hub-live-panel on" data-panel="img">
-              <p style="font-size:14px;color:var(--wv-ink-2);margin-bottom:12px">Still life, indossato e scene ambientate. Dal catalogo alla campagna.</p>
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-borsa-prima.webp" alt="Prodotto originale" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-borsa-dopo.webp" alt="Still life AI" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-borsa-indossato.webp" alt="Indossato AI" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-borsa-scena.webp" alt="Scena AI" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              </div>
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-scarpa-prima.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-scarpa-dopo.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-scarpa-indossato.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/feed/feed-scarpa-scena.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:1;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              </div>
-            </div>
-            <div class="hub-live-panel" data-panel="vid">
-              <p style="font-size:14px;color:var(--wv-ink-2);margin-bottom:12px">Video prodotto per campagne e social, generati dal catalogo.</p>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-                <video src="https://www.visiodp.com/stream-ai/hub/campagne.mp4" muted loop playsinline autoplay style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover"></video>
-                <video src="https://www.visiodp.com/stream-ai/hub/still-life.mp4" muted loop playsinline autoplay style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover"></video>
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-                <video src="https://www.visiodp.com/stream-ai/hub/modelli.mp4" muted loop playsinline autoplay style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover"></video>
-                <video src="https://www.visiodp.com/stream-ai/hub/feed-prodotti.mp4" muted loop playsinline autoplay style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover"></video>
-              </div>
-              <p style="font-size:12px;color:var(--wv-ink-3);margin-top:8px">Regia umana, produzione AI. Pronti per Meta, TikTok e Google Shopping.</p>
-            </div>
-            <div class="hub-live-panel" data-panel="ugc">
-              <p style="font-size:14px;color:var(--wv-ink-2);margin-bottom:12px">Contenuti in stile creator: avatar AI, scene ambientate, social assets.</p>
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
-                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-1.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-2.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-3.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="https://www.visiodp.com/stream-ai/spotlight/concl-4.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:3/4;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              </div>
-              <video src="https://www.visiodp.com/stream-ai/spotlight/slider-05.mp4" muted loop playsinline autoplay style="width:100%;border-radius:8px;margin-top:8px;aspect-ratio:21/9;object-fit:cover"></video>
-            </div>
-            <div class="hub-live-panel" data-panel="brand">
-              <p style="font-size:14px;color:var(--wv-ink-2);margin-bottom:12px">Il Brand Kit raccoglie logo, colori, font e tono di voce. Ogni contenuto parte da li.</p>
-              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-                <img src="https://www.visiodp.com/stream-ai/spotlight/timeline-01.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover">
-                <img src="https://www.visiodp.com/stream-ai/spotlight/timeline-02.webp" alt="" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover">
-              </div>
-              <video src="https://www.visiodp.com/stream-ai/spotlight/banner-spotlight-web.mp4" muted loop playsinline autoplay style="width:100%;border-radius:8px;margin-top:8px;aspect-ratio:21/9;object-fit:cover"></video>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p class="note rv d4" id="hubLiveNote">Registrazioni dal Creative Hub. Esempio dimostrativo.</p>
+    </div>
+    <div class="rv d3" style="border-radius:14px;overflow:hidden;border:1px solid var(--line-2);background:var(--bg-2);aspect-ratio:16/9">
+      <video id="hubLiveVid" muted loop playsinline autoplay src="https://www.visiodp.com/stream-ai/hub/campagne.mp4" style="width:100%;height:100%;object-fit:cover"></video>
     </div>
   </div>
 </section>
@@ -1052,11 +995,24 @@ function hubRender(anim) {
 }
 hubRender(false);
 
-/* 07 Creative Hub dal vivo: tab switching */
+/* 07 Creative Hub dal vivo: video switching (like Sease) */
+const hubLiveVid = $('#hubLiveVid');
+const HUB_NOTES = {
+  'campagne': 'Creativita per le campagne: dal catalogo agli annunci, in tutti i formati.',
+  'still-life': 'Still life e video prodotto: il catalogo prende vita senza shooting.',
+  'modelli': 'Contenuti con modelli e avatar AI: UGC e social pronti in pochi minuti.',
+  'feed-prodotti': 'Feed prodotti e Brand Kit: ogni contenuto parte dall\'identita del brand.'
+};
 $$('#hubLiveTabs button').forEach(b => b.onclick = () => {
   $$('#hubLiveTabs button').forEach(x => x.classList.toggle('on', x === b));
-  $$('.hub-live-panel').forEach(p => p.classList.toggle('on', p.dataset.panel === b.dataset.tab));
+  if (hubLiveVid) {
+    hubLiveVid.src = 'https://www.visiodp.com/stream-ai/hub/' + b.dataset.v + '.mp4';
+    hubLiveVid.play().catch(() => {});
+  }
+  const noteEl = $('#hubLiveNote');
+  if (noteEl) noteEl.textContent = HUB_NOTES[b.dataset.v] || 'Esempio dimostrativo.';
 });
+onEnter['Creative Hub dal vivo'] = () => { if (hubLiveVid && !reduce) hubLiveVid.play().catch(() => {}); };
 
 /* 08 chat assistente -- Enhanced with 5 suggestions + typing + Approva/Rivedi */
 const CHAT = [
