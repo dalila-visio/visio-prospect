@@ -379,9 +379,9 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 
 <header class="top">
   <div class="brandpair" aria-label="Tre Pi, con Visio Digital Partner by Wevion">
-    <img class="s" src="assets/tre-pi-logo-white.svg" alt="Tre Pi Profumerie">
+    <span style="font-weight:700;font-size:15px;letter-spacing:.02em">Tre Pi Profumerie</span>
     <span class="x">x</span>
-    <img class="w" src="assets/visio-logo-white.svg" alt="Visio Digital Partner">
+    <span style="font-weight:600;font-size:13px;letter-spacing:.04em;opacity:.9">visio digital partner</span>
     <span class="dp">by Wevion</span>
   </div>
   <div class="topr">
@@ -403,7 +403,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
   <div class="wrap">
     <div class="cv-in">
       <div class="logos rv">
-        <img class="s" src="assets/tre-pi-logo-white.svg" alt="Tre Pi Profumerie">
+        <span style="font-weight:700;font-size:15px;letter-spacing:.02em">Tre Pi Profumerie</span>
         <span class="dp">Visio Digital Partner - by Wevion</span>
       </div>
       <h1 id="coverH1">Campagne, creativita e contenuti del vostro negozio, <em>in un posto solo.</em></h1>
@@ -642,7 +642,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
             <div class="chm f45" id="m45">
               <img class="m-img" id="img45" alt="">
               <div class="m-scrim"></div>
-              <img class="m-logo" src="assets/tre-pi-logo.svg" alt="">
+              <span style="font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--ink)">TRE PI</span>
               <div class="m-badge" id="b45">Novita</div>
               <div class="m-foot"><div class="m-hl" id="hl45"></div><div class="mn" id="mn45"></div><div class="mp" id="mp45"></div><span class="m-cta" id="cta45"></span></div>
             </div>
@@ -653,7 +653,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
               <div class="chm f916" id="m916">
                 <img class="m-img" id="img916" alt="">
                 <div class="m-scrim"></div>
-                <img class="m-logo" src="assets/tre-pi-logo.svg" alt="">
+                <span style="font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--ink)">TRE PI</span>
               </div>
               <div class="m-fmt">Storie 9:16</div>
             </div>
@@ -661,7 +661,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
               <div class="chm f11" id="m11">
                 <img class="m-img" id="img11" alt="">
                 <div class="m-scrim"></div>
-                <img class="m-logo" src="assets/tre-pi-logo.svg" alt="">
+                <span style="font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--ink)">TRE PI</span>
               </div>
               <div class="m-fmt">Quadrato 1:1</div>
             </div>
@@ -686,7 +686,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
       <div class="fc rv d2">
         <div class="ft">01 - Il prodotto oggi</div>
         <h4>La scheda di partenza</h4>
-        <div class="fc-media light"><img class="pad" src="assets/prod-01-profumo-dg-lightblue.jpg" alt="Light Blue"></div>
+        <div class="fc-media light"><img class="pad" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="Light Blue"></div>
         <div class="pname">Dolce &amp; Gabbana Light Blue Eau de Toilette 100 ml</div>
         <div class="pprice">70,78 EUR</div>
         <p>Una foto sola, poche righe di descrizione, nessun video.</p>
@@ -696,7 +696,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
         <div class="ft">02 - Il prodotto prende vita</div>
         <h4>Immagini e video nuovi</h4>
         <div class="fc-media">
-          <video id="feedVideo" src="assets/gen/video-contesto.mp4" muted loop playsinline preload="metadata" poster="assets/gen/video-context-base.png"></video>
+          <video id="feedVideo" src="data:video/mp4," muted loop playsinline preload="metadata" poster="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353"></video>
           <div class="fc-play" id="feedPlay"><i></i></div>
           <span class="fc-badge">Esempio - segnaposto</span>
         </div>
@@ -705,7 +705,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
       <div class="fc rv d4">
         <div class="ft">03 - Zoom sulla scheda</div>
         <h4>La scheda arricchita</h4>
-        <div class="fc-media" id="zoomMedia"><img id="zoomImg" src="assets/gen/product-perfume-lifestyle.png" alt="Scheda arricchita"></div>
+        <div class="fc-media" id="zoomMedia"><img id="zoomImg" src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="Scheda arricchita"></div>
         <div class="colors"><i style="background:#1b2b4a"></i><i style="background:#8a9bb3"></i><i style="background:#c9a98e"></i></div>
         <div class="pname">Light Blue Eau de Toilette 100 ml</div>
         <div class="pprice">70,78 EUR</div>
@@ -1020,7 +1020,7 @@ if (feedPlay && feedVideo) {
   feedVideo.addEventListener('play', () => feedPlay.classList.add('hid'));
   onEnter['Product feed'] = () => { if (reduce) return; feedVideo.play().then(() => feedPlay.classList.add('hid')).catch(() => {}); };
 }
-const ZOOM = { foto:'assets/gen/product-perfume-lifestyle.png', video:'assets/gen/video-context-base.png', dett:'assets/prod-01-profumo-dg-lightblue.jpg' };
+const ZOOM = { foto:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353', video:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353', dett:'https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353' };
 $$('#zoomStrip button').forEach(b => b.onclick = () => {
   $$('#zoomStrip button').forEach(x => x.classList.toggle('on', x === b));
   const img = $('#zoomImg'); img.style.opacity = '0';
