@@ -7,61 +7,67 @@
 <title>Tre Pi Profumerie x Visio Digital Partner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FFFFFF; --bg-2:#F8F9FA; --bg-3:#F1F3F5;
-  --ink:#111118; --ink-2:#495057; --ink-3:#6C757D;
-  --line:rgba(0,0,0,.08); --line-2:rgba(0,0,0,.12);
+  --bg:#FFFFFF; --bg-2:#F8F8F8; --bg-3:#EFEFEF;
+  --ink:#111111; --ink-2:rgba(0,0,0,.65); --ink-3:rgba(0,0,0,.5);
+  --footer-bg:#E8E8E8; --glass-light:rgba(255,255,255,.75); --brand:#000AFF;
+  --line:rgba(0,0,0,.1); --line-2:rgba(0,0,0,.1);
   --camel:#002BFF; --camel-2:#002BFF; --nut:#002BFF; --wombat:#6C757D;
-  --paper:#FFFFFF; --promo:#C32B2B;
+  --paper:#FFFFFF; --promo:#C32B2B; --peach:#FFBC7D; --navy:#0A0E5C;
+  --radius-card:8px; --radius-md:16px; --radius-xl:24px; --radius-pill:9999px;
   --serif-ish:"Plus Jakarta Sans",system-ui,sans-serif;
   --mono:"IBM Plex Mono","Inconsolata",ui-monospace,monospace;
-  --wv-bg:#05071A; --wv-panel:#0A0E2C; --wv-panel-2:#10153A; --wv-line:rgba(174,181,218,.14);
+  --wv-bg:#000000; --wv-panel:#0A0E5C; --wv-panel-2:#141A7A; --wv-line:rgba(174,181,218,.14);
   --wv-ink:#F2F4FF; --wv-ink-2:#AEB5DA; --wv-ink-3:#7A82AE;
-  --wv-blue:#7C8CFF; --wv-blue-2:#4A62E8; --wv-violet:#A98BFF; --wv-mint:#4DEBB0;
+  --wv-blue:#5C7AFF; --wv-blue-2:#002BFF; --wv-violet:#A98BFF; --wv-mint:#4DEBB0;
   --ease:cubic-bezier(.16,1,.3,1);
   --gut:clamp(16px,4vw,60px);
   --blue:#002BFF;
-  --gray-50:#F8F9FA;--gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-300:#DEE2E6;
+  --gray-50:#F8F8F8;--gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-300:#DEE2E6;
   --gray-400:#ADB5BD;--gray-500:#6C757D;--gray-600:#495057;--gray-700:#343A40;
-  --gray-800:#212529;--gray-900:#111118;
+  --gray-800:#212529;--gray-900:#111111;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--ink);overflow-x:hidden;max-width:100%}
 body{font-family:var(--serif-ish);font-weight:300;-webkit-font-smoothing:antialiased;overflow:hidden}
 img,video{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-::selection{background:rgba(0,43,255,.12);color:var(--ink)}
+::selection{background:#000AFF;color:#fff}
 
 #deck{height:100svh;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;scroll-behavior:smooth;overscroll-behavior:contain}
 @media (max-width:999px),(max-height:700px){#deck{scroll-snap-type:y proximity}}
 .slide{position:relative;min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:74px var(--gut) 44px;overflow:hidden;isolation:isolate}
-@media (max-width:999px){.slide{min-height:auto;padding-top:90px;padding-bottom:54px;justify-content:flex-start}}
+@media (max-width:999px){.slide{min-height:auto;padding-top:96px;padding-bottom:54px;justify-content:flex-start}}
 .wrap{width:100%;max-width:1320px;margin:0 auto}
 
 .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--camel-2);display:flex;align-items:center;gap:12px;font-weight:600}
-.kicker::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
-h1,h2,h3{font-weight:300;letter-spacing:-.01em}
+
+h1,h2,h3{font-weight:700;letter-spacing:-.02em}
 h1{font-size:clamp(34px,5vw,74px);line-height:1.04;letter-spacing:-.02em}
-h2{font-size:clamp(25px,3.3vw,46px);line-height:1.08;margin-top:14px;max-width:24ch}
+h2{font-size:clamp(26px,3vw,42px);line-height:1.1;margin-top:14px;max-width:30ch}
 h2 em,h1 em{font-style:normal;color:var(--camel-2)}
-.lead{font-size:clamp(16px,1.3vw,20px);line-height:1.65;color:var(--ink-2);max-width:66ch;margin-top:14px}
-.note{font-family:var(--mono);font-size:13px;color:var(--ink-3);letter-spacing:.02em;margin-top:18px;line-height:1.6;max-width:92ch}
-.head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,64px);align-items:end}
-.head h2{max-width:none;font-size:clamp(23px,2.5vw,38px)}
-.head .lead{margin-top:0;font-size:clamp(15px,1.15vw,18px)}
+.lead{font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:var(--ink-2);max-width:66ch;margin-top:14px}
+.note{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.02em;margin-top:16px;line-height:1.6;max-width:92ch}
+@media (min-width:1100px){.note,.src,.cal-note{white-space:nowrap;max-width:none}}
+.head{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(20px,4vw,64px);align-items:end}
+.head h2{max-width:none}
+.nw{white-space:nowrap}
+.head .lead{margin-top:0}
 @media (max-width:999px){.head{grid-template-columns:1fr}.head .lead{margin-top:6px}}
 
-.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px var(--gut);pointer-events:none;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,0))}
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px var(--gut);pointer-events:none;overflow:hidden;background:rgba(248,248,248,.94);border-bottom:1px solid var(--line)}
 .top>*{pointer-events:auto}
 .brandpair{display:flex;align-items:center;gap:9px;min-width:0;overflow:hidden}
 .brandpair img.s{height:12px;width:auto}
 .brandpair .x{font-family:var(--mono);font-size:13px;color:var(--ink-3)}
 .brandpair img.w{height:15px;width:auto;opacity:.95}
 .brandpair .dp{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-3);white-space:nowrap}
+.brandpair .bp-a{font-weight:700;font-size:14px;letter-spacing:.02em;white-space:nowrap}
+.brandpair .bp-b{font-weight:600;font-size:13px;letter-spacing:.04em;white-space:nowrap;color:var(--ink-2)}
 .topr{display:flex;align-items:center;gap:8px}
-.chip{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:8px 14px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .3s,color .3s;min-height:36px}
+.chip{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:8px 14px;background:rgba(255,255,255,.85);transition:border-color .3s,color .3s;min-height:36px;white-space:nowrap}
 .chip:hover{border-color:var(--camel-2);color:var(--ink)}
 .progress{position:fixed;left:0;top:0;height:2px;background:var(--camel-2);z-index:60;width:0;transition:width .5s var(--ease)}
 
@@ -69,11 +75,11 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .dots button{width:22px;height:22px;display:grid;place-items:center;position:relative}
 .dots button i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);transition:all .4s var(--ease)}
 .dots button.on i{background:var(--camel-2);transform:scale(1.6)}
-.dots button span{position:absolute;right:30px;white-space:nowrap;font-family:var(--mono);font-size:13px;color:var(--ink);background:rgba(255,255,255,.95);padding:5px 10px;border-radius:6px;opacity:0;transform:translateX(6px);transition:all .3s var(--ease);pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.dots button span{position:absolute;right:30px;white-space:nowrap;font-family:var(--mono);font-size:13px;color:var(--ink);background:rgba(255,255,255,.95);padding:5px 10px;border-radius:6px;opacity:0;transform:translateX(6px);transition:all .3s var(--ease);pointer-events:none;border:1px solid var(--line)}
 .dots button:hover span{opacity:1;transform:none}
 @media (max-width:999px){.dots{display:none}}
 
-.toc{position:fixed;inset:0;z-index:80;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:none;overflow:auto;padding:96px var(--gut)}
+.toc{position:fixed;inset:0;z-index:80;background:rgba(255,255,255,.97);display:none;overflow:auto;padding:96px var(--gut)}
 .toc.open{display:block}
 .toc ol{list-style:none;max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px}
 .toc li button{width:100%;text-align:left;padding:17px 16px;border-top:1px solid var(--line);display:flex;gap:16px;align-items:baseline;transition:background .3s}
@@ -91,21 +97,21 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .cv-bg img{width:100%;height:100%;object-fit:cover;object-position:68% center}
 .cover::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,3,2,.94) 0%,rgba(4,3,2,.82) 32%,rgba(4,3,2,.42) 60%,rgba(4,3,2,.12) 100%)}
 .cover::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(4,3,2,.5),transparent 42%)}
-.cv-in{max-width:40ch}
-.cover .logos{display:flex;align-items:center;flex-wrap:wrap;gap:9px 14px;margin-bottom:34px}
-.cover .logos img.s{height:clamp(19px,2.2vw,27px);width:auto}
-.cover .logos .dp{font-family:var(--mono);font-size:clamp(12px,1.1vw,14px);letter-spacing:.09em;color:var(--camel-2);text-transform:uppercase}
-.cover h1{max-width:17ch;color:#fff}
+.cv-in{max-width:720px}
+.cover .logos{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-bottom:36px}
+.cover .logos .tp{font-weight:700;font-size:14px;letter-spacing:.02em;color:#fff}
+.cover .logos .dp{font-family:var(--mono);font-size:12px;letter-spacing:.09em;color:rgba(255,255,255,.7);text-transform:uppercase}
+.cover h1{max-width:19ch;text-wrap:balance;color:#fff;font-size:clamp(34px,4.6vw,66px)}
 .cover h1 .word{display:inline-block;opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .in .cover h1 .word{opacity:1;transform:none}
-.cover h1 em{color:var(--camel-2)}
-.cover .subh{font-size:clamp(17px,1.8vw,24px);color:rgba(255,255,255,.7);max-width:34ch;margin-top:16px;font-weight:300;line-height:1.4}
-.begin{margin-top:34px;display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.25);padding:16px 22px;border-radius:999px;transition:all .4s var(--ease);background:rgba(0,0,0,.3)}
-.begin:hover{background:var(--camel-2);color:#fff;border-color:var(--camel-2)}
+.cover h1 em{color:var(--wv-blue)}
+.cover .subh{font-size:clamp(16px,1.5vw,18px);color:rgba(255,255,255,.75);max-width:44ch;margin-top:20px;font-weight:400;line-height:1.55}
+.begin{margin-top:36px;display:inline-flex;align-items:center;gap:12px;font-family:var(--serif-ish);font-size:14px;font-weight:600;color:#fff;border:1px solid #fff;padding:10px 20px;height:42px;text-transform:uppercase;letter-spacing:.02em;border-radius:40px;transition:transform .3s ease;background:radial-gradient(circle at 50% 50%,#002BFF 0%,var(--navy) 75%)}
+.begin:hover{transform:translateY(-2px)}
 .begin svg{transition:transform .4s var(--ease)}.begin:hover svg{transform:translateY(3px)}
-.cover .meta{position:absolute;right:var(--gut);bottom:6svh;font-family:var(--mono);font-size:13px;color:rgba(255,255,255,.6);text-align:right;line-height:1.8;letter-spacing:.05em}
-.cover .richmond{position:absolute;left:var(--gut);bottom:6svh;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35)}
-@media (max-width:999px){.cover .meta{display:none}.cv-bg img{object-position:72% center}.cover .richmond{bottom:3svh}}
+.cover .meta{position:absolute;right:calc(var(--gut) + 28px);bottom:36px;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.65);text-align:right;line-height:1.7;letter-spacing:.05em}
+.cover .richmond{position:absolute;left:var(--gut);bottom:36px;font-family:var(--mono);font-size:12px;line-height:1.7;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+@media (max-width:999px){.cover{min-height:100svh;justify-content:flex-end;padding-bottom:84px}.cover .meta{display:none}.cv-bg img{object-position:72% center}.cover .richmond{bottom:28px}.cover .logos{margin-bottom:24px}.begin{margin-top:28px}}
 
 /* ---------- 02 Metodo (flusso 7 fasi) ---------- */
 .flow-groups{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:22px}
@@ -117,7 +123,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .node{position:relative;display:flex;flex-direction:column;gap:8px}
 .node .num{width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);background:var(--bg-2);display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--camel-2);position:relative;z-index:2;flex:none}
 .node:not(:last-child)::after{content:"";position:absolute;top:17px;left:34px;right:-10px;height:1px;background:var(--line-2);z-index:1}
-.node .nm{font-size:15px;font-weight:500;color:var(--ink)}
+.node .nm{font-size:14px;font-weight:500;color:var(--ink)}
 .node .build{font-size:13px;color:var(--ink-2);line-height:1.45}
 .node .ai{margin-top:auto;background:rgba(0,43,255,.05);border:1px solid var(--line);border-radius:8px;padding:9px 10px}
 .node .ai em{font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--camel-2);display:block;margin-bottom:5px}
@@ -129,15 +135,15 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 @media (max-width:560px){.flow{grid-template-columns:1fr}}
 
 /* ---------- 02 Ecosistema interattivo ---------- */
-.eco-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;text-align:center;line-height:1.2;z-index:2;box-shadow:0 8px 32px rgba(0,43,255,.25)}
+.eco-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;text-align:center;line-height:1.2;z-index:2}
 .eco-node{position:absolute;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:600;border:1.5px solid var(--line-2);background:var(--bg);color:var(--ink);z-index:2;transition:all .3s var(--ease);cursor:pointer}
 .eco-node:hover,.eco-node.active{border-color:var(--blue);background:rgba(0,43,255,.06);color:var(--blue);transform:scale(1.08)}
 .eco-line{transition:opacity .5s ease}
-.eco-tooltip{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:80%;background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--ink-2);line-height:1.5;opacity:0;transition:opacity .3s ease;pointer-events:none;text-align:center;z-index:3}
+.eco-tooltip{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:80%;background:var(--bg-2);border:1px solid var(--line-2);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--ink-2);line-height:1.5;opacity:0;transition:opacity .3s ease;pointer-events:none;text-align:center;z-index:3}
 .eco-tooltip.show{opacity:1}
 /* ---------- 03 Transizione frammentato/orchestrato ---------- */
-.eco-frag-node{padding:18px;border:2px dashed var(--gray-300);border-radius:12px;font-size:14px;font-weight:600;color:var(--gray-500);text-align:center;background:var(--gray-50)}
-.eco-orch-node{padding:18px;border:2px solid var(--blue);border-radius:12px;font-size:14px;font-weight:600;color:var(--blue);text-align:center;background:rgba(0,43,255,.04)}
+.eco-frag-node{padding:18px;border:2px dashed var(--gray-300);border-radius:8px;font-size:14px;font-weight:600;color:var(--gray-500);text-align:center;background:var(--gray-50)}
+.eco-orch-node{padding:18px;border:2px solid var(--blue);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue);text-align:center;background:rgba(0,43,255,.04)}
 /* ---------- 05 Dove vende oggi (Reference B style) ---------- */
 .bar-row{display:grid;grid-template-columns:100px 1fr 36px;gap:8px;align-items:center;font-size:13px;padding:4px 0}
 .bar-row span{color:var(--gray-700)}.bar-row em{font-style:normal;text-align:right;font-weight:600;color:var(--gray-700)}
@@ -149,41 +155,53 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .channel-row b{color:var(--ink)}.channel-row span{color:var(--gray-500);text-align:right}
 .kpi-strip-item{padding:18px 20px}
 .kpi-strip-item b{display:block;font-family:var(--serif-ish);font-weight:800;font-size:clamp(28px,2.8vw,42px);line-height:1;color:var(--ink)}
-.kpi-strip-item span{display:block;font-size:12.5px;color:var(--gray-500);margin-top:6px}
-.pill-blue-outline{display:inline-block;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:600;font-family:var(--mono);border:1.5px solid var(--blue);color:var(--blue)}
+.kpi-strip-item span{display:block;font-size:12px;color:var(--gray-500);margin-top:6px}
+.pill-blue-outline{display:inline-block;padding:4px 10px;border-radius:100px;font-size:12px;font-weight:600;font-family:var(--mono);border:1.5px solid var(--blue);color:var(--blue)}
 
+.cs-link:hover{border-color:var(--blue)!important}
 /* ---------- 04 Mockup browser ecommerce ---------- */
-.eco-browser{border:1px solid var(--line-2);border-radius:14px;overflow:hidden;background:#fff;margin-top:24px}
+.eco-browser{border:1px solid var(--line-2);border-radius:var(--radius-md);overflow:hidden;background:#fff;margin-top:20px}
 .eco-browser-bar{padding:9px 16px;background:var(--gray-50);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px}
-.eco-browser-bar .dots3{display:flex;gap:5px}
-.eco-browser-bar .dots3 i{width:8px;height:8px;border-radius:50%;background:#ccc}
-.eco-browser-bar .url{margin-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3);background:var(--gray-100);padding:4px 12px;border-radius:6px;flex:1;max-width:420px}
-.eco-mock{position:relative;display:grid;grid-template-columns:.32fr .68fr;min-height:380px}
-.eco-mock-sidebar{background:var(--gray-50);padding:18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
-.eco-mock-sidebar .cat{font-size:12px;color:var(--ink-3);padding:6px 10px;border-radius:6px;cursor:default;transition:background .2s}
-.eco-mock-sidebar .cat.on{background:var(--gray-200);color:var(--ink);font-weight:500}
-.eco-mock-main{padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
-.eco-prod-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;position:relative}
-.eco-prod-card img{width:100%;aspect-ratio:1;object-fit:contain;background:var(--gray-50);padding:8px}
-.eco-prod-card .info{padding:10px}
-.eco-prod-card .info .brand{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase}
-.eco-prod-card .info .pname{font-size:13px;font-weight:500;color:var(--ink);margin-top:3px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.eco-browser-bar .url{font-family:var(--mono);font-size:12px;color:var(--ink-3);background:var(--gray-100);padding:4px 12px;border-radius:6px;flex:1;max-width:420px}
+.eco-mock{position:relative;display:grid;grid-template-columns:150px 1fr;min-height:300px}
+.eco-mock-sidebar{background:var(--gray-50);padding:18px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.eco-mock-sidebar .cat{font-size:13px;color:var(--ink-2);padding:6px 10px;border-radius:6px;cursor:default;font-weight:400}
+.eco-mock-sidebar .cat.on{background:var(--gray-200);color:var(--ink);font-weight:600}
+.eco-mock-main{position:relative;padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
+.eco-prod-card{border:1px solid var(--line);border-radius:var(--radius-card);background:#fff;position:relative}
+.eco-prod-card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff;border-radius:var(--radius-card) var(--radius-card) 0 0}
+.eco-prod-card .info{padding:10px 12px 12px}
+.eco-prod-card .info .brand{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase}
+.eco-prod-card .info .pname{font-size:13px;font-weight:500;color:var(--ink);margin-top:3px;line-height:1.3}
 .eco-prod-card .info .pprice{font-size:14px;font-weight:700;color:var(--ink);margin-top:4px}
-/* hotspot */
-.eco-hotspot{position:absolute;z-index:4;cursor:pointer;display:flex;align-items:center;gap:6px}
-.eco-hotspot .dot{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700;flex:none;box-shadow:0 0 0 4px rgba(0,43,255,.15);animation:hotPulse 2s infinite}
-@keyframes hotPulse{0%,100%{box-shadow:0 0 0 4px rgba(0,43,255,.15)}50%{box-shadow:0 0 0 8px rgba(0,43,255,.08)}}
-.eco-hotspot .label{background:#fff;border:1px solid var(--line-2);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--ink);line-height:1.4;box-shadow:0 4px 16px rgba(0,0,0,.08);max-width:200px;opacity:0;transform:translateX(-6px);transition:all .3s var(--ease);pointer-events:none}
-.eco-hotspot:hover .label,.eco-hotspot.show .label{opacity:1;transform:none}
-.eco-hotspot .label b{color:var(--blue);display:block;margin-bottom:2px}
-@media (max-width:999px){.eco-mock{grid-template-columns:1fr}.eco-mock-sidebar{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--line)}.eco-mock-main{grid-template-columns:repeat(2,1fr)}.eco-hotspot .label{display:none}}
+/* hotspot: punto numerato sul punto interessato, tooltip al hover/click */
+.eco-hotspot{position:relative;display:inline-block;vertical-align:middle;cursor:pointer;line-height:0}
+.eco-hotspot.on-img{position:absolute;top:34%;left:50%;transform:translate(-50%,-50%);z-index:3}
+.eco-hotspot .dot{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;line-height:1;box-shadow:0 0 0 3px #fff;transition:transform .3s var(--ease)}
+.eco-hotspot:hover .dot,.eco-hotspot.open .dot{transform:scale(1.15)}
+.eco-hotspot .label{position:absolute;z-index:6;bottom:calc(100% + 12px);left:50%;width:240px;transform:translate(-50%,6px);background:#fff;border:1px solid var(--line-2);border-radius:var(--radius-card);padding:10px 12px;font-size:13px;color:var(--ink-2);line-height:1.45;font-weight:400;text-align:left;text-transform:none;letter-spacing:0;font-family:var(--serif-ish);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.eco-hotspot .label::after{content:"";position:absolute;top:100%;left:50%;width:10px;height:10px;background:#fff;border:solid var(--line-2);border-width:0 1px 1px 0;transform:translate(-50%,-5px) rotate(45deg)}
+.eco-hotspot:hover .label,.eco-hotspot.open .label{opacity:1;transform:translate(-50%,0)}
+.eco-hotspot .label b{color:var(--blue);display:block;margin-bottom:2px;font-weight:600}
+#ecoHot1 .label{bottom:auto;top:calc(100% + 12px);transform:translate(-50%,-6px)}
+#ecoHot1:hover .label,#ecoHot1.open .label{transform:translate(-50%,0)}
+#ecoHot1 .label::after{top:auto;bottom:100%;border-width:1px 0 0 1px;transform:translate(-50%,5px) rotate(45deg)}
+#ecoHot3 .label{left:auto;right:-8px;transform:translate(0,6px)}
+#ecoHot3:hover .label,#ecoHot3.open .label{transform:none}
+#ecoHot3 .label::after{left:auto;right:14px;transform:translate(0,-5px) rotate(45deg)}
+.eco-prod-card .pname .eco-hotspot{margin-left:8px;top:-1px}
+@media (max-width:1199px){
+  .eco-mock{grid-template-columns:1fr}
+  .eco-mock-sidebar{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--line)}
+}
+@media (max-width:640px){.eco-mock-main{grid-template-columns:repeat(2,1fr);padding:14px;gap:12px}}
 .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
-.col{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:22px 20px;display:flex;flex-direction:column}
-.col .ic{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--camel-2)}
+.col{border:1px solid var(--line);border-radius:16px;background:var(--glass-light);padding:22px 20px;display:flex;flex-direction:column}
+.col .ic{width:38px;height:38px;border-radius:8px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--camel-2)}
 .col .ic svg{width:18px;height:18px}
-.col h4{font-size:17px;font-weight:500;color:var(--ink);margin-top:14px}
+.col h4{font-size:18px;font-weight:500;color:var(--ink);margin-top:14px}
 .col ul{list-style:none;margin-top:12px;display:grid;gap:9px}
-.col li{font-size:13.5px;color:var(--ink-2);line-height:1.5;padding-left:14px;position:relative}
+.col li{font-size:14px;color:var(--ink-2);line-height:1.5;padding-left:14px;position:relative}
 .col li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:1px;background:var(--camel-2)}
 .col.str{background:rgba(0,180,100,.04);border-color:rgba(0,180,100,.15)}
 .col.str h4{color:#00864e}
@@ -197,15 +215,15 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 @media (max-width:899px){.cols3{grid-template-columns:1fr}}
 
 /* ---------- 05 Selettore prodotti OGGI vs CON VISIO ---------- */
-.prod-sel{display:flex;gap:6px;margin-top:20px;flex-wrap:wrap}
-.prod-sel button{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border:1px solid var(--line-2);border-radius:10px;font-size:13px;font-weight:500;color:var(--ink-2);transition:all .3s var(--ease);background:#fff}
+.prod-sel{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.prod-sel button{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border:1px solid var(--line-2);border-radius:8px;font-size:13px;font-weight:500;color:var(--ink-2);transition:all .3s var(--ease);background:#fff;text-align:left;min-height:48px}
 .prod-sel button img{width:36px;height:36px;border-radius:6px;object-fit:contain;background:var(--gray-50);flex:none}
 .prod-sel button.on{border-color:var(--blue);color:var(--blue);background:rgba(0,43,255,.03)}
-.prod-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
-.prod-panel{border-radius:14px;overflow:hidden;transition:opacity .4s var(--ease)}
+.prod-compare{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px);margin-top:16px;align-items:stretch}
+.prod-panel{border-radius:16px;overflow:hidden;transition:opacity .4s var(--ease)}
 .prod-panel.oggi{border:1px solid var(--line-2)}
 .prod-panel.visio{border:2px solid var(--blue);position:relative}
-.prod-panel .browser-top{padding:9px 16px;display:flex;align-items:center;gap:6px}
+.prod-panel .browser-top{padding:0 16px;min-height:38px;display:flex;align-items:center;gap:6px}
 .prod-panel.oggi .browser-top{background:var(--gray-50);border-bottom:1px solid var(--line)}
 .prod-panel.visio .browser-top{background:rgba(0,43,255,.03);border-bottom:1px solid rgba(0,43,255,.1)}
 .prod-panel .browser-top .d3{display:flex;gap:5px}
@@ -213,103 +231,124 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .prod-panel.visio .browser-top .d3 i{width:8px;height:8px;border-radius:50%;background:var(--blue)}
 .prod-panel.visio .browser-top .d3 i:nth-child(2){opacity:.5}
 .prod-panel.visio .browser-top .d3 i:nth-child(3){opacity:.3}
-.prod-panel .browser-top .burl{margin-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.prod-panel .browser-top .burl{font-family:var(--mono);font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.prod-panel.visio .browser-top .burl{padding-right:96px}
 .prod-panel.visio .browser-top .burl{color:var(--blue)}
-.prod-body{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.prod-panel{display:flex;flex-direction:column}
+.prod-body{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px);align-items:start;flex:1}
+.prod-body .pimg{width:100%;height:clamp(200px,31vh,280px);object-fit:contain;border-radius:8px;background:var(--gray-50)}
+.pb-brand{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-3)}
+.pb-brand.v{color:var(--blue);font-weight:600}
+.pb-name{display:block;font-size:16px;font-weight:600;line-height:1.3;color:var(--ink);margin-top:6px}
+.pb-price{display:block;font-size:18px;font-weight:700;color:var(--ink);margin-top:6px}
+.pb-desc{font-size:13px;color:var(--ink-2);line-height:1.55;margin-top:12px}
+.pb-rows{display:grid;margin-top:12px}
 .prod-body .thumb-row{display:flex;gap:4px;margin-top:8px}
-.prod-body .thumb-row .th{width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:9px;color:var(--ink-3)}
+.prod-body .thumb-row .th{width:40px;height:40px;border-radius:4px;border:1px solid var(--line);background:var(--gray-50);display:grid;place-items:center;font-size:12px;color:var(--ink-3)}
 .prod-body .thumb-row .th.empty{border-style:dashed;border-color:var(--gray-300);color:var(--gray-400)}
 .prod-body .thumb-row .th.vid{background:#111;color:#fff;font-size:12px;border-color:#111}
 .prod-body .thumb-row .th.sel{border:2px solid var(--blue);color:var(--blue);font-weight:600}
-.prod-badge-visio{position:absolute;top:12px;right:12px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;padding:4px 10px;border-radius:6px;z-index:2}
-.prod-row{display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+.prod-badge-visio{position:absolute;top:8px;right:12px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;padding:4px 10px;border-radius:6px;z-index:2}
+.prod-row{display:flex;justify-content:space-between;font-size:13px;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
 .prod-row .lbl{color:var(--ink-3)}
 .prod-row .val-bad{color:#C32B2B;font-weight:600}
 .prod-row .val-good{color:var(--blue);font-weight:600}
-.prod-sizes{display:flex;gap:4px;margin-top:8px}
-.prod-sizes span{padding:3px 8px;border-radius:4px;font-size:10px;background:var(--gray-100);color:var(--ink-3)}
+.prod-sizes{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap}
+.prod-sizes span{padding:3px 8px;border-radius:4px;font-size:12px;background:var(--gray-100);color:var(--ink-3)}
 .prod-sizes span.on{background:var(--blue);color:#fff;font-weight:600}
-@media (max-width:999px){.prod-compare{grid-template-columns:1fr}.prod-sel{gap:4px}}
+@media (max-width:999px){.prod-compare{grid-template-columns:1fr}}
+@media (max-width:560px){.prod-body{grid-template-columns:1fr;padding:16px}.prod-body .pimg{height:200px}.prod-sel button{flex:1 1 calc(50% - 4px);min-width:0}}
 
 /* ---------- 06 Recensioni ---------- */
-.rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-.rc{border:1px solid var(--line);border-radius:12px;padding:18px 17px;background:var(--bg);display:flex;flex-direction:column}
+.rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.rc{border:1px solid var(--line);border-radius:8px;padding:22px;background:var(--glass-light);display:flex;flex-direction:column}
 .rc .rh{display:flex;align-items:center;gap:9px}
 .rc .ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;flex:none;border:1px solid var(--line-2);color:var(--camel-2)}
 .rc .ic svg{width:15px;height:15px}
-.rc h4{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.2}
-.rc .big{font-size:clamp(26px,2.6vw,38px);font-weight:200;color:var(--camel-2);line-height:1;margin-top:12px}
-.rc .stars{color:#F5A623;letter-spacing:2px;font-size:14px;margin-top:6px}
-.rc ul{list-style:none;margin-top:12px;display:grid;gap:8px}
-.rc li{font-size:13px;color:var(--ink-2);line-height:1.45;padding-left:13px;position:relative}
-.rc li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:1px;background:var(--camel-2)}
+.rc h4{font-size:16px;font-weight:600;color:var(--ink);line-height:1.2}
+.rc .big{font-size:clamp(34px,3.4vw,48px);font-weight:300;color:var(--camel-2);line-height:1;margin-top:18px}
+.rc .stars{color:#F5A623;letter-spacing:2px;font-size:16px;margin-top:8px}
+.rc ul{list-style:none;margin-top:16px;display:grid;gap:10px}
+.rc li{font-size:14px;color:var(--ink-2);line-height:1.5;padding-left:16px;position:relative}
+.rc li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:1px;background:var(--camel-2)}
 .rc.soft li::before{background:var(--nut)}
-.rc cite{display:block;font-style:italic;color:var(--ink-3);font-size:13px;margin-top:auto;padding-top:12px}
-.verdict{display:flex;align-items:center;gap:18px;margin-top:14px;padding:16px 22px;border:1px solid var(--line-2);border-radius:12px;background:rgba(0,43,255,.035)}
-.verdict .vi{width:40px;height:40px;border-radius:11px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--camel-2);flex:none}
+.rc cite{display:block;font-style:italic;color:var(--ink-3);font-size:14px;margin-top:auto;padding-top:16px}
+.verdict{display:flex;align-items:center;gap:18px;margin-top:16px;padding:18px 22px;border:1px solid var(--line-2);border-radius:8px;background:rgba(0,43,255,.035)}
+.verdict .vi{width:40px;height:40px;border-radius:8px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--camel-2);flex:none}
 .verdict .vi svg{width:19px;height:19px}
-.verdict p{font-size:14.5px;color:var(--ink);line-height:1.5}
+.verdict p{font-size:16px;color:var(--ink);line-height:1.5}
 .verdict p b{color:var(--camel-2);font-weight:500}
-@media (max-width:899px){.rev3{grid-template-columns:1fr}.verdict{flex-direction:column;text-align:center}}
+@media (max-width:899px){.rev3{grid-template-columns:1fr}.verdict{flex-direction:column;align-items:flex-start;gap:12px}.verdict p{font-size:14px}}
 
 /* ---------- 06 Creative Hub ---------- */
-.hub{display:grid;grid-template-columns:330px 1fr;gap:clamp(24px,3.2vw,52px);margin-top:18px;align-items:start}
+.hub{display:grid;grid-template-columns:330px minmax(0,1fr);gap:clamp(24px,3.2vw,52px);margin-top:24px;align-items:start}
 .hub-opts h5{font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:20px 0 10px}
 .hub-opts h5:first-child{margin-top:0}
 .hub-prods{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
-.hub-prods button{aspect-ratio:1;border-radius:10px;overflow:hidden;border:2px solid transparent;background:var(--bg-3);transition:border-color .3s,transform .3s var(--ease)}
+.hub-prods button{aspect-ratio:1;border-radius:8px;overflow:hidden;border:2px solid transparent;background:var(--bg-3);transition:border-color .3s,transform .3s var(--ease)}
 .hub-prods button img{width:100%;height:100%;object-fit:cover}
 .hub-prods button.on{border-color:var(--camel-2)}
 .hub-prods button:hover{transform:translateY(-2px)}
 .seg-ctl{display:flex;flex-wrap:wrap;gap:8px}
 .seg-ctl button{border:1px solid var(--line-2);border-radius:999px;padding:10px 17px;font-size:14px;color:var(--ink-2);min-height:42px;transition:all .3s var(--ease)}
-.seg-ctl button.on{background:var(--camel-2);color:#fff;border-color:var(--camel-2)}
+.seg-ctl button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
 .seg-ctl button:hover{border-color:var(--camel-2)}
 .hub-live-panel{display:none;animation:fadeUp .5s var(--ease)}
 .hub-live-panel.on{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.hub-shop{margin-top:20px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2);padding:17px 18px}
+.hub-shop{margin-top:20px;border:1px solid var(--line-2);border-radius:16px;background:var(--bg-2);padding:17px 18px}
 .hub-shop .lab{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 .hub-shop-row{display:flex;align-items:center;gap:14px;margin-top:12px}
-.hub-shop-img{width:66px;height:66px;flex:none;border-radius:10px;object-fit:contain;background:#f3eeea;padding:7px}
+.hub-shop-img{width:66px;height:66px;flex:none;border-radius:8px;object-fit:contain;background:#f3eeea;padding:7px}
 .hub-shop .brand{font-family:var(--mono);font-size:13px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em}
 .hub-shop h4{font-size:16px;color:var(--ink);margin-top:5px;font-weight:500;line-height:1.25}
 .hub-shop .pr{font-family:var(--mono);color:var(--camel-2);margin-top:5px;font-size:16px}
-.hub-shop p{font-size:13.5px;color:var(--ink-2);line-height:1.55;margin-top:13px}
-.hub-stage{position:relative;display:grid;grid-template-columns:auto auto;gap:clamp(16px,1.8vw,24px);justify-content:center;align-items:start}
-.hub-main{display:flex;flex-direction:column;align-items:center;gap:11px}
-.hub-side{display:flex;flex-direction:column;gap:clamp(14px,1.7vw,20px)}
-.mock-sm{display:flex;flex-direction:column;align-items:center;gap:9px}
-.m-fmt{font-family:var(--mono);font-size:13px;color:var(--ink-2);letter-spacing:.02em}
-.chm{position:relative;border-radius:9px;overflow:hidden;background:var(--bg-3);flex:none;transition:opacity .3s;box-shadow:0 34px 76px -46px rgba(0,0,0,.18)}
-.hub-main .chm.f45{height:clamp(366px,50vh,472px);aspect-ratio:4/5}
-.hub-side .chm.f916{height:clamp(178px,24.5vh,228px);aspect-ratio:9/16}
-.hub-side .chm.f11{height:clamp(160px,21.5vh,204px);aspect-ratio:1/1}
+.hub-shop p{font-size:14px;color:var(--ink-2);line-height:1.55;margin-top:13px}
+.hub-stage{--h:clamp(366px,50vh,472px);position:relative;display:grid;grid-template-columns:auto auto;gap:clamp(16px,1.8vw,24px);justify-content:center;align-items:start}
+.hub-main{display:flex;flex-direction:column;align-items:center;gap:10px}
+.hub-side{display:flex;flex-direction:column;gap:16px}
+.mock-sm{display:flex;flex-direction:column;align-items:center;gap:10px}
+.m-fmt{font-family:var(--mono);font-size:13px;line-height:18px;color:var(--ink-2);letter-spacing:.02em;text-align:center}
+.chm{position:relative;border-radius:8px;overflow:hidden;background:var(--bg-3);flex:none;transition:opacity .3s}
+.hub-main .chm.f45{height:var(--h);aspect-ratio:4/5}
+.hub-side .chm.f916{width:calc((var(--h) - 44px) / 2.78);aspect-ratio:9/16}
+.hub-side .chm.f11{width:calc((var(--h) - 44px) / 2.78);aspect-ratio:1/1}
+.chm .m-brand{position:absolute;top:6%;left:7%;z-index:4;font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;line-height:1}
+.hub-note{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--ink-2);max-width:62ch;margin:20px auto 0;text-align:center}
 .chm .m-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s var(--ease)}
 .chm .m-scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,transparent 26%,transparent 46%,rgba(0,0,0,.80) 100%)}
-.chm .m-logo{position:absolute;top:6%;left:7%;height:17px;width:auto;max-width:56%;object-fit:contain;object-position:left;z-index:4;filter:brightness(0) invert(1);opacity:.96}
-.hub-side .chm .m-logo{height:12px;top:7%}
+.chm .m-logo{position:absolute;top:6%;left:7%;height:auto;width:46%;z-index:4}
+.hub-side .chm .m-logo{width:62%;top:7%}
 .chm .m-badge{position:absolute;top:6%;right:6.5%;z-index:5;background:var(--promo);color:#fff;font-family:var(--mono);font-size:13px;padding:5px 11px;border-radius:5px;display:none}
 .chm .m-badge.on{display:block}
 .chm .m-foot{position:absolute;left:7%;right:7%;bottom:7%;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:7px}
 .chm .m-hl{text-transform:uppercase;letter-spacing:.05em;font-weight:700;font-size:clamp(20px,2.1vw,27px);color:#fff;line-height:1.14;text-shadow:0 2px 16px rgba(0,0,0,.78)}
-.chm .m-foot .mn{font-size:15px;color:#fff;font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.8);line-height:1.3}
-.chm .m-foot .mp{font-family:var(--mono);font-size:15px;color:rgba(255,255,255,.95);text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.chm .m-foot .mn{font-size:14px;color:#fff;font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.8);line-height:1.3}
+.chm .m-foot .mp{font-family:var(--mono);font-size:14px;color:rgba(255,255,255,.95);text-shadow:0 1px 10px rgba(0,0,0,.8)}
 .chm .m-cta{margin-top:4px;font-family:var(--mono);font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--camel-2);padding:8px 14px;border-radius:4px}
-.hub-gen{position:absolute;inset:0;z-index:9;display:grid;place-items:center;background:rgba(255,255,255,.7);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);opacity:0;pointer-events:none;transition:opacity .35s}
+.hub-gen{position:absolute;inset:0;z-index:9;display:grid;place-items:center;background:rgba(255,255,255,.88);opacity:0;pointer-events:none;transition:opacity .35s}
 .hub-gen.on{opacity:1}
-.hub-gen span{font-family:var(--mono);font-size:13.5px;color:var(--ink);display:flex;align-items:center;gap:9px;text-align:center;padding:0 10px}
+.hub-gen span{font-family:var(--mono);font-size:14px;color:var(--ink);display:flex;align-items:center;gap:9px;text-align:center;padding:0 10px}
 .hub-gen span::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid rgba(0,43,255,.2);border-top-color:var(--blue);animation:spin .8s linear infinite;flex:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:1099px){.hub{grid-template-columns:1fr}}
-@media (max-width:680px){.hub-stage{grid-template-columns:1fr;justify-items:center}.hub-side{flex-direction:row;justify-content:center;flex-wrap:wrap}.hub-main .chm.f45{height:clamp(340px,70vw,420px)}}
+@media (max-width:680px){.hub-stage{--h:clamp(300px,78vw,420px);grid-template-columns:1fr;justify-items:center}.hub-side{flex-direction:row;justify-content:center;align-items:flex-start;gap:16px}.hub-side .chm.f916,.hub-side .chm.f11{width:calc((100vw - 32px - 16px) / 2 - 8px);max-width:170px}.hub-note{text-align:left}}
+
+/* ---------- 08 Creative Hub dal vivo ---------- */
+.live{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(28px,4vw,64px);align-items:center}
+.live-tabs{margin-top:24px}
+.live-vid{border-radius:16px;overflow:hidden;border:1px solid var(--line-2);background:var(--bg-2);aspect-ratio:16/9}
+.live-vid{aspect-ratio:6/5;position:relative}
+.live-vid video,.live-vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.live-vid [hidden]{display:none}
+@media (max-width:999px){.live{grid-template-columns:1fr;gap:24px}.live-vid{order:2}}
 
 /* ---------- 07 Product feed (3 card) ---------- */
 .feed3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;align-items:stretch}
-.fc{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:18px;display:flex;flex-direction:column}
+.fc{border:1px solid var(--line);border-radius:16px;background:var(--glass-light);padding:18px;display:flex;flex-direction:column}
 .fc .ft{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--camel-2)}
 .fc h4{font-size:16px;font-weight:500;color:var(--ink);margin-top:7px}
-.fc-media{position:relative;border-radius:10px;overflow:hidden;background:var(--bg-3);margin-top:13px;aspect-ratio:4/3}
+.fc-media{position:relative;border-radius:8px;overflow:hidden;background:var(--bg-3);margin-top:13px;aspect-ratio:4/3}
 .fc-media img{width:100%;height:100%;object-fit:cover}
 .fc-media.light{background:#f3eeea}
 .fc-media img.pad{object-fit:contain;padding:12%;mix-blend-mode:multiply}
@@ -320,7 +359,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .fc-play:hover i{transform:scale(1.08)}
 .fc-play i::before{content:"";border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:3px}
 .fc-badge{position:absolute;left:10px;top:10px;z-index:2;font-family:var(--mono);font-size:12px;background:var(--blue);color:#fff;border-radius:5px;padding:4px 9px}
-.fc .pname{font-size:13.5px;color:var(--ink);font-weight:500;margin-top:12px}
+.fc .pname{font-size:14px;color:var(--ink);font-weight:500;margin-top:12px}
 .fc .pprice{font-family:var(--mono);font-size:13px;color:var(--camel-2);margin-top:4px}
 .fc p{font-size:13px;color:var(--ink-2);line-height:1.55;margin-top:8px}
 .fc .tovalue{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
@@ -329,26 +368,28 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .fc .concept{margin-top:10px;font-size:13px;color:var(--ink-2);line-height:1.55}
 .fc .colors{display:flex;gap:6px;margin-top:10px}
 .fc .colors i{width:16px;height:16px;border-radius:50%;border:1px solid var(--line-2)}
-.fc .mini-cta{background:var(--ink);color:#fff;text-align:center;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;padding:10px;margin-top:11px;border-radius:2px;border:1px solid var(--line)}
+.fc .mini-cta{background:var(--ink);color:#fff;text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:10px;margin-top:11px;border-radius:2px;border:1px solid var(--line)}
 .fc-strip{display:flex;gap:6px;margin-top:11px}
 .fc-strip button{flex:1;font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line-2);border-radius:6px;padding:8px 4px;color:var(--ink-2);min-height:38px;transition:all .3s}
 .fc-strip button.on{background:var(--camel-2);color:#fff;border-color:var(--camel-2)}
 @media (max-width:999px){.feed3{grid-template-columns:1fr}}
 
 /* ---------- 08 Come lavoriamo (Chat) ---------- */
-.work{display:grid;grid-template-columns:1fr 360px;gap:clamp(26px,4vw,52px);margin-top:20px;align-items:start}
-.chatw{background:linear-gradient(180deg,var(--wv-panel),var(--wv-bg));border:1px solid var(--wv-line);border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -50px rgba(0,0,0,.15)}
+.work{display:grid;grid-template-columns:1fr 360px;gap:clamp(26px,4vw,52px);margin-top:28px;align-items:stretch}
+.work-chat{display:flex;flex-direction:column;min-width:0}
+.work-chat .note{margin-top:14px}
+.chatw{background:var(--wv-panel);border:1px solid var(--wv-line);border-radius:16px;overflow:hidden;flex:1;display:flex;flex-direction:column}
+.chatw-tag{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--wv-ink-3);margin-bottom:6px}
 .chatw-head{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--wv-line)}
-.chatw-head b{font-size:13.5px;color:var(--wv-ink);font-weight:600;display:flex;align-items:center;gap:8px}
-.chatw-head b::before{content:"";width:16px;height:16px;border-radius:5px;background:conic-gradient(from 200deg,var(--wv-blue),var(--wv-violet),var(--wv-mint),var(--wv-blue));flex:none}
-.chatw-head .online{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--wv-mint);display:flex;align-items:center;gap:6px}
-.chatw-head .online::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--wv-mint)}
-.chatw-body{padding:16px;min-height:260px;max-height:340px;overflow-y:auto}
-.chatw-intro{max-width:94%;font-size:13px;color:var(--wv-ink);opacity:.7;margin-bottom:12px}
-.chatw-user{margin-left:auto;max-width:82%;background:var(--wv-panel-2);color:var(--wv-ink);border:1px solid var(--wv-line);border-radius:14px 14px 4px 14px;padding:10px 13px;font-size:13.5px;line-height:1.45;width:fit-content}
+.chatw-head b{font-size:14px;color:var(--wv-ink);font-weight:600;display:flex;align-items:center;gap:8px}
+.chatw-head b::before{content:"";width:16px;height:16px;border-radius:5px;background:var(--wv-blue);flex:none}
+.chatw-head .online{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--wv-mint);display:flex;align-items:center;gap:6px}
+.chatw-body{padding:16px;min-height:260px;max-height:340px;overflow-y:auto;flex:1}
+.chatw-intro{max-width:94%;font-size:13px;line-height:1.5;color:var(--wv-ink-2);margin-bottom:12px}
+.chatw-user{margin-left:auto;max-width:82%;background:var(--wv-panel-2);color:var(--wv-ink);border:1px solid var(--wv-line);border-radius:16px 14px 4px 14px;padding:10px 13px;font-size:14px;line-height:1.45;width:fit-content}
 .chatw-bot{margin-top:12px;max-width:94%}
 .chatw-bot .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.chatw-bot .who i{width:18px;height:18px;border-radius:6px;background:conic-gradient(from 200deg,var(--wv-blue),var(--wv-violet),var(--wv-mint),var(--wv-blue));flex:none}
+.chatw-bot .who i{width:18px;height:18px;border-radius:6px;background:var(--wv-blue);flex:none}
 .chatw-bot .who span{font-size:13px;color:var(--wv-ink-3);font-family:var(--mono);letter-spacing:.03em}
 .chatw-bot .who em{font-style:normal;margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--wv-ink-3);border:1px solid var(--wv-line);border-radius:999px;padding:3px 9px}
 .chatw-bot .reply{background:rgba(124,140,255,.08);border:1px solid var(--wv-line);border-radius:4px 14px 14px 14px;padding:11px 13px;font-size:13px;line-height:1.52;color:var(--wv-ink)}
@@ -359,36 +400,37 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .chatw-sugg button{font-size:13px;color:var(--wv-ink-2);border:1px solid var(--wv-line);border-radius:999px;padding:8px 13px;min-height:38px;transition:all .3s}
 .chatw-sugg button.on{background:rgba(124,140,255,.16);border-color:var(--wv-blue);color:var(--wv-ink)}
 .chatw-sugg button:hover{border-color:var(--wv-blue)}
-.chatw-action{border:1.5px solid rgba(124,140,255,.25);border-radius:10px;padding:14px;margin:10px 0;background:rgba(124,140,255,.06)}
+.chatw-action{border:1.5px solid rgba(124,140,255,.25);border-radius:8px;padding:14px;margin:10px 0;background:rgba(124,140,255,.06)}
 .chatw-action .status{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--wv-blue);margin-bottom:8px}
 .chatw-action .status::before{content:"";width:14px;height:14px;border:2px solid var(--wv-blue);border-radius:50%;flex:none}
-.chatw-action ul{margin:0;padding-left:18px;font-size:12.5px;color:var(--wv-ink)}
+.chatw-action ul{margin:0;padding-left:18px;font-size:12px;color:var(--wv-ink)}
 .chatw-action li{margin:2px 0}
 .chatw-action .btns{display:flex;gap:8px;margin-top:12px}
 .chatw-action .btn-app{background:var(--wv-blue);color:#fff;padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600;border:none;cursor:pointer}
 .chatw-action .btn-rev{background:rgba(255,255,255,.06);color:var(--wv-ink-2);padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid var(--wv-line);cursor:pointer}
-.wblocks{display:grid;gap:11px}
-.wb{border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:15px 18px;display:flex;gap:14px;align-items:flex-start}
-.wb b.n{font-family:var(--mono);font-size:13px;color:var(--camel-2);flex:none;padding-top:2px}
-.wb .nm{display:block;font-size:15px;font-weight:500;color:var(--ink)}
-.wb p{font-size:13px;color:var(--ink-2);line-height:1.5;margin-top:4px}
-@media (max-width:1099px){.work{grid-template-columns:1fr}}
+.wblocks{display:grid;gap:12px;grid-auto-rows:1fr}
+.wb{border:1px solid var(--line);border-radius:8px;background:var(--glass-light);padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.wb b.n{font-family:var(--mono);font-size:13px;color:var(--camel-2);flex:none;padding-top:2px;font-weight:500}
+.wb .nm{display:block;font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.wb p{font-size:14px;color:var(--ink-2);line-height:1.5;margin-top:4px}
+@media (max-width:1099px){.work{grid-template-columns:1fr;margin-top:22px}.chatw-body{min-height:220px}}
+@media (max-width:520px){.chatw-head{flex-wrap:wrap;gap:6px 12px}.chatw-sugg{padding:0 12px 14px}.chatw-body{padding:14px 12px}}
 
 /* ---------- 09 Calendario ---------- */
-.slide.light{background:linear-gradient(180deg,#F8F9FA,#E9ECEF)}
+.slide.light{background:var(--footer-bg)}
 .slide.light .kicker{color:var(--blue)}
 .slide.light h2{color:var(--ink)}.slide.light h2 em{color:var(--blue)}
 .slide.light .lead,.slide.light .cal-note{color:var(--ink-2)}
 /* ---------- 10 Calendario interattivo (stile Sease) ---------- */
-.cal-tabs{display:flex;gap:6px;margin-top:24px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.cal-tabs{display:flex;gap:6px;margin-top:28px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
 .cal-tabs::-webkit-scrollbar{display:none}
 .cal-tabs button{flex:1 0 auto;min-width:130px;text-align:left;padding:14px 14px 12px;border-top:2px solid var(--line-2);transition:border-color .4s,background .4s;min-height:44px}
 .cal-tabs button b{display:block;font-family:var(--mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
-.cal-tabs button span{display:block;margin-top:6px;font-size:15px;color:var(--ink-2)}
-.cal-tabs button.on{border-color:var(--blue);background:linear-gradient(180deg,rgba(0,43,255,.08),transparent)}
+.cal-tabs button span{display:block;margin-top:6px;font-size:14px;color:var(--ink-2)}
+.cal-tabs button.on{border-color:var(--blue)}
 .cal-tabs button.on b{color:var(--blue)}.cal-tabs button.on span{color:var(--ink)}
 .cal-year{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);margin-top:22px;align-items:stretch}
-.cal-img{position:relative;overflow:hidden;min-height:250px;background:var(--bg-2);border-radius:10px}
+.cal-img{position:relative;overflow:hidden;min-height:250px;background:var(--bg-2);border-radius:8px}
 .cal-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--gray-50);padding:10px;opacity:0;transform:scale(1.04);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
 .cal-img img.on{opacity:1;transform:none}
 .cal-img .cal-date{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#fff;background:rgba(0,0,0,.6);padding:5px 10px;border-radius:4px;z-index:2}
@@ -399,50 +441,113 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 .cal-prodgrid{display:flex;gap:10px;flex-wrap:wrap}
 .cal-prodgrid .cp{display:flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--ink-2);background:#fff}
 .cal-prodgrid .cp img{width:32px;height:32px;border-radius:4px;object-fit:contain;background:var(--gray-50);flex:none}
-.cal-actions{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cal-actions>div{border:1px solid var(--line);padding:14px;border-radius:8px}
+.cal-actions{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px)}
+.cal-actions>div{border-top:1px solid var(--line-2);padding:14px 0 0}
 .cal-actions h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
 .cal-actions ul{list-style:none;display:grid;gap:6px}
 .cal-actions li{font-size:14px;line-height:1.5;color:var(--ink-2);padding-left:14px;position:relative}
 .cal-actions li::before{content:"";position:absolute;left:0;top:.65em;width:5px;height:1px;background:var(--blue)}
-@media (max-width:899px){.cal-year{grid-template-columns:1fr}.cal-img{min-height:220px}.cal-actions{grid-template-columns:1fr}}
+@media (max-width:899px){.cal-year{grid-template-columns:1fr;gap:20px}.cal-img{min-height:220px}.cal-actions{grid-template-columns:1fr;gap:16px;margin-top:20px}}
 
 .mo.key{border-top-color:var(--blue)}.mo.key h5{color:var(--blue)}
 
-.ev.key{border-left-color:var(--blue);background:linear-gradient(90deg,rgba(0,43,255,.06),transparent);border-radius:0 6px 6px 0}
-.cal-note{margin-top:15px;font-size:14.5px;max-width:70ch;line-height:1.55}
+.cal-note{margin-top:20px;font-size:14px;max-width:70ch;line-height:1.55}
 
 /* ---------- 10 Partner ---------- */
-.partner-logos{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin:28px 0}
+.partner-wrap{text-align:center}
+.partner-wrap .kicker{justify-content:center}
+.partner-wrap h2{max-width:24ch;margin:14px auto 0}
+.partner-logos{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin:36px auto;max-width:1040px}
+.stack-block{margin-top:36px}
+.stack-label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+.partner-note{text-align:center;margin:28px auto 0}
 .partner-badge{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1.5px solid var(--line-2);border-radius:100px;font-weight:600;font-size:14px;color:var(--ink-2);transition:all .3s;cursor:pointer;position:relative;background:var(--bg)}
 .partner-badge:hover{border-color:var(--blue);color:var(--blue)}
 .partner-badge.active{border-color:var(--blue);color:var(--blue);background:rgba(0,43,255,.04)}
-.partner-badge .tag{margin-left:6px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--blue);color:#fff;padding:3px 8px;border-radius:999px;white-space:nowrap}
-.partner-detail{max-width:600px;margin:0 auto;padding:20px 24px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:14px;font-size:14px;color:var(--ink-2);line-height:1.6;text-align:left;display:none}
+.partner-badge .tag{margin-left:6px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#000;color:#fff;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.partner-detail{max-width:600px;margin:-12px auto 0;padding:20px 24px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:16px;font-size:14px;color:var(--ink-2);line-height:1.6;text-align:left;display:none}
 .partner-detail.show{display:block}
-.partner-detail b{color:var(--ink);display:block;margin-bottom:4px;font-size:15px}
-.extended-stack{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
-.stack-pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.8px;padding:5px 14px;border-radius:100px;background:var(--bg-2);color:var(--ink-3);border:1px solid var(--line)}
-@media (max-width:640px){.partner-badge{padding:10px 16px;font-size:12px}}
+.partner-detail b{color:var(--ink);display:block;margin-bottom:4px;font-size:14px}
+.extended-stack{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:760px;margin:0 auto}
+.stack-pill{font-family:var(--mono);font-size:12px;letter-spacing:.8px;padding:6px 14px;border-radius:100px;background:var(--bg-2);color:var(--ink-2);border:1px solid var(--line)}
+@media (max-width:640px){.partner-badge{padding:10px 16px;font-size:13px}.partner-logos{gap:8px;margin:26px auto}.partner-badge .tag{font-size:12px}.stack-block{margin-top:28px}}
 
 /* ---------- 11 Prossimo passo (dark) ---------- */
-.slide.dark{background:linear-gradient(155deg,#111118 0%,#1a1a2e 50%,#111118 100%);color:#fff}
-.slide.dark .kicker{color:rgba(255,255,255,.35)}
-.slide.dark .kicker::before{background:rgba(255,255,255,.2)}
+.slide.dark{background:#000000;color:#fff}
+.slide.dark .kicker{color:rgba(255,255,255,.55)}
 .slide.dark h2{color:#fff}
-.slide.dark h2 em{color:var(--blue)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
-.step{border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.04);padding:24px 22px;display:flex;flex-direction:column}
+.slide.dark h2 em{color:var(--wv-blue)}
+.next-wrap{text-align:center}
+.next-wrap .kicker{justify-content:center}
+.next-wrap h2{max-width:none;margin:14px auto 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;text-align:left}
+.step{border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.04);padding:24px 22px;display:flex;flex-direction:column}
 .step:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
 .step.first{background:rgba(0,43,255,.08);border-color:rgba(0,43,255,.2)}
-.step b.n{font-family:var(--mono);font-size:14px;color:var(--blue)}
-.step h4{font-size:19px;font-weight:500;color:#fff;margin-top:12px}
-.step p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.55;margin-top:10px}
-.steps-lead{font-size:clamp(16px,1.5vw,21px);line-height:1.5;color:rgba(255,255,255,.7);max-width:62ch;margin-top:12px}
-.steps-lead em{font-style:normal;color:var(--blue)}
-.legal{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:rgba(255,255,255,.3);line-height:1.7;max-width:92ch}
-.signature{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.35);letter-spacing:2.5px;text-transform:uppercase;margin-top:28px}
+.step b.n{font-family:var(--mono);font-size:14px;color:var(--wv-blue);font-weight:500}
+.step h4{font-size:18px;font-weight:500;color:#fff;margin-top:12px}
+.step p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;margin-top:10px}
+.steps-lead{font-size:clamp(16px,1.5vw,21px);line-height:1.5;color:rgba(255,255,255,.7);max-width:62ch;margin:16px auto 0}
+.steps-lead em{font-style:normal;color:var(--wv-blue)}
+.next-foot{margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;align-items:center;gap:10px}
+.next-logo{height:28px;width:auto;filter:brightness(0) invert(1);margin-bottom:6px}
+.next-event,.next-contact{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.55)}
+.next-contact{letter-spacing:.05em}
+.legal{margin-top:14px;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;max-width:92ch;text-align:center}
+.signature{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.18em;text-transform:uppercase}
 @media (max-width:899px){.steps{grid-template-columns:1fr}}
+
+/* ---------- 02 Chi e Visio ---------- */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:start}
+.about .claim{font-size:16px;color:var(--ink);line-height:1.6;margin-top:16px;font-weight:500;max-width:66ch}
+.about .pull{font-size:18px;line-height:1.5;color:var(--ink);margin-top:24px;padding-top:20px;border-top:1px solid var(--line-2);font-weight:400}
+.about>div+div{padding-top:14px}
+.about .pull strong{color:var(--blue);font-weight:600}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{padding:20px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:var(--radius-card)}
+.tile i{font-style:normal;display:block;font-family:var(--mono);font-size:13px;color:var(--blue);margin-bottom:10px}
+.tile b{display:block;font-size:16px;font-weight:600;color:var(--ink)}
+.tile p{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.5;font-weight:400}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-2);border-radius:var(--radius-md);overflow:hidden;margin-top:12px}
+.kpis div{padding:16px 10px;text-align:center}
+.kpis div+div{border-left:1px solid var(--line)}
+.kpis b{display:block;font-size:clamp(24px,2.4vw,36px);font-weight:800;line-height:1.1;color:var(--blue)}
+.kpis span{display:block;font-size:13px;color:var(--ink-2);margin-top:4px;font-weight:400}
+.src{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:10px;letter-spacing:.03em;line-height:1.5}
+@media (max-width:999px){.about{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- 03 Come lo facciamo ---------- */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.phase{display:flex;flex-direction:column;border:1px solid var(--line-2);border-radius:var(--radius-md);overflow:hidden;background:#fff}
+.phase-h{display:flex;align-items:baseline;gap:10px;padding:14px 18px;background:var(--blue);color:#fff}
+.phase-h b{font-family:var(--mono);font-size:12px;letter-spacing:.15em;font-weight:600;flex:none}
+.phase-h span{font-size:14px;font-weight:600;line-height:1.3}
+.phase-b{display:flex;flex-direction:column;flex:1;padding:18px 18px 18px}
+.phase-b p{font-size:14px;color:var(--ink-2);line-height:1.55;font-weight:400;margin-bottom:16px}
+.phase-for{margin-top:auto;padding:10px 12px;background:var(--bg-2);border-radius:var(--radius-card);font-size:14px;font-weight:600;color:var(--ink);line-height:1.45}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.phases+.cases{margin-top:16px}
+.cs-link{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:var(--radius-card);text-decoration:none;color:var(--ink);transition:border-color .3s}
+.cs-link:hover{border-color:var(--blue)}
+.cs-link img{width:48px;height:48px;border-radius:var(--radius-card);object-fit:cover;flex:none}
+.cs-link b{display:block;font-size:14px;font-weight:600;color:var(--ink)}
+.cs-link p{font-size:13px;color:var(--ink-2);margin-top:2px;line-height:1.4;font-weight:400}
+@media (max-width:1199px){.phases{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:899px){.cases{grid-template-columns:1fr}}
+@media (max-width:560px){.phases{grid-template-columns:1fr}}
+
+/* ---------- 04 Ecosistema: stat + lettura ---------- */
+.eco-layout{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(0,1fr);gap:20px;align-items:start;margin-top:20px}
+.eco-layout .eco-browser{margin-top:0}
+.eco-aside{display:flex;flex-direction:column;gap:12px}
+.eco-stats{display:grid;grid-template-columns:1fr;gap:12px}
+.eco-stat{padding:14px 18px;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--bg-2)}
+.eco-stat b{display:block;font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.1;color:var(--blue)}
+.eco-stat span{display:block;font-size:13px;color:var(--ink-2);margin-top:4px;font-weight:400}
+.eco-read{margin-top:4px;padding-top:14px;border-top:1px solid var(--line-2);font-size:14px;color:var(--ink);line-height:1.55}
+.eco-read strong{font-weight:600}
+@media (max-width:1199px){.eco-layout{grid-template-columns:1fr}.eco-stats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:899px){.eco-stats{grid-template-columns:1fr}}
 
 .shot *,.shot *::before,.shot *::after{transition:none!important;animation:none!important}
 .shot .rv,.shot .cover h1 .word{opacity:1;transform:none}
@@ -455,12 +560,55 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
   .brandpair .x,.brandpair img.w,.brandpair .dp{display:none}
   .brandpair img.s{height:11px}
 }
+@media (max-width:480px){.brandpair .bp-b{display:none}.chip{padding:8px 12px}}
 @media (min-width:1100px) and (max-height:900px){
-  .hub-main .chm.f45{height:clamp(336px,46vh,430px)}
-  .hub-side .chm.f916{height:clamp(170px,22vh,208px)}
-  .hub-side .chm.f11{height:clamp(150px,19.5vh,186px)}
+  .hub-stage{--h:clamp(336px,46vh,430px)}
   .node .ai{padding:7px 8px}
 }
+/* ads in stile Tre Pi: fondo sabbia, DM Sans, nero */
+.chm{background:#F3EEEA;font-family:"DM Sans",var(--serif-ish)}
+.chm .m-scrim{display:none}
+.chm .m-img{object-fit:contain;mix-blend-mode:multiply;inset:auto;width:84%;left:8%;top:14%;height:40%}
+.hub-side .chm.f916 .m-img{width:88%;left:6%;top:16%;height:68%}
+.hub-side .chm.f11 .m-img{width:80%;left:10%;top:16%;height:76%}
+.chm .m-hl,.chm .m-foot .mn,.chm .m-foot .mp{color:#000;text-shadow:none}
+.chm .m-hl{font-weight:700;font-size:clamp(18px,1.7vw,23px)}
+.chm .m-foot .mp{font-family:"DM Sans",var(--serif-ish);font-weight:500}
+.chm .m-cta{background:#000;color:#fff;border-radius:2px;font-family:"DM Sans",var(--serif-ish);font-weight:500;letter-spacing:.08em}
+.chm .m-badge{background:#000;color:#fff;font-family:"DM Sans",var(--serif-ish);font-weight:500;border-radius:2px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+/* chat: look messaggistica, colori Visio */
+.chatw{--wv-ink:#111111;--wv-ink-2:rgba(0,0,0,.68);--wv-ink-3:rgba(0,0,0,.5);--wv-line:rgba(0,0,0,.1);--wv-blue:#002BFF;background:#fff;border:1px solid var(--line-2);border-radius:20px}
+.chatw-head{background:var(--navy);border-bottom:0;padding:14px 18px}
+.chatw-head b{color:#fff;gap:12px;font-weight:600}
+.chatw-head b::before{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#002BFF 0%,#0A0E5C 75%);border:1px solid rgba(255,255,255,.9)}
+.chatw-head b span{display:flex;flex-direction:column;gap:2px;font-size:15px;line-height:1.2}
+.chatw-head b small{font-size:12px;font-weight:400;color:rgba(255,255,255,.7)}
+.chatw-head .online{color:rgba(255,255,255,.8)}
+.chatw-body{background:#FDF1E6;padding:18px;display:flex;flex-direction:column;gap:12px}
+.chatw-intro{align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:4px 16px 16px 16px;padding:11px 14px;margin:0;max-width:86%;font-size:14px;color:var(--ink)}
+.chatw-user{background:var(--blue);color:#fff;border:0;border-radius:16px 16px 4px 16px;padding:10px 14px;margin-top:0}
+.chatw-bot{margin-top:0;display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start;max-width:92%}
+.chatw-bot .av{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#002BFF 0%,#0A0E5C 75%);border:1px solid #fff}
+.chatw-bot .bub{min-width:0}
+.chatw-bot .who{margin-bottom:4px;gap:10px}
+.chatw-bot .who em{border:0;padding:0;text-transform:none;letter-spacing:.02em;font-size:12px}
+.chatw-bot .reply{background:#fff;border:1px solid var(--line);border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:14px;color:var(--ink)}
+.chatw-bot .reply strong{color:var(--blue)}
+.chatw-action{background:var(--bg-2);border:1px solid var(--line-2)}
+.chatw-action .btn-rev{background:#fff;color:var(--ink-2);border:1px solid var(--line-2)}
+.chatw-sugg{background:#fff;padding:12px 18px 6px;border-top:1px solid var(--line)}
+.chatw-sugg button{background:#fff;color:var(--blue);border:1px solid var(--blue);font-weight:500}
+.chatw-sugg button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.chatw-sugg button:hover{background:rgba(0,43,255,.06)}
+.chatw-sugg button.on:hover{background:var(--blue)}
+.chatw-input{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 18px 18px;padding:6px 6px 6px 18px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg-2);color:var(--ink-3);font-size:14px}
+.chatw-input i{width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+/* chat v3: sfondo grigio, logo Visio, top bar animata */
+.chatw-body{background:#ECECEE}
+.chatw-head{background:linear-gradient(110deg,#000AFF,#0A0E5C,#002BFF,#0A0E5C,#000AFF);background-size:300% 100%;animation:chatGrad 9s ease-in-out infinite}
+@keyframes chatGrad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.chatw-head b::before{background:url(assets/visio-icon.png) center/cover;border:0;width:38px;height:38px}
+.chatw-bot .av{background:url(assets/visio-icon.png) center/cover;border:0;width:30px;height:30px}
 </style>
 </head>
 <body>
@@ -468,9 +616,9 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 
 <header class="top">
   <div class="brandpair" aria-label="Tre Pi, con Visio Digital Partner by Wevion">
-    <span style="font-weight:700;font-size:15px;letter-spacing:.02em">Tre Pi Profumerie</span>
+    <span class="bp-a">Tre Pi Profumerie</span>
     <span class="x">x</span>
-    <span style="font-weight:600;font-size:13px;letter-spacing:.04em;opacity:.9">visio digital partner</span>
+    <span class="bp-b">visio digital partner</span>
     <span class="dp">by Wevion</span>
   </div>
   <div class="topr">
@@ -492,7 +640,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
   <div class="wrap">
     <div class="cv-in">
       <div class="logos rv">
-        <span style="font-weight:700;font-size:15px;letter-spacing:.02em">Tre Pi Profumerie</span>
+        <span class="tp">Tre Pi Profumerie</span>
         <span class="dp">Visio Digital Partner - by Wevion</span>
       </div>
       <h1 id="coverH1">Campagne, creatività e contenuti del vostro negozio, <em>in un posto solo.</em></h1>
@@ -512,48 +660,27 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 <section class="slide" data-title="Chi è Visio">
   <div class="wrap">
     <div class="kicker rv">02 - Visio Digital Partner</div>
-    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:start;margin-top:8px">
+    <div class="about">
       <div>
-        <h2 class="rv d1" style="max-width:none;font-size:clamp(28px,3.6vw,50px);line-height:1.06">La regia che mancava al tuo <em>ecosistema digitale</em></h2>
-        <p class="lead rv d2" style="font-size:16px;line-height:1.7;margin-top:18px">E-commerce, advertising, CRM, feed, creatività, analytics: i brand li hanno tutti, ma quasi mai si parlano. Le performance non valorizzano il lavoro creativo. Le email non sfruttano i dati. Ricostruire una visione completa richiede tempo e attività manuali.</p>
-        <p class="rv d3" style="font-size:16px;color:var(--ink);line-height:1.7;margin-top:14px;font-weight:500">Visio nasce per connettere ciò che già esiste in un unico sistema intelligente. Non aggiungiamo complessità: la riduciamo.</p>
-
-        <div class="rv d4" style="padding:18px 22px;background:var(--blue);color:#fff;border-radius:14px;margin-top:22px">
-          <p style="font-size:15px;line-height:1.55">Il problema non è la mancanza di strumenti. <strong>È l'assenza di una regia capace di farli lavorare insieme.</strong></p>
-        </div>
+        <h2 class="rv d1">La regia che mancava al tuo <em>ecosistema digitale</em></h2>
+        <p class="lead rv d2">E-commerce, advertising, CRM, feed, creatività, analytics: i brand li hanno tutti, ma quasi mai si parlano. Le performance non valorizzano il lavoro creativo. Le email non sfruttano i dati. Ricostruire una visione completa richiede tempo e attività manuali.</p>
+        <p class="claim rv d3">Visio nasce per connettere ciò che già esiste in un unico sistema intelligente. Non aggiungiamo complessità: la riduciamo.</p>
+        <p class="pull rv d4">Il problema non è la mancanza di strumenti. <strong>È l'assenza di una regia capace di farli lavorare insieme.</strong></p>
       </div>
 
-      <!-- 4 NODI ECOSISTEMA: visual pulito, come pag 7 del deck manager -->
       <div class="rv d3">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div style="padding:22px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:14px;text-align:center">
-            <div style="font-size:28px;margin-bottom:8px">&#128200;</div>
-            <b style="font-size:14px;color:var(--ink);display:block">Dati</b>
-            <p style="font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.45">Una visione centralizzata. Report quando servono.</p>
-          </div>
-          <div style="padding:22px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:14px;text-align:center">
-            <div style="font-size:28px;margin-bottom:8px">&#127919;</div>
-            <b style="font-size:14px;color:var(--ink);display:block">Campagne</b>
-            <p style="font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.45">Media coordinati per obiettivo, non per canale.</p>
-          </div>
-          <div style="padding:22px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:14px;text-align:center">
-            <div style="font-size:28px;margin-bottom:8px">&#9998;&#65039;</div>
-            <b style="font-size:14px;color:var(--ink);display:block">Creatività</b>
-            <p style="font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.45">Dal catalogo alla campagna, con il Creative Hub AI.</p>
-          </div>
-          <div style="padding:22px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:14px;text-align:center">
-            <div style="font-size:28px;margin-bottom:8px">&#128202;</div>
-            <b style="font-size:14px;color:var(--ink);display:block">Report</b>
-            <p style="font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.45">Ogni lunedì alle 8:00, o quando lo chiedi.</p>
-          </div>
+        <div class="tiles">
+          <div class="tile"><i>01</i><b>Dati</b><p>Una visione centralizzata. Report quando servono.</p></div>
+          <div class="tile"><i>02</i><b>Campagne</b><p>Media coordinati per obiettivo, non per canale.</p></div>
+          <div class="tile"><i>03</i><b>Creatività</b><p>Dal catalogo alla campagna, con il Creative Hub AI.</p></div>
+          <div class="tile"><i>04</i><b>Report</b><p>Ogni lunedì alle 8:00, o quando lo chiedi.</p></div>
         </div>
-        <!-- KPI -->
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line-2);border-radius:14px;overflow:hidden;margin-top:14px" class="rv d4">
-          <div style="padding:14px;text-align:center"><b style="font-size:clamp(24px,2.4vw,36px);font-weight:800;color:var(--blue)">+300%</b><p style="font-size:11px;color:var(--ink-3);margin-top:3px">conversioni</p></div>
-          <div style="padding:14px;text-align:center;border-left:1px solid var(--line)"><b style="font-size:clamp(24px,2.4vw,36px);font-weight:800;color:var(--blue)">+250%</b><p style="font-size:11px;color:var(--ink-3);margin-top:3px">crescita ricavi</p></div>
-          <div style="padding:14px;text-align:center;border-left:1px solid var(--line)"><b style="font-size:clamp(24px,2.4vw,36px);font-weight:800;color:var(--blue)">-40%</b><p style="font-size:11px;color:var(--ink-3);margin-top:3px">costi acquisizione</p></div>
+        <div class="kpis rv d4">
+          <div><b>+300%</b><span>conversioni</span></div>
+          <div><b>+250%</b><span>crescita ricavi</span></div>
+          <div><b>-40%</b><span>costi acquisizione</span></div>
         </div>
-        <p style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-top:5px;letter-spacing:.05em">Risultati su progetti reali. Fonte: visiodp.com</p>
+        <p class="src">Risultati su progetti reali. Fonte: visiodp.com</p>
       </div>
     </div>
   </div>
@@ -564,69 +691,53 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
      ================================================================ -->
 <section class="slide" data-title="Come lo facciamo">
   <div class="wrap">
-    <div class="kicker rv">03 - Come lo facciamo</div>
-    <h2 class="rv d1" style="max-width:none;font-size:clamp(26px,3.2vw,46px)">Strategia, orchestrazione e tecnologia: <em>applicate al vostro business</em></h2>
-    <p class="lead rv d2" style="font-size:15px">Quattro fasi, un solo flusso. Ogni fase ha un output verificabile. Si passa alla successiva solo quando la precedente ha risposto.</p>
+    <div class="head"><div><div class="kicker rv">03 - Come lo facciamo</div>
+    <h2 class="rv d1">Strategia, orchestrazione e tecnologia: <em>applicate al vostro business</em></h2></div>
+    <p class="lead rv d2">Quattro fasi, un solo flusso. Ogni fase ha un output verificabile. Si passa alla successiva solo quando la precedente ha risposto.</p></div>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px">
-      <!-- FASE I -->
-      <div class="rv d2" style="border:1px solid var(--line-2);border-radius:14px;overflow:hidden">
-        <div style="padding:14px 18px;background:var(--blue);color:#fff">
-          <b style="font-family:var(--mono);font-size:11px;letter-spacing:2px">I</b>
-          <span style="font-size:14px;font-weight:600;margin-left:8px">Direzione e posizionamento</span>
-        </div>
-        <div style="padding:16px 18px">
-          <p style="font-size:13px;color:var(--ink-2);line-height:1.55;margin-bottom:10px">Analisi del modello di business, mercato, competitor. Obiettivi misurabili e roadmap condivisa.</p>
-          <div style="font-size:12px;color:var(--ink);font-weight:600;padding:8px 10px;background:var(--bg-2);border-radius:8px;border-left:3px solid var(--blue)">Per Tre Pi: capire quali dei 26 mercati rendono davvero e dove concentrare la spesa.</div>
+    <div class="phases">
+      <div class="phase rv d2">
+        <div class="phase-h"><b>I</b><span>Direzione e posizionamento</span></div>
+        <div class="phase-b">
+          <p>Analisi del modello di business, mercato, competitor. Obiettivi misurabili e roadmap condivisa.</p>
+          <div class="phase-for">Per Tre Pi: capire quali dei 26 mercati rendono davvero e dove concentrare la spesa.</div>
         </div>
       </div>
-      <!-- FASE II -->
-      <div class="rv d3" style="border:1px solid var(--line-2);border-radius:14px;overflow:hidden">
-        <div style="padding:14px 18px;background:var(--blue);color:#fff">
-          <b style="font-family:var(--mono);font-size:11px;letter-spacing:2px">II</b>
-          <span style="font-size:14px;font-weight:600;margin-left:8px">Infrastruttura</span>
-        </div>
-        <div style="padding:16px 18px">
-          <p style="font-size:13px;color:var(--ink-2);line-height:1.55;margin-bottom:10px">Shop, CRM, tracciamento e feed prodotti collegati. La base tecnica che regge la crescita.</p>
-          <div style="font-size:12px;color:var(--ink);font-weight:600;padding:8px 10px;background:var(--bg-2);border-radius:8px;border-left:3px solid var(--blue)">Per Tre Pi: feed arricchito, tracciamento verificato, 10.629 prodotti connessi.</div>
+      <div class="phase rv d3">
+        <div class="phase-h"><b>II</b><span>Infrastruttura</span></div>
+        <div class="phase-b">
+          <p>Shop, CRM, tracciamento e feed prodotti collegati. La base tecnica che regge la crescita.</p>
+          <div class="phase-for">Per Tre Pi: feed arricchito, tracciamento verificato, 10.629 prodotti connessi.</div>
         </div>
       </div>
-      <!-- FASE III -->
-      <div class="rv d4" style="border:1px solid var(--line-2);border-radius:14px;overflow:hidden">
-        <div style="padding:14px 18px;background:var(--blue);color:#fff">
-          <b style="font-family:var(--mono);font-size:11px;letter-spacing:2px">III</b>
-          <span style="font-size:14px;font-weight:600;margin-left:8px">Narrazione e validazione</span>
-        </div>
-        <div style="padding:16px 18px">
-          <p style="font-size:13px;color:var(--ink-2);line-height:1.55;margin-bottom:10px">Contenuti, campagne e traffico qualificato. Test su messaggi, target e canali con dati reali.</p>
-          <div style="font-size:12px;color:var(--ink);font-weight:600;padding:8px 10px;background:var(--bg-2);border-radius:8px;border-left:3px solid var(--blue)">Per Tre Pi: Creative Hub su 5 categorie, campagne in 3 lingue, test prima di scalare.</div>
+      <div class="phase rv d4">
+        <div class="phase-h"><b>III</b><span>Narrazione e validazione</span></div>
+        <div class="phase-b">
+          <p>Contenuti, campagne e traffico qualificato. Test su messaggi, target e canali con dati reali.</p>
+          <div class="phase-for">Per Tre Pi: Creative Hub su 5 categorie, campagne in 3 lingue, test prima di scalare.</div>
         </div>
       </div>
-      <!-- FASE IV -->
-      <div class="rv d5" style="border:1px solid var(--line-2);border-radius:14px;overflow:hidden">
-        <div style="padding:14px 18px;background:var(--blue);color:#fff">
-          <b style="font-family:var(--mono);font-size:11px;letter-spacing:2px">IV</b>
-          <span style="font-size:14px;font-weight:600;margin-left:8px">Scalabilità</span>
-        </div>
-        <div style="padding:16px 18px">
-          <p style="font-size:13px;color:var(--ink-2);line-height:1.55;margin-bottom:10px">Automazioni, nuovi mercati, omnicanalità. Dashboard h24 e report automatici.</p>
-          <div style="font-size:12px;color:var(--ink);font-weight:600;padding:8px 10px;background:var(--bg-2);border-radius:8px;border-left:3px solid var(--blue)">Per Tre Pi: espansione su FR e DE con agenti che controllano 24h, anche nei weekend.</div>
+      <div class="phase rv d5">
+        <div class="phase-h"><b>IV</b><span>Scalabilità</span></div>
+        <div class="phase-b">
+          <p>Automazioni, nuovi mercati, omnicanalità. Dashboard h24 e report automatici.</p>
+          <div class="phase-for">Per Tre Pi: espansione su FR e DE con agenti che controllano 24h, anche nei weekend.</div>
         </div>
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px" class="rv d5">
-      <a href="https://www.visiodp.com/case-study/franz-kraler" target="_blank" style="padding:14px 18px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:12px;display:flex;gap:12px;align-items:center;text-decoration:none;transition:border-color .3s,box-shadow .3s" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='0 4px 16px rgba(0,43,255,.08)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
-        <img src="https://www.visiodp.com/case-study/franz-kraler-cover.webp" alt="" style="width:48px;height:48px;border-radius:8px;object-fit:cover">
-        <div><b style="font-size:13px;color:var(--ink)">Franz Kraler</b><p style="font-size:11px;color:var(--ink-3)">Shopify Plus in 90gg, resi dal 30% al 3,5%</p></div>
+    <div class="cases rv d5">
+      <a class="cs-link" href="https://www.visiodp.com/case-study/franz-kraler" target="_blank" rel="noopener">
+        <img src="https://www.visiodp.com/case-study/franz-kraler-cover.webp" alt="">
+        <div><b>Franz Kraler</b><p>Shopify Plus in 90gg, resi dal 30% al 3,5%</p></div>
       </a>
-      <a href="https://www.visiodp.com/case-study/olivieri" target="_blank" style="padding:14px 18px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:12px;display:flex;gap:12px;align-items:center;text-decoration:none;transition:border-color .3s,box-shadow .3s" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='0 4px 16px rgba(0,43,255,.08)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
-        <img src="https://www.visiodp.com/case-study/olivieri-cover.webp" alt="" style="width:48px;height:48px;border-radius:8px;object-fit:cover">
-        <div><b style="font-size:13px;color:var(--ink)">Olivieri 1882</b><p style="font-size:11px;color:var(--ink-3)">+272% fatturato in 3 anni, MER 9x</p></div>
+      <a class="cs-link" href="https://www.visiodp.com/case-study/olivieri" target="_blank" rel="noopener">
+        <img src="https://www.visiodp.com/case-study/olivieri-cover.webp" alt="">
+        <div><b>Olivieri 1882</b><p>+272% fatturato in 3 anni, MER 9x</p></div>
       </a>
-      <a href="https://www.visiodp.com/stream-ai/case-study/raf" target="_blank" style="padding:14px 18px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:12px;display:flex;gap:12px;align-items:center;text-decoration:none;transition:border-color .3s,box-shadow .3s" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='0 4px 16px rgba(0,43,255,.08)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
-        <img src="https://www.visiodp.com/stream-ai/raf/raf-cover.webp" alt="" style="width:48px;height:48px;border-radius:8px;object-fit:cover">
-        <div><b style="font-size:13px;color:var(--ink)">RAF Footwear</b><p style="font-size:11px;color:var(--ink-3)">15 prodotti con video AI in 30 minuti</p></div>
+      <a class="cs-link" href="https://www.visiodp.com/stream-ai/case-study/raf" target="_blank" rel="noopener">
+        <img src="https://www.visiodp.com/stream-ai/raf/raf-cover.webp" alt="">
+        <div><b>RAF Footwear</b><p>15 prodotti con video AI in 30 minuti</p></div>
       </a>
     </div>
 
@@ -639,13 +750,13 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
      ================================================================ -->
 <section class="slide" data-title="Il vostro ecosistema">
   <div class="wrap">
-    <div class="kicker rv">04 - Il vostro ecosistema oggi</div>
-    <h2 class="rv d1" style="max-width:none;font-size:clamp(25px,3vw,44px)">Abbiamo osservato il vostro e-commerce dall'esterno. <em>Ecco cosa abbiamo trovato.</em></h2>
-    <p class="lead rv d2" style="font-size:16px">Shopify, 10.000+ prodotti, 3 lingue, 26 Paesi. La base c'è. Cliccate sui punti blu per vedere dove intervenire.</p>
+    <div class="head"><div><div class="kicker rv">04 - Il vostro ecosistema oggi</div>
+    <h2 class="rv d1">Abbiamo osservato il vostro <span class="nw">e-commerce</span> dall'esterno. <em>Ecco cosa abbiamo trovato.</em></h2></div>
+    <p class="lead rv d2">Shopify, 10.000+ prodotti, 3 lingue, 26 Paesi. La base c'è. Passate sui punti blu per vedere dove intervenire.</p></div>
 
+    <div class="eco-layout">
     <div class="eco-browser rv d2">
       <div class="eco-browser-bar">
-        <div class="dots3"><i></i><i></i><i></i></div>
         <div class="url">trepiprofumerie.com</div>
       </div>
       <div class="eco-mock">
@@ -661,6 +772,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
           <!-- Prodotto 1 -->
           <div class="eco-prod-card">
             <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/dolce-gabbana-light-blue-edt-100ml-800x800.jpg?v=1737011353" alt="D&amp;G Light Blue" loading="lazy">
+            <span class="eco-hotspot on-img" id="ecoHot1" tabindex="0" role="button" aria-label="Nota 1"><span class="dot">1</span><span class="label"><b>1 sola foto per prodotto</b>Nessun video, nessuno scatto ambientato. Il prodotto non racconta nulla.</span></span>
             <div class="info">
               <div class="brand">Dolce &amp; Gabbana</div>
               <div class="pname">Light Blue EDT 100 ml</div>
@@ -672,7 +784,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
             <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/paco-rabanne-one-million-eau-de-toilette-100-ml_1.jpg?v=1736967132" alt="One Million" loading="lazy">
             <div class="info">
               <div class="brand">Paco Rabanne</div>
-              <div class="pname">One Million EDT 100 ml</div>
+              <div class="pname">One Million EDT 100 ml <span class="eco-hotspot" id="ecoHot2" tabindex="0" role="button" aria-label="Nota 2"><span class="dot">2</span><span class="label"><b>Descrizioni minime</b>2 righe, senza note olfattive, senza ingredienti, senza storytelling.</span></span></div>
               <div class="pprice">74,90 &euro;</div>
             </div>
           </div>
@@ -681,49 +793,24 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
             <img src="https://cdn.shopify.com/s/files/1/0931/3717/4866/files/yves-saint-laurent-black-opium-eau-de-parfum-50ml.jpg" alt="YSL Black Opium" loading="lazy">
             <div class="info">
               <div class="brand">Yves Saint Laurent</div>
-              <div class="pname">Black Opium EDP 50 ml</div>
+              <div class="pname">Black Opium EDP <span class="nw">50 ml</span> <span class="eco-hotspot" id="ecoHot3" tabindex="0" role="button" aria-label="Nota 3"><span class="dot">3</span><span class="label"><b>Varianti separate</b>30 ml, 50 ml e 100 ml sono 3 prodotti diversi. Il cliente non li trova.</span></span></div>
               <div class="pprice">89,02 &euro;</div>
             </div>
           </div>
-
-          <!-- Hotspot 1: foto -->
-          <div class="eco-hotspot" style="top:12px;right:14px" id="ecoHot1">
-            <div class="dot">1</div>
-            <div class="label"><b>1 sola foto per prodotto</b>Nessun video, nessuno scatto ambientato. Il prodotto non racconta nulla.</div>
-          </div>
-          <!-- Hotspot 2: descrizioni -->
-          <div class="eco-hotspot" style="bottom:110px;right:14px" id="ecoHot2">
-            <div class="dot">2</div>
-            <div class="label"><b>Descrizioni minime</b>2 righe, senza note olfattive, senza ingredienti, senza storytelling.</div>
-          </div>
-          <!-- Hotspot 3: varianti -->
-          <div class="eco-hotspot" style="bottom:40px;left:36%" id="ecoHot3">
-            <div class="dot">3</div>
-            <div class="label"><b>Varianti separate</b>30 ml, 50 ml e 100 ml sono 3 prodotti diversi. Il cliente non li trova.</div>
-          </div>
+          
         </div>
       </div>
     </div>
 
-    <!-- Contesto aggiuntivo -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px">
-      <div class="rv d3" style="padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)">
-        <b style="font-size:28px;color:var(--blue);display:block">10.000+</b>
-        <span style="font-size:13px;color:var(--ink-2)">prodotti online, 3 lingue, 26 Paesi</span>
-      </div>
-      <div class="rv d4" style="padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)">
-        <b style="font-size:28px;color:var(--blue);display:block">4,1 / 5</b>
-        <span style="font-size:13px;color:var(--ink-2)">Trustpilot su 2.795 recensioni</span>
-      </div>
-      <div class="rv d4" style="padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)">
-        <b style="font-size:28px;color:var(--blue);display:block">5.900 + 17K</b>
-        <span style="font-size:13px;color:var(--ink-2)">follower IG + FB, social non collegati ad ADV</span>
-      </div>
+    <div class="eco-aside">
+    <div class="eco-stats">
+      <div class="eco-stat rv d3"><b>10.000+</b><span>prodotti online, 3 lingue, 26 Paesi</span></div>
+      <div class="eco-stat rv d4"><b>4,1 / 5</b><span>Trustpilot su 2.795 recensioni</span></div>
+      <div class="eco-stat rv d4"><b>5.900 + 17K</b><span>follower IG + FB, social non collegati ad ADV</span></div>
     </div>
 
-    <!-- Insight box -->
-    <div style="display:flex;gap:14px;align-items:center;border-left:4px solid var(--blue);background:rgba(0,43,255,.04);border-radius:0 12px 12px 0;padding:16px 20px;margin-top:14px" class="rv d5">
-      <p style="font-size:15px;color:var(--ink);line-height:1.5"><strong>La lettura:</strong> le componenti ci sono tutte. Quello che manca è la connessione tra loro. Il catalogo non alimenta le campagne, le recensioni non finiscono nelle schede, i dati non guidano le decisioni. È esattamente il tipo di ecosistema che Visio orchestra.</p>
+    <p class="eco-read rv d5"><strong>La lettura:</strong> le componenti ci sono tutte. Quello che manca è la connessione tra loro. Il catalogo non alimenta le campagne, le recensioni non finiscono nelle schede, i dati non guidano le decisioni. È esattamente il tipo di ecosistema che Visio orchestra.</p>
+    </div>
     </div>
 
     <p class="note rv d6">Fonte: sito pubblico trepiprofumerie.com, Trustpilot, profili social. Rilevazione: ottobre 2026.</p>
@@ -736,7 +823,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 <section class="slide" data-title="La scheda prodotto">
   <div class="wrap">
     <div class="kicker rv">05 - La scheda prodotto oggi</div>
-    <h2 class="rv d1" style="max-width:none">Ecco cosa vede un cliente quando arriva su una <em>scheda prodotto</em></h2>
+    <h2 class="rv d1">Ecco cosa vede un cliente quando arriva su una <em>scheda prodotto</em></h2>
     <p class="lead rv d2">Scegliete un prodotto dal vostro catalogo. A sinistra com'è oggi, a destra come potrebbe essere con Visio.</p>
 
     <!-- Selettore prodotti -->
@@ -746,37 +833,37 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
     <div class="prod-compare" id="prodCompare">
       <!-- OGGI -->
       <div class="prod-panel oggi rv d2">
-        <div class="browser-top"><div class="d3"><i></i><i></i><i></i></div><span class="burl" id="prodUrlOggi">trepiprofumerie.com/products/...</span></div>
+        <div class="browser-top"><span class="burl" id="prodUrlOggi">trepiprofumerie.com/products/...</span></div>
         <div class="prod-body">
           <div>
-            <img id="prodImgOggi" src="" alt="" style="width:100%;border-radius:8px;background:var(--gray-50)">
+            <img class="pimg" id="prodImgOggi" src="" alt="">
             <div class="thumb-row"><div class="th">1 foto</div><div class="th empty">?</div><div class="th empty">?</div></div>
           </div>
           <div>
-            <p id="prodBrandOggi" style="font-size:11px;color:var(--ink-3);font-family:var(--mono)"></p>
-            <b id="prodNameOggi" style="font-size:15px;color:var(--ink);display:block;margin-top:4px"></b>
-            <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px"><span id="prodPriceOggi" style="font-size:18px;font-weight:700;color:var(--ink)"></span></div>
-            <p id="prodDescOggi" style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5"></p>
-            <div style="margin-top:14px;display:grid;gap:6px" id="prodRowsOggi"></div>
+            <p class="pb-brand" id="prodBrandOggi"></p>
+            <b class="pb-name" id="prodNameOggi"></b>
+            <span class="pb-price" id="prodPriceOggi"></span>
+            <p class="pb-desc" id="prodDescOggi"></p>
+            <div class="pb-rows" id="prodRowsOggi"></div>
           </div>
         </div>
       </div>
       <!-- CON VISIO -->
       <div class="prod-panel visio rv d3">
         <div class="prod-badge-visio">CON VISIO</div>
-        <div class="browser-top"><div class="d3"><i></i><i></i><i></i></div><span class="burl" id="prodUrlVisio">trepiprofumerie.com - scheda arricchita</span></div>
+        <div class="browser-top"><span class="burl" id="prodUrlVisio">trepiprofumerie.com - scheda arricchita</span></div>
         <div class="prod-body">
           <div>
-            <img id="prodImgVisio" src="" alt="" style="width:100%;border-radius:8px;background:var(--gray-50)">
+            <img class="pimg" id="prodImgVisio" src="" alt="">
             <div class="thumb-row"><div class="th sel">1</div><div class="th">2</div><div class="th">3</div><div class="th">4</div><div class="th vid">&#9654;</div></div>
           </div>
           <div>
-            <p id="prodBrandVisio" style="font-size:11px;color:var(--blue);font-family:var(--mono);font-weight:600"></p>
-            <b id="prodNameVisio" style="font-size:15px;color:var(--ink);display:block;margin-top:4px"></b>
-            <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px"><span id="prodPriceVisio" style="font-size:18px;font-weight:700;color:var(--ink)"></span></div>
+            <p class="pb-brand v" id="prodBrandVisio"></p>
+            <b class="pb-name" id="prodNameVisio"></b>
+            <span class="pb-price" id="prodPriceVisio"></span>
             <div class="prod-sizes" id="prodSizes"></div>
-            <p id="prodDescVisio" style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.55"></p>
-            <div style="margin-top:12px;display:grid;gap:6px" id="prodRowsVisio"></div>
+            <p class="pb-desc" id="prodDescVisio"></p>
+            <div class="pb-rows" id="prodRowsVisio"></div>
           </div>
         </div>
       </div>
@@ -854,7 +941,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
             <div class="chm f45" id="m45">
               <img class="m-img" id="img45" alt="">
               <div class="m-scrim"></div>
-              <span style="font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--ink)">TRE PI</span>
+              <img class="m-logo" src="assets/logo-trepi.svg" alt="Tre Pi Profumerie">
               <div class="m-badge" id="b45">Novità</div>
               <div class="m-foot"><div class="m-hl" id="hl45"></div><div class="mn" id="mn45"></div><div class="mp" id="mp45"></div><span class="m-cta" id="cta45"></span></div>
             </div>
@@ -865,7 +952,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
               <div class="chm f916" id="m916">
                 <img class="m-img" id="img916" alt="">
                 <div class="m-scrim"></div>
-                <span style="font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--ink)">TRE PI</span>
+                <img class="m-logo" src="assets/logo-trepi.svg" alt="Tre Pi Profumerie">
               </div>
               <div class="m-fmt">Storie 9:16</div>
             </div>
@@ -873,14 +960,14 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
               <div class="chm f11" id="m11">
                 <img class="m-img" id="img11" alt="">
                 <div class="m-scrim"></div>
-                <span style="font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--ink)">TRE PI</span>
+                <img class="m-logo" src="assets/logo-trepi.svg" alt="Tre Pi Profumerie">
               </div>
               <div class="m-fmt">Quadrato 1:1</div>
             </div>
           </div>
           <div class="hub-gen" id="hubGen"><span>I nostri agenti stanno componendo le creatività</span></div>
         </div>
-        <p class="note" style="font-size:13px;color:var(--ink-2)">Una creatività grande e protagonista con lo stesso prodotto declinato nei tre formati delle campagne. Il visuale nasce dalla foto del catalogo trasformata in una scena contestualizzata, pronta per la pubblicità, nel vostro stile.</p>
+        <p class="hub-note">Una creatività grande e protagonista con lo stesso prodotto declinato nei tre formati delle campagne. Il visuale nasce dalla foto del catalogo trasformata in una scena contestualizzata, pronta per la pubblicità, nel vostro stile.</p>
       </div>
     </div>
   </div>
@@ -890,12 +977,12 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
      07 PRODUCT FEED (LOGIC UNTOUCHED)
      ================================================================ -->
 <section class="slide" data-title="Creative Hub dal vivo">
-  <div class="wrap" style="display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(28px,4vw,64px);align-items:center">
+  <div class="wrap live">
     <div>
       <div class="kicker rv">08 - Creative Hub dal vivo</div>
       <h2 class="rv d1">Immagini, video, UGC e contenuti, <em>dallo stesso posto</em></h2>
       <p class="lead rv d2">Si parte da un prodotto del catalogo. Il Creative Hub genera foto, video e contenuti pronti per campagne e schede prodotto. Nessuno shooting, nessun export manuale. Regia umana, produzione AI.</p>
-      <div class="seg-ctl rv d3" style="margin-top:22px" id="hubLiveTabs">
+      <div class="seg-ctl live-tabs rv d3" id="hubLiveTabs">
         <button class="on" data-v="campagne">Immagini</button>
         <button data-v="still-life">Video</button>
         <button data-v="modelli">UGC</button>
@@ -903,8 +990,9 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
       </div>
       <p class="note rv d4" id="hubLiveNote">Registrazioni dal Creative Hub. Esempio dimostrativo.</p>
     </div>
-    <div class="rv d3" style="border-radius:14px;overflow:hidden;border:1px solid var(--line-2);background:var(--bg-2);aspect-ratio:16/9">
-      <video id="hubLiveVid" muted loop playsinline autoplay src="https://www.visiodp.com/stream-ai/hub/campagne.mp4" style="width:100%;height:100%;object-fit:cover"></video>
+    <div class="live-vid rv d3">
+      <img id="hubLiveImg" src="assets/immagini.jpg" alt="Immagine generata dal Creative Hub">
+      <video id="hubLiveVid" muted loop playsinline hidden></video>
     </div>
   </div>
 </section>
@@ -918,12 +1006,12 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
     <h2 class="rv d1">Un unico punto di controllo: <em>chiedi, controlla, decidi.</em></h2></div>
     <p class="lead rv d2">Tutto sotto controllo, anche di notte, senza stare attaccati allo schermo.</p></div>
     <div class="work">
-      <div class="rv d2">
+      <div class="work-chat rv d2">
         <div class="chatw">
-          <div class="chatw-head"><b>Assistente Visio - Dashboard e-commerce Tre Pi Profumerie</b><span class="online">Online h24</span></div>
+          <div class="chatw-head"><b><span>Assistente Visio<small>Dashboard e-commerce Tre Pi Profumerie</small></span></b><span class="online">Online h24</span></div>
           <div class="chatw-body" id="chatBody">
             <div class="chatw-intro">
-              <span style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span>
+              <span class="chatw-tag">esempio dimostrativo</span>
               Buongiorno! Sono il vostro assistente dedicato. Come posso aiutarvi?
             </div>
           </div>
@@ -934,8 +1022,8 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
             <button data-k="3">Anomalie aperte</button>
             <button data-k="4">Metti in pausa gli annunci sotto soglia</button>
           </div>
+          <div class="chatw-input" aria-hidden="true"><span>Scrivi un messaggio...</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3 13.5 8l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
         </div>
-        <p class="note">Dal browser, in qualsiasi momento, con i dati di tutte le piattaforme collegate. I numeri qui sono un esempio. Le decisioni non le prende il sistema, ma voi.</p>
       </div>
       <div class="wblocks rv d3">
         <div class="wb"><b class="n">01</b><div><span class="nm">Il sistema</span><p>Shop, catalogo, campagne e contatti in un'unica dashboard. Tutto visibile, tutto interrogabile.</p></div></div>
@@ -944,6 +1032,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
         <div class="wb"><b class="n">04</b><div><span class="nm">Valore per voi</span><p>Continuità e controllo. Report automatico ogni lunedì alle 8:00, richiedibile in qualsiasi momento.</p></div></div>
       </div>
     </div>
+  <p class="note rv d4">Dal browser, in qualsiasi momento, con i dati di tutte le piattaforme collegate. I numeri qui sono un esempio. Le decisioni non le prende il sistema, ma voi.</p>
   </div>
 </section>
 
@@ -980,9 +1069,9 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
      10 PARTNER
      ================================================================ -->
 <section class="slide" data-title="Partner">
-  <div class="wrap" style="text-align:center">
-    <div class="kicker rv" style="justify-content:center">11 - Certificazioni</div>
-    <h2 class="rv d1" style="text-align:center;max-width:none;margin:0 auto">Partner certificati delle piattaforme di pubblicità, vendita e dati</h2>
+  <div class="wrap partner-wrap">
+    <div class="kicker rv">11 - Certificazioni</div>
+    <h2 class="rv d1">Partner certificati delle piattaforme di pubblicità, vendita e dati</h2>
 
     <div class="partner-logos rv d2">
       <button class="partner-badge" data-partner="meta">
@@ -1019,8 +1108,8 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
 
     <div class="partner-detail" id="partnerDetail"></div>
 
-    <div class="rv d3" style="margin-top:20px">
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray-400);margin-bottom:14px">Stack esteso</div>
+    <div class="stack-block rv d3">
+      <div class="stack-label">Stack esteso</div>
       <div class="extended-stack">
         <span class="stack-pill">Shopify Plus</span>
         <span class="stack-pill">Google Merchant</span>
@@ -1034,7 +1123,7 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
       </div>
     </div>
 
-    <p class="note rv d4" style="text-align:center;margin:24px auto 0">Caserta, Italia - Operativi in remoto in tutta Europa</p>
+    <p class="note partner-note rv d4">Caserta, Italia - Operativi in remoto in tutta Europa</p>
   </div>
 </section>
 
@@ -1042,22 +1131,22 @@ h2 em,h1 em{font-style:normal;color:var(--camel-2)}
      11 PROSSIMO PASSO (dark)
      ================================================================ -->
 <section class="slide dark" data-title="Prossimo passo">
-  <div class="wrap" style="text-align:center">
-    <div class="kicker rv" style="justify-content:center">12 - Il prossimo passo</div>
-    <h2 class="rv d1" style="text-align:center;max-width:none;margin:10px auto 0">Partire dall'audit, poi decidere, poi eseguire.</h2>
-    <p class="steps-lead rv d2" style="margin:12px auto 0;text-align:center">Una sessione di audit su shop, catalogo, recensioni e dati di vendita, e <em>scegliamo insieme le fasi del metodo che servono davvero a Tre Pi.</em></p>
+  <div class="wrap next-wrap">
+    <div class="kicker rv">12 - Il prossimo passo</div>
+    <h2 class="rv d1">Partire dall'audit, poi decidere, poi eseguire.</h2>
+    <p class="steps-lead rv d2">Una sessione di audit su shop, catalogo, recensioni e dati di vendita, e <em>scegliamo insieme le fasi del metodo che servono davvero a Tre Pi.</em></p>
     <div class="steps">
       <div class="step first rv d3"><b class="n">01</b><h4>Audit</h4><p>Accesso alla piattaforma e ad Analytics, export delle recensioni, lettura del catalogo. Guardiamo i dati reali e verifichiamo le ipotesi di questa analisi.</p></div>
       <div class="step rv d3"><b class="n">02</b><h4>Direzione</h4><p>Obiettivi misurabili e una roadmap condivisa, con le priorità del primo mese decise insieme.</p></div>
       <div class="step rv d4"><b class="n">03</b><h4>Primo flusso</h4><p>Un primo set di creatività dal Creative Hub, da validare prima di scalare.</p></div>
     </div>
-    <div class="signature rv d4">Visio Digital Partner - Commerce Flow Orchestrator</div>
-    <div style="font-family:var(--mono);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.35);margin-top:12px" class="rv d4">RICHMOND E-COMMERCE FORUM 2026</div>
-    <div class="rv d5" style="margin-top:24px">
-      <img src="https://www.visiodp.com/logo/visio-logo-horizontal.svg" alt="Visio Digital Partner" style="height:28px;width:auto;filter:brightness(0) invert(1)">
+    <div class="next-foot rv d4">
+      <img class="next-logo" src="https://www.visiodp.com/logo/visio-logo-horizontal.svg" alt="Visio Digital Partner">
+      <div class="signature">Visio Digital Partner - Commerce Flow Orchestrator</div>
+      <div class="next-event">RICHMOND E-COMMERCE FORUM 2026</div>
+      <div class="next-contact">info@visiodp.com - visiodp.com</div>
+      <p class="legal">Visio Digital Partner - by Wevion - Bhblasted S.R.L. SB<br>Foto, logo e testi di Tre Pi sono usati solo per questa proposta. I dati delle schermate sono esempi e sono indicati come tali.</p>
     </div>
-    <div style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.3);margin-top:14px;letter-spacing:.05em" class="rv d5">info@visiodp.com - visiodp.com</div>
-    <p class="legal rv d5">Visio Digital Partner - by Wevion - Bhblasted S.R.L. SB<br>Foto, logo e testi di Tre Pi sono usati solo per questa proposta. I dati delle schermate sono esempi e sono indicati come tali.</p>
   </div>
 </section>
 
@@ -1116,6 +1205,26 @@ const io = new IntersectionObserver(es => { es.forEach(e => {
     if (!seen.has(i)) { seen.add(i); onEnter[e.target.dataset.title]?.(); }
   } }); }, {root: deck, threshold: [0.35, 0.6]});
 slides.forEach(s => io.observe(s));
+
+/* ogni slide deve stare intera nel frame (desktop): se il contenuto e' piu' alto, lo scala */
+function fitSlides() {
+  slides.forEach(s => {
+    const w = $('.wrap', s); if (!w) return;
+    w.style.zoom = '';
+    if (innerWidth < 1000) return;
+    const cs = getComputedStyle(s);
+    const avail = innerHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    let z = 1;
+    for (let k = 0; k < 4; k++) {
+      const need = w.getBoundingClientRect().height;
+      if (need <= avail - 2) break;
+      z = Math.max(.55, z * (avail - 4) / need); w.style.zoom = z.toFixed(3);
+    }
+  });
+}
+addEventListener('resize', fitSlides);
+addEventListener('load', () => { fitSlides(); setTimeout(fitSlides, 800); });
+document.fonts && document.fonts.ready.then(fitSlides);
 const fromHash = () => { const n = parseInt(location.hash.slice(1), 10); if (n >= 1 && n <= slides.length) { deck.style.scrollBehavior = 'auto'; slides[n - 1].scrollIntoView({behavior: 'instant'}); deck.style.scrollBehavior = ''; } };
 addEventListener('hashchange', fromHash); requestAnimationFrame(fromHash);
 
@@ -1269,22 +1378,37 @@ const HUB_NOTES = {
   'modelli': 'Contenuti con modelli e avatar AI: UGC e social pronti in pochi minuti.',
   'feed-prodotti': 'Feed prodotti e Brand Kit: ogni contenuto parte dall\'identità del brand.'
 };
+const hubLiveImg = $('#hubLiveImg');
+const LIVE = {
+  'campagne': {img: 'assets/immagini.jpg'},
+  'still-life': {vid: 'https://www.visiodp.com/stream-ai/hub/campagne.mp4'},
+  'modelli': {vid: 'assets/ugc.mp4'},
+  'feed-prodotti': {img: 'assets/brandkit.jpg'}
+};
 $$('#hubLiveTabs button').forEach(b => b.onclick = () => {
   $$('#hubLiveTabs button').forEach(x => x.classList.toggle('on', x === b));
-  if (hubLiveVid) {
-    hubLiveVid.src = 'https://www.visiodp.com/stream-ai/hub/' + b.dataset.v + '.mp4';
-    hubLiveVid.play().catch(() => {});
+  const m = LIVE[b.dataset.v];
+  if (m && hubLiveVid && hubLiveImg) {
+    if (m.vid) {
+      hubLiveImg.hidden = true; hubLiveVid.hidden = false;
+      hubLiveVid.src = m.vid; hubLiveVid.play().catch(() => {});
+    } else {
+      hubLiveVid.pause(); hubLiveVid.hidden = true; hubLiveImg.hidden = false; hubLiveImg.src = m.img;
+    }
   }
   const noteEl = $('#hubLiveNote');
   if (noteEl) noteEl.textContent = HUB_NOTES[b.dataset.v] || 'Esempio dimostrativo.';
 });
-onEnter['Creative Hub dal vivo'] = () => { if (hubLiveVid && !reduce) hubLiveVid.play().catch(() => {}); };
+onEnter['Creative Hub dal vivo'] = () => { if (hubLiveVid && !hubLiveVid.hidden && !reduce) hubLiveVid.play().catch(() => {}); };
 
-/* 04 hotspot auto-reveal */
-onEnter['Il vostro ecosistema'] = () => {
-  if (reduce) { $$('.eco-hotspot').forEach(h => h.classList.add('show')); return; }
-  $$('.eco-hotspot').forEach((h, i) => setTimeout(() => h.classList.add('show'), 800 + i * 500));
-};
+/* 04 hotspot: tooltip al click/tap (e hover da CSS) */
+$$('.eco-hotspot').forEach(h => {
+  const tog = e => { e.stopPropagation(); const was = h.classList.contains('open'); $$('.eco-hotspot').forEach(x => x.classList.remove('open')); if (!was) h.classList.add('open'); };
+  h.addEventListener('click', tog);
+  h.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(e); } });
+});
+document.addEventListener('click', () => $$('.eco-hotspot.open').forEach(x => x.classList.remove('open')));
+onEnter['Il vostro ecosistema'] = () => { const h = $('#ecoHot1'); if (h && !$('.eco-hotspot.open')) setTimeout(() => h.classList.add('open'), 700); };
 
 /* 02 Ecosistema interattivo */
 $$('.eco-node').forEach(n => {
@@ -1313,15 +1437,15 @@ onEnter['Il contesto'] = () => {
 /* 08 chat assistente -- Enhanced with 5 suggestions + typing + Approva/Rivedi */
 const CHAT = [
   { q:'Come lavorano le campagne in Italia?',
-    a:'<span style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Flusso campagne Italia:</strong><ul><li>Il catalogo alimenta il Creative Hub: le schede dei prodotti prioritari vengono lette automaticamente</li><li>Gli agenti generano creatività per formato (Feed, Stories, Shopping) e lingua (IT, EN, FR)</li><li>Gli obiettivi arrivano dalla fase di Direzione: ogni campagna ha un target misurabile</li><li>Le campagne sono monitorate 24h: spesa, performance, stato di ogni attività</li><li>Se un KPI esce dalla soglia, ricevete un alert con diagnosi e azione suggerita</li><li>La decisione resta sempre vostra: nulla va online senza la vostra approvazione</li></ul>' },
+    a:'<span style="font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Flusso campagne Italia:</strong><ul><li>Il catalogo alimenta il Creative Hub: le schede dei prodotti prioritari vengono lette automaticamente</li><li>Gli agenti generano creatività per formato (Feed, Stories, Shopping) e lingua (IT, EN, FR)</li><li>Gli obiettivi arrivano dalla fase di Direzione: ogni campagna ha un target misurabile</li><li>Le campagne sono monitorate 24h: spesa, performance, stato di ogni attività</li><li>Se un KPI esce dalla soglia, ricevete un alert con diagnosi e azione suggerita</li><li>La decisione resta sempre vostra: nulla va online senza la vostra approvazione</li></ul>' },
   { q:'Stato di oggi',
-    a:'<span style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Stato attività - oggi:</strong><ul><li>Campagne Meta Italia: attive, monitoraggio in corso</li><li>Campagne Google Shopping: attive su IT e FR</li><li>Creative Hub: 3 creatività in coda per la collezione natalizia</li><li>Feed catalogo: ultimo aggiornamento completato alle 06:00</li><li>Alert: nessuna anomalia rilevata nelle ultime 24 ore</li></ul><em style="font-size:10px;color:var(--wv-ink-3);display:block;margin-top:6px">I dati reali saranno visibili dopo l\'audit e l\'accesso alla piattaforma.</em>' },
+    a:'<span style="font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Stato attività - oggi:</strong><ul><li>Campagne Meta Italia: attive, monitoraggio in corso</li><li>Campagne Google Shopping: attive su IT e FR</li><li>Creative Hub: 3 creatività in coda per la collezione natalizia</li><li>Feed catalogo: ultimo aggiornamento completato alle 06:00</li><li>Alert: nessuna anomalia rilevata nelle ultime 24 ore</li></ul><em style="font-size:12px;color:var(--wv-ink-3);display:block;margin-top:6px">I dati reali saranno visibili dopo l\'audit e l\'accesso alla piattaforma.</em>' },
   { q:'Mandami il report di questa settimana',
-    a:'<span style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Report settimanale pronto.</strong><br>Il report arriva in automatico <strong>ogni lunedì alle 8:00</strong> via email, ma potete richiederlo in qualsiasi momento da questa chat.<br><br><strong>Tre versioni disponibili:</strong><ul><li><strong>Direzione:</strong> vendite, spesa, ROAS, nuovi clienti, sintesi settimanale</li><li><strong>Marketing:</strong> campagne per canale, creatività attive, performance per mercato</li><li><strong>Vendite:</strong> prodotti più venduti, ordini per Paese, clienti ricorrenti</li></ul><strong>Formato:</strong> PDF, email o link condivisibile.<br><em style="font-size:10px;color:var(--wv-ink-3);display:block;margin-top:6px">Richiedibile come e quando volete. I numeri mostrati qui sono dimostrativi.</em>' },
+    a:'<span style="font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Report settimanale pronto.</strong><br>Il report arriva in automatico <strong>ogni lunedì alle 8:00</strong> via email, ma potete richiederlo in qualsiasi momento da questa chat.<br><br><strong>Tre versioni disponibili:</strong><ul><li><strong>Direzione:</strong> vendite, spesa, ROAS, nuovi clienti, sintesi settimanale</li><li><strong>Marketing:</strong> campagne per canale, creatività attive, performance per mercato</li><li><strong>Vendite:</strong> prodotti più venduti, ordini per Paese, clienti ricorrenti</li></ul><strong>Formato:</strong> PDF, email o link condivisibile.<br><em style="font-size:12px;color:var(--wv-ink-3);display:block;margin-top:6px">Richiedibile come e quando volete. I numeri mostrati qui sono dimostrativi.</em>' },
   { q:'Anomalie aperte',
-    a:'<span style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Sistema alert - monitoraggio 24h:</strong><br>Gli agenti controllano spesa, risultati e anomalie ogni 24 ore, anche nei weekend.<ul><li>CPA sopra soglia su un gruppo di inserzioni</li><li>ROAS sotto la soglia minima definita</li><li>Prodotti rifiutati nel feed Shopping</li><li>Calo improvviso di traffico o conversioni</li></ul>Quando scatta un alert, ricevete la notifica con la diagnosi e l\'azione suggerita. <strong>L\'azione la decidete voi.</strong><br><em style="font-size:10px;color:var(--wv-ink-3);display:block;margin-top:6px">Le soglie vengono definite insieme durante l\'audit.</em>' },
+    a:'<span style="font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Sistema alert - monitoraggio 24h:</strong><br>Gli agenti controllano spesa, risultati e anomalie ogni 24 ore, anche nei weekend.<ul><li>CPA sopra soglia su un gruppo di inserzioni</li><li>ROAS sotto la soglia minima definita</li><li>Prodotti rifiutati nel feed Shopping</li><li>Calo improvviso di traffico o conversioni</li></ul>Quando scatta un alert, ricevete la notifica con la diagnosi e l\'azione suggerita. <strong>L\'azione la decidete voi.</strong><br><em style="font-size:12px;color:var(--wv-ink-3);display:block;margin-top:6px">Le soglie vengono definite insieme durante l\'audit.</em>' },
   { q:'Metti in pausa gli annunci sotto soglia',
-    a:'<span style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Piano proposto - 3 azioni su 2 piattaforme:</strong><br><div class="chatw-action"><div class="status">In attesa della vostra approvazione</div><ul><li>Metti in pausa 4 ad set Meta con ROAS sotto soglia</li><li>Metti in pausa 2 ad group TikTok sotto soglia</li><li>Lascia invariati i budget sulle campagne che performano</li></ul><div class="btns"><button class="btn-app">Approva</button><button class="btn-rev">Rivedi</button></div></div><em style="font-size:10px;color:var(--wv-ink-3);display:block;margin-top:6px">Nulla va online senza la vostra approvazione. Le decisioni restano sempre al cliente.</em>' },
+    a:'<span style="font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--wv-ink-3);display:block;margin-bottom:5px">esempio dimostrativo</span><strong>Piano proposto - 3 azioni su 2 piattaforme:</strong><br><div class="chatw-action"><div class="status">In attesa della vostra approvazione</div><ul><li>Metti in pausa 4 ad set Meta con ROAS sotto soglia</li><li>Metti in pausa 2 ad group TikTok sotto soglia</li><li>Lascia invariati i budget sulle campagne che performano</li></ul><div class="btns"><button class="btn-app">Approva</button><button class="btn-rev">Rivedi</button></div></div><em style="font-size:12px;color:var(--wv-ink-3);display:block;margin-top:6px">Nulla va online senza la vostra approvazione. Le decisioni restano sempre al cliente.</em>' },
 ];
 const chatBody = $('#chatBody');
 function chatShow(k) {
@@ -1337,7 +1461,7 @@ function chatShow(k) {
   setTimeout(() => {
     const bot = document.createElement('div');
     bot.className = 'chatw-bot';
-    bot.innerHTML = '<div class="who"><i></i><span>Assistente Visio</span><em>esempio dimostrativo</em></div><div class="reply"></div>';
+    bot.innerHTML = '<i class="av"></i><div class="bub"><div class="who"><span>Assistente Visio</span><em>esempio dimostrativo</em></div><div class="reply"></div></div>';
     chatBody.appendChild(bot);
     chatBody.scrollTop = chatBody.scrollHeight;
 
